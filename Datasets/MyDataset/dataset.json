@@ -1,0 +1,22 @@
+[
+  {
+    "instruction": "Explain why the sky appears blue during the day.",
+    "response": "Sunlight contains all colors. As it passes through the atmosphere, shorter (blue) wavelengths scatter much more than longer ones (Rayleigh scattering), so the sky looks blue."
+  },
+  {
+    "instruction": "Write a Python function that returns the n-th Fibonacci number.",
+    "response": "def fib(n):\n    a, b = 0, 1\n    for _ in range(n):\n        a, b = b, a + b\n    return a"
+  },
+  {
+    "instruction": "Summarize the plot of Romeo and Juliet in two sentences.",
+    "response": "Two young lovers from feuding families fall for each other and secretly marry. A series of misunderstandings leads them both to take their own lives, which finally reconciles their families."
+  },
+  {
+    "instruction": "Convert 100 degrees Fahrenheit to Celsius and show the formula.",
+    "response": "C = (F - 32) * 5/9 = (100 - 32) * 5/9 = 37.78 degrees Celsius."
+  },
+  {
+    "instruction": "Give three tips for writing a clear commit message.",
+    "response": "1) Use a short imperative subject line. 2) Explain the why, not just the what, in the body. 3) Reference related issues or context so future readers have it."
+  }
+]
