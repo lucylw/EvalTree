@@ -7,6 +7,13 @@ import multiprocessing
 from tqdm import tqdm
 from utils.api_inference import create_OpenAIclient, openai_embedding
 
+
+# On macOS the default start method is "spawn", which re-imports this module in
+# every worker (re-running the module-level Pool below) and does not inherit the
+# module-level globals that Process() relies on. Force "fork" to match Linux.
+if multiprocessing.get_start_method(allow_none = True) != "fork" :
+    multiprocessing.set_start_method("fork", force = True)
+
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", type = str, required = True, choices = ("MATH", "WildChat10K", "DS-1000", ) + ("Chatbot-Arena", "ShareGPT10K", "MMLU", "CollegeMath", "DRChallenge", ))
 parser.add_argument("--num_procs", type = int, default = 4)
