@@ -5,13 +5,13 @@ import random
 import argparse
 import concurrent.futures
 from utils.common import manual_seed
-from utils.api_inference import create_OpenAIclient, openai_completion, prompt_to_chatml
+from utils.api_inference import create_LLMclient, llm_completion, prompt_to_chatml
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", type = str, required = True, choices = ("MATH", "WildChat10K", "DS-1000", "DRChallenge", ))
 parser.add_argument("--tree_path", type = str, required = True)
 
-parser.add_argument("--description_model", type = str, default = "gpt-4o-mini", choices = ("gpt-4o-mini", ))
+parser.add_argument("--description_model", type = str, default = "gpt-4o-mini", choices = ("gpt-4o-mini", "claude-opus-4-8", ))
 parser.add_argument("--num_procs", type = int, default = 4)
 args = parser.parse_args()
 
@@ -55,11 +55,11 @@ def initialize_description(tree) :
 
 
 EXECUTORS = {}
-OPENAI_KWARGS = {
+LLM_KWARGS = {
     "model" : args.description_model,
     "max_tokens" : 1024,
-    "temperature" : 0.0,
-    "seed" : 0,
+    "temperature" : 0.0,  # ignored on Claude models (sampling params are removed on Opus 4.x)
+    "seed" : 0,           # ignored on Claude models
 }
 def describe(tree_description, depth) :
     cost = 0.0
@@ -77,8 +77,8 @@ def describe(tree_description, depth) :
         skills = ["### Skill #{}\n{}\n".format(index + 1, skill) for index, skill in enumerate(skills)]
         
         chatml = prompt_to_chatml(prompt = PROMPT.format_map(dict(group_number = len(skills), skill_descriptions = "\n".join(skills))))
-        client = create_OpenAIclient(dict(api_key = os.getenv("OpenAI_API_KEY")))
-        response = openai_completion(client, chatml, OPENAI_KWARGS)
+        client = create_LLMclient(args.description_model)
+        response = llm_completion(client, chatml, LLM_KWARGS)
         tree_description["description"] = response["response"].strip()
         cost += response["cost"]
         print(tree_description["description"])

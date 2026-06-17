@@ -1,4 +1,5 @@
 
+import os
 import time
 import openai
 import logging
@@ -68,6 +69,29 @@ def create_OpenAIclient(args) :
     return OpenAI(**args)
 
 
+def is_anthropic_model(model : str) :
+    return model.startswith("claude-")
+
+
+def create_LLMclient(model : str) :
+    """Return an OpenAI or Anthropic client based on the model name."""
+    if is_anthropic_model(model) :
+        import anthropic
+        return anthropic.Anthropic(api_key = os.getenv("ANTHROPIC_API_KEY"))
+    return create_OpenAIclient(dict(api_key = os.getenv("OpenAI_API_KEY")))
+
+
+def llm_completion(client, chatml, kwargs : dict, sleep_time : int = 5) :
+    """Dispatch a chat completion to OpenAI or Anthropic based on kwargs['model'].
+
+    Both backends return the same dict shape: {"response": <str>, "cost": <float>}.
+    """
+    assert "model" in kwargs, "'model' not in kwargs"
+    if is_anthropic_model(kwargs["model"]) :
+        return anthropic_completion(client, chatml, kwargs, sleep_time)
+    return openai_completion(client, chatml, kwargs, sleep_time)
+
+
 def openai_completion(
     client,
     chatml,
@@ -109,6 +133,67 @@ def openai_completion(
     return dict(
         response = message.content,
         cost = cost_calculation(completion_batch.usage),
+    )
+
+
+def anthropic_completion(
+    client,
+    chatml,
+    anthropic_kwargs : dict,
+    sleep_time : int = 5,
+) :
+    """Anthropic (Claude) counterpart to openai_completion.
+
+    Accepts the same ChatML message list and the same kwargs dict as the OpenAI
+    path. OpenAI-only keys (e.g. temperature, seed) are ignored — they are removed
+    on Claude Opus 4.x and would 400. The ChatML system turns become the top-level
+    `system` prompt; user/assistant turns become `messages`.
+    """
+    import anthropic
+
+    assert "model" in anthropic_kwargs, "'model' not in anthropic_kwargs"
+    model = anthropic_kwargs["model"]
+    # Adaptive thinking needs headroom on top of the visible answer's budget.
+    max_tokens = max(int(anthropic_kwargs.get("max_tokens", 1024)), 4096)
+
+    system = "\n\n".join(m["content"] for m in chatml if m["role"] == "system")
+    messages = [{"role" : m["role"], "content" : m["content"]} for m in chatml if m["role"] in ("user", "assistant")]
+
+    while True :
+        try :
+            message = client.messages.create(
+                model = model,
+                max_tokens = max_tokens,
+                system = system,
+                messages = messages,
+                thinking = {"type" : "adaptive"},
+            )
+            break
+        except anthropic.RateLimitError as e :
+            logging.warning("Anthropic API request exceeded rate limit: {}".format(e))
+            time.sleep(sleep_time)
+        except Exception as e : # Bad Handling ... but it's fine for now (mirrors openai_completion)
+            logging.error("Anthropic API request failed: {}".format(e))
+            time.sleep(sleep_time)
+
+    text = "".join(block.text for block in message.content if block.type == "text").strip()
+
+    def cost_calculation(usage) :
+        # $/1M tokens (input, output). https://platform.claude.com pricing.
+        PRICES = {
+            "claude-opus-4-8" : (5.0, 25.0),
+            "claude-opus-4-7" : (5.0, 25.0),
+            "claude-sonnet-4-6" : (3.0, 15.0),
+            "claude-haiku-4-5" : (1.0, 5.0),
+        }
+        if model not in PRICES :
+            raise NotImplementedError("No pricing for model = {}".format(model))
+        input_price, output_price = PRICES[model]
+        return usage.input_tokens / 1000000 * input_price + usage.output_tokens / 1000000 * output_price
+
+    return dict(
+        response = text,
+        cost = cost_calculation(message.usage),
     )
 
 

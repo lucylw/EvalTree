@@ -5,7 +5,7 @@ import argparse
 import functools
 import multiprocessing
 from tqdm import tqdm
-from utils.api_inference import create_OpenAIclient, openai_completion, prompt_to_chatml
+from utils.api_inference import create_LLMclient, llm_completion, prompt_to_chatml
 
 
 # On macOS the default start method is "spawn", which re-imports this module in
@@ -18,7 +18,7 @@ if multiprocessing.get_start_method(allow_none = True) != "fork" :
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", type = str, required = True, choices = ("MATH", "WildChat10K", "DS-1000", ) + ("Chatbot-Arena", "ShareGPT10K", "MMLU", "CollegeMath", "DRChallenge"))
 parser.add_argument("--num_procs", type = int, default = 4)
-parser.add_argument("--annotation_model", type = str, default = "gpt-4o-mini", choices = ("gpt-4o-mini", ))
+parser.add_argument("--annotation_model", type = str, default = "gpt-4o-mini", choices = ("gpt-4o-mini", "claude-opus-4-8", ))
 args = parser.parse_args()
 
 
@@ -56,16 +56,16 @@ with open("EvalTree/stage1-CapabilityAnnotation/prompts/{}.txt".format(PROMPT), 
     PROMPT = fin.read()
 
 
-OPENAI_KWARGS = {
+LLM_KWARGS = {
     "model" : args.annotation_model,
     "max_tokens" : 1024,
-    "temperature" : 0.0,
-    "seed" : 0,
+    "temperature" : 0.0,  # ignored on Claude models (sampling params are removed on Opus 4.x)
+    "seed" : 0,           # ignored on Claude models
 }
 def Process(instance) :
     chatml = prompt_to_chatml(PROMPT.format_map(dict(instance, input = instance[INPUT_KEY], output = instance[OUTPUT_KEY])))
-    client = create_OpenAIclient(dict(api_key = os.getenv("OpenAI_API_KEY")))
-    return openai_completion(client, chatml, OPENAI_KWARGS)
+    client = create_LLMclient(args.annotation_model)
+    return llm_completion(client, chatml, LLM_KWARGS)
 with multiprocessing.Pool(args.num_procs) as p :
     _Process = functools.partial(Process)
     outputs = list(
