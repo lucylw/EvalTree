@@ -8,11 +8,11 @@ from utils.common import manual_seed
 from utils.api_inference import create_OpenAIclient, openai_completion, prompt_to_chatml
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--dataset", type = str, required = True, choices = ("MATH", "WildChat10K", "DS-1000", ))
+parser.add_argument("--dataset", type = str, required = True, choices = ("MATH", "WildChat10K", "DS-1000", "DRChallenge", ))
 parser.add_argument("--tree_path", type = str, required = True)
 
 parser.add_argument("--description_model", type = str, default = "gpt-4o-mini", choices = ("gpt-4o-mini", ))
-parser.add_argument("--num_procs", type = int, default = 512)
+parser.add_argument("--num_procs", type = int, default = 4)
 args = parser.parse_args()
 
 
@@ -28,6 +28,8 @@ elif args.dataset == "DS-1000" :
     PROMPT = "ds-1000"
 elif args.dataset == "MMLU" :
     PROMPT = "mmlu"
+elif args.dataset == "DRChallenge" :
+    PROMPT = "drchallenge"
 else :
     raise NotImplementedError("dataset = {}".format(args.dataset))
 with open("EvalTree/stage4-CapabilityDescription/prompts/{}.txt".format(PROMPT), "r") as fin :

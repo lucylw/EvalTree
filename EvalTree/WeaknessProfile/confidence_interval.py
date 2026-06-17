@@ -5,7 +5,7 @@ import argparse
 import statsmodels.api as sm
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--dataset", type = str, required = True, choices = ("MATH", "WildChat10K", "DS-1000", "MMLU", ))
+parser.add_argument("--dataset", type = str, required = True, choices = ("MATH", "WildChat10K", "DS-1000", "MMLU", "DRChallenge", ))
 parser.add_argument("--tree_path", type = str, required = True)
 parser.add_argument("--results_path", type = str, required = True)
 args = parser.parse_args()
@@ -15,7 +15,7 @@ TREE = torch.load(os.path.join("Datasets/{}/EvalTree".format(args.dataset), "{}.
 with open(os.path.join("Datasets/{}/eval_results".format(args.dataset), args.results_path, "results.json"), "r") as fin :
     RESULTS = json.load(fin)
 
-if args.dataset in ("MATH", "DS-1000", "MMLU", ) :
+if args.dataset in ("MATH", "DS-1000", "MMLU", "DRChallenge", ) :
     results_type = "accuracy"
 elif args.dataset == "WildChat10K" :
     results_type = "win-rate"

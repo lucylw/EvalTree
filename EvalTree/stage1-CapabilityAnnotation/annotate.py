@@ -8,9 +8,16 @@ from tqdm import tqdm
 from utils.api_inference import create_OpenAIclient, openai_completion, prompt_to_chatml
 
 
+# On macOS the default start method is "spawn", which re-imports this module in
+# every worker (re-running the module-level Pool below) and does not inherit the
+# module-level globals that Process() relies on. Force "fork" to match Linux.
+if multiprocessing.get_start_method(allow_none = True) != "fork" :
+    multiprocessing.set_start_method("fork", force = True)
+
+
 parser = argparse.ArgumentParser()
-parser.add_argument("--dataset", type = str, required = True, choices = ("MATH", "WildChat10K", "DS-1000", ) + ("Chatbot-Arena", "ShareGPT10K", "MMLU", "CollegeMath", ))
-parser.add_argument("--num_procs", type = int, default = 64)
+parser.add_argument("--dataset", type = str, required = True, choices = ("MATH", "WildChat10K", "DS-1000", ) + ("Chatbot-Arena", "ShareGPT10K", "MMLU", "CollegeMath", "DRChallenge"))
+parser.add_argument("--num_procs", type = int, default = 4)
 parser.add_argument("--annotation_model", type = str, default = "gpt-4o-mini", choices = ("gpt-4o-mini", ))
 args = parser.parse_args()
 
@@ -38,6 +45,11 @@ elif args.dataset in ("CollegeMath", ) :
     INPUT_KEY, OUTPUT_KEY = "question", "[gpt-4o-mini]_solution"
     with open("Datasets/{}/dataset.json".format(args.dataset), "r") as fin :
         dataset = json.load(fin)
+elif args.dataset in ("DRChallenge", ) :
+    PROMPT = "drchallenge"
+    INPUT_KEY, OUTPUT_KEY = "seed_question", "updated_question"
+    with open("Datasets/{}/dataset.json".format(args.dataset), "r") as fin :
+        dataset = json.load(fin)
 else :
     raise NotImplementedError("dataset = {}".format(args.dataset))
 with open("EvalTree/stage1-CapabilityAnnotation/prompts/{}.txt".format(PROMPT), "r") as fin :
@@ -51,7 +63,7 @@ OPENAI_KWARGS = {
     "seed" : 0,
 }
 def Process(instance) :
-    chatml = prompt_to_chatml(PROMPT.format_map(dict(input = instance[INPUT_KEY], output = instance[OUTPUT_KEY])))
+    chatml = prompt_to_chatml(PROMPT.format_map(dict(instance, input = instance[INPUT_KEY], output = instance[OUTPUT_KEY])))
     client = create_OpenAIclient(dict(api_key = os.getenv("OpenAI_API_KEY")))
     return openai_completion(client, chatml, OPENAI_KWARGS)
 with multiprocessing.Pool(args.num_procs) as p :

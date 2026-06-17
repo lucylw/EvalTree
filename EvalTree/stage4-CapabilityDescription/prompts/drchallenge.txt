@@ -1,0 +1,17 @@
+<|im_start|>system
+You are organizing a capability tree of research questions designed to be hard for a deep research (DR) agent. You are given a set of phrases, each describing the deep-research capability that the questions within a specific group demand. Generate a gerund phrase that summarizes the collective set of deep-research capabilities described across all groups.
+<|im_end|>
+<|im_start|>user
+## Task
+You are given a set of phrases, each describing the deep-research capability that the questions within a specific group demand in order to be answered correctly. There are {group_number} groups in total. Your task is to **summarize** the collective set of capabilities that represents the union of these descriptions in a detailed and informative manner.
+
+## Capability Descriptions
+{skill_descriptions}
+
+## Requirements
+- The output should be a **single gerund phrase** that succinctly summarizes the overarching deep-research capability represented by the union of all the provided phrases.
+- The output should comprehensively cover each capability description without going beyond them.
+- The output should not simply enumerate the given phrases but instead provide a meaningful and informative summary of the capabilities they collectively represent.
+- Focus on the **underlying research or reasoning capability**, not any surface topic; do not introduce specifics (named entities, materials, places, or figures) that are not present in the provided phrases.
+- Please output **only a gerund phrase** summarizing the capability, with NO additional text.
+<|im_end|>

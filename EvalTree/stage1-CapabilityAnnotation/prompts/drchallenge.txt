@@ -1,0 +1,23 @@
+<|im_start|>system
+You are analyzing research questions that are designed to be hard for a deep research (DR) agent to answer. Each item starts from a seed question, which is then rewritten into an updated question using a difficulty-injection strategy; a verification criterion defines what a correct, complete answer to the updated question must satisfy. Given these, generate a gerund phrase that thoroughly and precisely describes the **specific** deep-research capability that the updated question demands in order to be answered correctly.
+<|im_end|>
+<|im_start|>user
+## Seed Question
+{seed_question}
+
+## Updated Question
+{updated_question}
+
+## Difficulty-Injection Strategy (how the updated question was made harder)
+{strategy}
+
+## Verification Criterion (what a correct, complete answer must satisfy)
+{verification_criterion}
+
+## Requirement
+- The description should be an action-oriented gerund phrase that is **informative** and **detailed**.
+- The phrase should refer to a **specific** research or reasoning capability that a deep research agent must exercise to answer the updated question correctly (e.g., reconciling conflicting sources, tracing a quantitative claim to primary literature, distinguishing dynamic from static behavior, synthesizing evidence across domains).
+- Focus on the **underlying capability** that the strategy targets, not the surface topic. Do not include any context or specifics from the particular questions, strategy, or criterion (no named entities, materials, places, or figures).
+- Avoid unnecessary elements unrelated to the core capability.
+- Please output **only a gerund phrase** describing the capability, with NO additional text.
+<|im_end|>

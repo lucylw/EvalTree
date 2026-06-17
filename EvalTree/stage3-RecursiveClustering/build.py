@@ -7,7 +7,7 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--dataset", type = str, required = True, choices = ("MATH", "WildChat10K", "DS-1000", "MMLU", ))
+parser.add_argument("--dataset", type = str, required = True, choices = ("MATH", "WildChat10K", "DS-1000", "MMLU", "DRChallenge", ))
 parser.add_argument("--annotation_model", type = str, default = "gpt-4o-mini", choices = ("gpt-4o-mini", ))
 parser.add_argument("--embedding_model", type = str, default = "text-embedding-3-small", choices = ("text-embedding-3-small", ))
 parser.add_argument("--max_children", type = int, default = 10)

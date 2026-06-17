@@ -8,8 +8,8 @@ from tqdm import tqdm
 from utils.api_inference import create_OpenAIclient, openai_embedding
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--dataset", type = str, required = True, choices = ("MATH", "WildChat10K", "DS-1000", ) + ("Chatbot-Arena", "ShareGPT10K", "MMLU", "CollegeMath", ))
-parser.add_argument("--num_procs", type = int, default = 64)
+parser.add_argument("--dataset", type = str, required = True, choices = ("MATH", "WildChat10K", "DS-1000", ) + ("Chatbot-Arena", "ShareGPT10K", "MMLU", "CollegeMath", "DRChallenge", ))
+parser.add_argument("--num_procs", type = int, default = 4)
 parser.add_argument("--annotation_model", type = str, default = "gpt-4o-mini", choices = ("gpt-4o-mini", ))
 parser.add_argument("--embedding_model", type = str, default = "text-embedding-3-small", choices = ("text-embedding-3-small", ))
 args = parser.parse_args()
@@ -21,7 +21,7 @@ with open("Datasets/{}/EvalTree/stage1-CapabilityAnnotation/[annotation={}].json
 
 if args.dataset in ("MATH", "DS-1000", "CollegeMath", ) :
     PREFIX = "The model has the following skill or capability: "
-elif args.dataset in ("WildChat10K", "Chatbot-Arena", "ShareGPT10K", "MMLU", ) :
+elif args.dataset in ("WildChat10K", "Chatbot-Arena", "ShareGPT10K", "MMLU", "DRChallenge", ) :
     PREFIX = "The model has the following capability: "
 else :
     raise NotImplementedError("dataset = {}".format(args.dataset))
