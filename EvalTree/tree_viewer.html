@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EvalTree — Capability Tree Viewer</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --line: #2a2f3a;
+    --text: #e6e9ef;
+    --muted: #9aa3b2;
+    --accent: #6ea8fe;
+    --accent-soft: #6ea8fe22;
+    --leaf: #3ddc97;
+    --hit: #ffd166;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 14px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+    padding: 12px 16px;
+    display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center;
+  }
+  header h1 { font-size: 15px; margin: 0; font-weight: 600; letter-spacing: .2px; }
+  header .spacer { flex: 1; }
+  .ctl { display: flex; align-items: center; gap: 6px; color: var(--muted); }
+  input[type="search"], select {
+    background: var(--bg); border: 1px solid var(--line); color: var(--text);
+    border-radius: 8px; padding: 6px 10px; outline: none; font: inherit;
+  }
+  input[type="search"] { min-width: 220px; }
+  input[type="search"]:focus, select:focus { border-color: var(--accent); }
+  button, label.filebtn {
+    background: var(--bg); border: 1px solid var(--line); color: var(--text);
+    border-radius: 8px; padding: 6px 12px; cursor: pointer; font: inherit;
+  }
+  button:disabled { opacity: .4; cursor: default; }
+  button:not(:disabled):hover, label.filebtn:hover { border-color: var(--accent); color: var(--accent); }
+  label.filebtn input { display: none; }
+  main { padding: 16px 20px 80px; }
+  .drop {
+    margin: 40px auto; max-width: 640px; border: 1.5px dashed var(--line);
+    border-radius: 14px; padding: 48px 24px; text-align: center; color: var(--muted);
+  }
+  .drop.drag { border-color: var(--accent); background: var(--accent-soft); }
+  .drop code { color: var(--text); background: #0b0d11; padding: 2px 6px; border-radius: 5px; }
+
+  ul.tree, ul.tree ul { list-style: none; margin: 0; padding: 0; }
+  /* indent guides make the hierarchy obvious */
+  ul.tree ul { margin-left: 15px; border-left: 1px solid var(--line); padding-left: 16px; }
+  li.node { margin: 6px 0; position: relative; }
+  /* elbow connector from the guide line into each block */
+  ul.tree ul > li.node::before {
+    content: ""; position: absolute; left: -16px; top: 18px;
+    width: 14px; height: 1px; background: var(--line);
+  }
+
+  /* each node is a block / card */
+  .row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 12px; border-radius: 10px; cursor: default;
+    background: #1a1e27; border: 1px solid var(--line);
+    transition: border-color .12s ease, background .12s ease;
+  }
+  li.internal > .row { border-left: 3px solid var(--accent); }
+  li.leaf > .row { background: #141a18; border-left: 3px solid var(--leaf); }
+  .row.clickable { cursor: pointer; }
+  .row.clickable:hover { background: #20262f; border-color: var(--accent); }
+
+  .twisty {
+    flex: 0 0 auto; width: 14px; text-align: center; color: var(--muted);
+    user-select: none; font-size: 11px; transition: transform .12s ease;
+  }
+  li.collapsed > .row .twisty { transform: rotate(-90deg); }
+  li.leaf > .row .twisty { visibility: hidden; }
+
+  .count {
+    flex: 0 0 auto; min-width: 56px; text-align: center;
+    font-variant-numeric: tabular-nums; font-size: 12px;
+    background: var(--accent-soft); color: var(--accent);
+    border-radius: 999px; padding: 2px 9px;
+  }
+  .count b { font-weight: 700; }
+  li.leaf .count { background: #3ddc9722; color: var(--leaf); }
+  .count .unit { opacity: .75; font-weight: 400; }
+
+  .icon { flex: 0 0 auto; }
+  li.internal > .row .icon { color: var(--accent); }
+  li.leaf > .row .icon { color: var(--leaf); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+
+  .desc { flex: 1; }
+  li.internal > .row .desc { font-weight: 500; }
+  li.leaf > .row .desc { color: var(--muted); }
+  li.collapsed > ul { display: none; }
+  mark { background: var(--hit); color: #000; border-radius: 3px; padding: 0 1px; }
+  .hidden { display: none !important; }
+  .meta { color: var(--muted); font-size: 12px; }
+  .legend { color: var(--muted); font-size: 12px; }
+  .legend b { color: var(--accent); } .legend i { color: var(--leaf); font-style: normal; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🌳 EvalTree Capability Viewer</h1>
+  <label class="filebtn">Open JSON…<input id="file" type="file" accept=".json,application/json" /></label>
+  <div class="ctl"><input id="search" type="search" placeholder="Filter capabilities…" disabled /></div>
+  <div class="spacer"></div>
+  <div class="ctl">show depth
+    <select id="depth" disabled>
+      <option value="1">1</option>
+      <option value="2" selected>2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="99">all</option>
+    </select>
+  </div>
+  <div class="ctl"><label><input id="showLeaves" type="checkbox" /> instances</label></div>
+  <div class="meta" id="stats"></div>
+</header>
+<main>
+  <div class="drop" id="drop">
+    <p style="font-size:16px;color:var(--text);margin:0 0 8px">Drop a capability-tree <code>.json</code> here</p>
+    <p>or use <b>Open JSON…</b> above.</p>
+    <p style="margin-top:18px">Expected file: <code>Datasets/&lt;name&gt;/EvalTree/stage3-RecursiveClustering/[…].json</code></p>
+  </div>
+  <div class="legend hidden" id="legend"><b>▸ capability node</b> (groups instances) &nbsp;·&nbsp; <i>#n leaf</i> = one dataset instance &nbsp;·&nbsp; <b>n=</b> instances under a node</div>
+  <ul class="tree" id="tree"></ul>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let stats = { nodes: 0, leaves: 0, depth: 0 };
+
+// A node is { description, subtrees }.
+//   subtrees is an OBJECT (dict) or ARRAY  -> internal node
+//   subtrees is a NUMBER (instance index)  -> leaf
+const isLeaf = (n) => typeof n.subtrees === "number";
+const childrenOf = (n) => (Array.isArray(n.subtrees) ? n.subtrees : Object.values(n.subtrees));
+
+function countInstances(n) {
+  if (isLeaf(n)) return 1;
+  if (n.__count != null) return n.__count;
+  let c = 0;
+  for (const ch of childrenOf(n)) c += countInstances(ch);
+  return (n.__count = c);
+}
+
+const escapeHTML = (s) => String(s).replace(/[&<>]/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[m]));
+
+function buildLi(node, depth) {
+  stats.depth = Math.max(stats.depth, depth);
+  const leaf = isLeaf(node);
+  leaf ? stats.leaves++ : stats.nodes++;
+
+  const li = document.createElement("li");
+  li.className = "node " + (leaf ? "leaf" : "internal");
+  li.dataset.depth = depth;
+  li.dataset.text = (node.description || "").toLowerCase();
+
+  const row = document.createElement("div");
+  row.className = "row" + (leaf ? "" : " clickable");
+
+  const tw = document.createElement("span"); tw.className = "twisty"; tw.textContent = "▾";
+
+  const count = document.createElement("span"); count.className = "count";
+  const n = countInstances(node);
+  count.innerHTML = leaf ? '<span class="unit">leaf</span>' : '<span class="unit">n=</span><b>' + n + "</b>";
+
+  const icon = document.createElement("span"); icon.className = "icon";
+  icon.textContent = leaf ? "#" + node.subtrees : "▸";
+
+  const desc = document.createElement("span"); desc.className = "desc";
+  desc.textContent = node.description || "(no description)";
+
+  row.append(tw, count, icon, desc);
+  li.appendChild(row);
+
+  if (!leaf) {
+    const ul = document.createElement("ul");
+    for (const ch of childrenOf(node)) ul.appendChild(buildLi(ch, depth + 1));
+    li.appendChild(ul);
+    row.addEventListener("click", (e) => { e.stopPropagation(); li.classList.toggle("collapsed"); });
+  }
+  return li;
+}
+
+function render(tree) {
+  stats = { nodes: 0, leaves: 0, depth: 0 };
+  const root = $("tree");
+  root.innerHTML = "";
+  root.appendChild(buildLi(tree, 0));
+  $("drop").classList.add("hidden");
+  $("legend").classList.remove("hidden");
+  $("stats").textContent = `${stats.nodes.toLocaleString()} capability nodes · ${stats.leaves.toLocaleString()} instances · depth ${stats.depth}`;
+  ["search", "depth"].forEach((id) => ($(id).disabled = false));
+  applyDepth();
+  applyLeafVisibility();
+}
+
+function load(text) {
+  let data;
+  try { data = JSON.parse(text); }
+  catch (err) { return alert("Could not parse JSON: " + err.message); }
+  if (!data || typeof data !== "object" || !("subtrees" in data))
+    return alert("This file doesn't look like a capability tree (no top-level 'subtrees').");
+  render(data);
+}
+
+// ---- depth: collapse everything deeper than the chosen level ----
+function applyDepth() {
+  const max = parseInt($("depth").value, 10);
+  document.querySelectorAll("#tree li.internal").forEach((li) => {
+    const d = parseInt(li.dataset.depth, 10);
+    li.classList.toggle("collapsed", d >= max);
+  });
+}
+$("depth").addEventListener("change", applyDepth);
+
+function applyLeafVisibility() {
+  const show = $("showLeaves").checked;
+  document.querySelectorAll("#tree li.leaf").forEach((li) => li.classList.toggle("hidden", !show));
+}
+$("showLeaves").addEventListener("change", applyLeafVisibility);
+
+// ---- filter ----
+let searchTimer = null;
+$("search").addEventListener("input", (e) => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => filter(e.target.value.trim().toLowerCase()), 120);
+});
+function filter(q) {
+  document.querySelectorAll("#tree mark").forEach((m) => m.replaceWith(m.textContent));
+  const internals = document.querySelectorAll("#tree li.internal");
+  if (!q) { applyDepth(); document.querySelectorAll("#tree li").forEach((li) => li.classList.remove("hidden")); applyLeafVisibility(); return; }
+  document.querySelectorAll("#tree li").forEach((li) => li.classList.add("hidden"));
+  internals.forEach((li) => {
+    if ((li.dataset.text || "").includes(q)) {
+      li.classList.remove("hidden", "collapsed");
+      const desc = li.querySelector(":scope > .row > .desc");
+      const t = desc.textContent, i = t.toLowerCase().indexOf(q);
+      if (i >= 0) desc.innerHTML = escapeHTML(t.slice(0, i)) + "<mark>" + escapeHTML(t.slice(i, i + q.length)) + "</mark>" + escapeHTML(t.slice(i + q.length));
+      let p = li.parentElement;
+      while (p && p.id !== "tree") { if (p.tagName === "LI") p.classList.remove("hidden", "collapsed"); p = p.parentElement; }
+    }
+  });
+}
+
+// ---- drag & drop ----
+const drop = $("drop");
+["dragenter", "dragover"].forEach((ev) => document.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add("drag"); }));
+document.addEventListener("dragleave", (e) => { if (!e.relatedTarget) drop.classList.remove("drag"); });
+document.addEventListener("drop", (e) => { e.preventDefault(); drop.classList.remove("drag"); const f = e.dataTransfer.files[0]; if (f) f.text().then(load); });
+$("file").addEventListener("change", (e) => { const f = e.target.files[0]; if (f) f.text().then(load); });
+</script>
+</body>
+</html>
