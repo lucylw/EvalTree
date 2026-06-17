@@ -97,6 +97,16 @@
   li.internal > .row .icon { color: var(--accent); }
   li.leaf > .row .icon { color: var(--leaf); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
 
+  .acc {
+    flex: 0 0 auto; min-width: 88px; display: none; align-items: center; gap: 6px;
+    font-variant-numeric: tabular-nums; font-size: 12px;
+  }
+  body.has-results .acc { display: inline-flex; }
+  .acc .bar { width: 40px; height: 7px; border-radius: 4px; background: #2a2f3a; overflow: hidden; }
+  .acc .bar > span { display: block; height: 100%; }
+  .acc .pct { min-width: 34px; text-align: right; font-weight: 600; }
+  .acc .frac { color: var(--muted); font-size: 11px; }
+
   .desc { flex: 1; }
   li.internal > .row .desc { font-weight: 500; }
   li.leaf > .row .desc { color: var(--muted); }
@@ -111,9 +121,11 @@
 <body>
 <header>
   <h1>🌳 EvalTree Capability Viewer</h1>
-  <label class="filebtn">Open JSON…<input id="file" type="file" accept=".json,application/json" /></label>
+  <label class="filebtn">Open tree…<input id="file" type="file" accept=".json,application/json" /></label>
+  <label class="filebtn">Open results…<input id="resultsFile" type="file" accept=".json,application/json" /></label>
   <div class="ctl"><input id="search" type="search" placeholder="Filter capabilities…" disabled /></div>
   <div class="spacer"></div>
+  <div class="ctl" id="invertWrap" style="display:none"><label title="DRChallenge encodes 1=FAILED, so enable this to show accuracy"><input id="invert" type="checkbox" /> 1 = incorrect</label></div>
   <div class="ctl">show depth
     <select id="depth" disabled>
       <option value="1">1</option>
@@ -129,16 +141,20 @@
 <main>
   <div class="drop" id="drop">
     <p style="font-size:16px;color:var(--text);margin:0 0 8px">Drop a capability-tree <code>.json</code> here</p>
-    <p>or use <b>Open JSON…</b> above.</p>
+    <p>or use <b>Open tree…</b> above.</p>
     <p style="margin-top:18px">Expected file: <code>Datasets/&lt;name&gt;/EvalTree/stage3-RecursiveClustering/[…].json</code></p>
+    <p style="margin-top:6px">Optionally <b>Open results…</b> (<code>eval_results/&lt;model&gt;/results.json</code> — a list of 0/1) to show per-node accuracy.</p>
   </div>
-  <div class="legend hidden" id="legend"><b>▸ capability node</b> (groups instances) &nbsp;·&nbsp; <i>#n leaf</i> = one dataset instance &nbsp;·&nbsp; <b>n=</b> instances under a node</div>
+  <div class="legend hidden" id="legend"><b>▸ capability node</b> (groups instances) &nbsp;·&nbsp; <i>#n leaf</i> = one dataset instance &nbsp;·&nbsp; <b>n=</b> instances under a node &nbsp;·&nbsp; <span style="color:var(--leaf)">acc bar</span> = mean score under a node</div>
   <ul class="tree" id="tree"></ul>
 </main>
 
 <script>
 const $ = (id) => document.getElementById(id);
 let stats = { nodes: 0, leaves: 0, depth: 0 };
+let currentTree = null;   // last-loaded tree (for re-render when results/invert change)
+let RESULTS = null;       // array of per-instance scores (0/1), indexed by leaf index
+let scoreCache = new WeakMap();
 
 // A node is { description, subtrees }.
 //   subtrees is an OBJECT (dict) or ARRAY  -> internal node
@@ -152,6 +168,47 @@ function countInstances(n) {
   let c = 0;
   for (const ch of childrenOf(n)) c += countInstances(ch);
   return (n.__count = c);
+}
+
+// Aggregate raw scores under a node: { sum, n, scored } (scored = instances with a result).
+function scoreStats(n) {
+  if (isLeaf(n)) {
+    const v = RESULTS ? RESULTS[n.subtrees] : undefined;
+    const has = typeof v === "number";
+    return { sum: has ? v : 0, n: 1, scored: has ? 1 : 0 };
+  }
+  if (scoreCache.has(n)) return scoreCache.get(n);
+  let sum = 0, count = 0, scored = 0;
+  for (const ch of childrenOf(n)) { const s = scoreStats(ch); sum += s.sum; count += s.n; scored += s.scored; }
+  const r = { sum, n: count, scored };
+  scoreCache.set(n, r);
+  return r;
+}
+
+// Displayed accuracy in [0,1] (inverted when results encode 1=incorrect), or null.
+function accuracyOf(n) {
+  if (!RESULTS) return null;
+  const s = scoreStats(n);
+  if (!s.scored) return null;
+  const rate = s.sum / s.scored;
+  return $("invert").checked ? 1 - rate : rate;
+}
+
+function accBadge(node) {
+  const acc = accuracyOf(node);
+  const span = document.createElement("span");
+  span.className = "acc";
+  if (acc == null) return span;
+  const s = scoreStats(node);
+  const correct = $("invert").checked ? s.scored - s.sum : s.sum;
+  const pct = Math.round(acc * 100);
+  const hue = Math.round(120 * acc); // 0=red .. 120=green
+  span.innerHTML =
+    '<span class="bar"><span style="width:' + pct + '%;background:hsl(' + hue + ',62%,46%)"></span></span>' +
+    '<span class="pct" style="color:hsl(' + hue + ',62%,58%)">' + pct + '%</span>' +
+    '<span class="frac">' + correct + '/' + s.scored + '</span>';
+  span.title = "accuracy " + correct + "/" + s.scored + " (" + pct + "%)";
+  return span;
 }
 
 const escapeHTML = (s) => String(s).replace(/[&<>]/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[m]));
@@ -178,10 +235,12 @@ function buildLi(node, depth) {
   const icon = document.createElement("span"); icon.className = "icon";
   icon.textContent = leaf ? "#" + node.subtrees : "▸";
 
+  const acc = accBadge(node);
+
   const desc = document.createElement("span"); desc.className = "desc";
   desc.textContent = node.description || "(no description)";
 
-  row.append(tw, count, icon, desc);
+  row.append(tw, count, acc, icon, desc);
   li.appendChild(row);
 
   if (!leaf) {
@@ -194,13 +253,22 @@ function buildLi(node, depth) {
 }
 
 function render(tree) {
+  currentTree = tree;
+  scoreCache = new WeakMap();
   stats = { nodes: 0, leaves: 0, depth: 0 };
   const root = $("tree");
   root.innerHTML = "";
   root.appendChild(buildLi(tree, 0));
   $("drop").classList.add("hidden");
   $("legend").classList.remove("hidden");
-  $("stats").textContent = `${stats.nodes.toLocaleString()} capability nodes · ${stats.leaves.toLocaleString()} instances · depth ${stats.depth}`;
+  let line = `${stats.nodes.toLocaleString()} capability nodes · ${stats.leaves.toLocaleString()} instances · depth ${stats.depth}`;
+  const acc = accuracyOf(tree);
+  if (acc != null) {
+    const s = scoreStats(tree);
+    const correct = $("invert").checked ? s.scored - s.sum : s.sum;
+    line += ` · overall acc ${Math.round(acc * 100)}% (${correct}/${s.scored})`;
+  }
+  $("stats").textContent = line;
   ["search", "depth"].forEach((id) => ($(id).disabled = false));
   applyDepth();
   applyLeafVisibility();
@@ -214,6 +282,20 @@ function load(text) {
     return alert("This file doesn't look like a capability tree (no top-level 'subtrees').");
   render(data);
 }
+
+function loadResults(text) {
+  let data;
+  try { data = JSON.parse(text); }
+  catch (err) { return alert("Could not parse results JSON: " + err.message); }
+  if (!Array.isArray(data))
+    return alert("Results must be a JSON list of per-instance scores (e.g. [0, 1, 0, ...]).");
+  RESULTS = data;
+  document.body.classList.add("has-results");
+  $("invertWrap").style.display = "";
+  if (currentTree) render(currentTree);
+}
+$("resultsFile").addEventListener("change", (e) => { const f = e.target.files[0]; if (f) f.text().then(loadResults); });
+$("invert").addEventListener("change", () => { if (currentTree) render(currentTree); });
 
 // ---- depth: collapse everything deeper than the chosen level ----
 function applyDepth() {
@@ -260,6 +342,43 @@ const drop = $("drop");
 document.addEventListener("dragleave", (e) => { if (!e.relatedTarget) drop.classList.remove("drag"); });
 document.addEventListener("drop", (e) => { e.preventDefault(); drop.classList.remove("drag"); const f = e.dataTransfer.files[0]; if (f) f.text().then(load); });
 $("file").addEventListener("change", (e) => { const f = e.target.files[0]; if (f) f.text().then(load); });
+
+// ---- auto-load (only works when served over http, e.g. `python3 -m http.server` from repo root) ----
+// Root-relative so it doesn't depend on where this HTML lives in the URL.
+const DATASET_DIR = "/Datasets/DRChallenge";
+const TREE_DIR = DATASET_DIR + "/EvalTree/stage3-RecursiveClustering/";
+const RESULTS_PATH = DATASET_DIR + "/eval_results/real/drtulu/results.json";
+
+// Discover the stage-4 tree (.json with descriptions) in the clustering dir,
+// so it adapts to whatever annotation model was used (gpt-4o-mini, claude-opus-4-8, …).
+async function discoverTreeUrl() {
+  const res = await fetch(TREE_DIR);              // http.server returns an HTML index
+  if (!res.ok) throw new Error("no dir listing");
+  const doc = new DOMParser().parseFromString(await res.text(), "text/html");
+  const hrefs = [...doc.querySelectorAll("a")]
+    .map((a) => a.getAttribute("href"))
+    .filter((h) => h && h.endsWith(".json"));
+  // prefer the described tree (stage 4 output); fall back to any .json
+  const pick = hrefs.find((h) => decodeURIComponent(h).includes("stage4-CapabilityDescription")) || hrefs[0];
+  return pick ? new URL(pick, location.origin + TREE_DIR).href : null;
+}
+
+async function autoLoad() {
+  try {
+    const treeUrl = await discoverTreeUrl();
+    if (!treeUrl) return;                          // nothing to load → keep manual UI
+    load(await (await fetch(treeUrl)).text());
+    const r = await fetch(RESULTS_PATH);
+    if (r.ok) {
+      $("invert").checked = true;                  // DRChallenge encodes 1 = FAILED → show accuracy
+      loadResults(await r.text());
+    }
+  } catch (e) {
+    // file:// or server missing the data → silently leave the drop/pickers visible
+    console.info("auto-load skipped (serve over http to enable):", e.message);
+  }
+}
+autoLoad();
 </script>
 </body>
 </html>
