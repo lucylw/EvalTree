@@ -1,12 +1,13 @@
 # Capability Embedding Files
+Datasets/*/EvalTree/stage1-CapabilityAnnotation/*.bin
+Datasets/*/EvalTree/stage1-CapabilityAnnotation/*.json
 Datasets/*/EvalTree/stage2-CapabilityEmbedding/*.bin
+Datasets/*/EvalTree/stage2-CapabilityEmbedding/*.json
+Datasets/*/EvalTree/stage3-RecursiveClustering/*.bin
 Datasets/*/EvalTree/stage3-RecursiveClustering/*.json
 Datasets/*/EvalTree/viewers/*.html
 Datasets/DRChallenge/eval_results/*
 Datasets/DRChallenge/*.csv
-
-# Tree Files
-Datasets/*/EvalTree/stage3-RecursiveClustering/*.bin
 
 
 # Byte-compiled / optimized / DLL files
