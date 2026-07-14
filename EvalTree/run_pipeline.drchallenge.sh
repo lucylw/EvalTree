@@ -27,12 +27,27 @@ MODEL="drtulu"                            # eval_results/real/drtulu/results.jso
 ANNOTATION_MODEL="gpt-4o-mini"
 ANNOTATION_MODEL_2="gpt-4o-mini"          # stage 1 (embedding annotations) + stage 2/3 keying
 EMBEDDING_MODEL="text-embedding-3-small"  # OpenAI embeddings (stage 2)
-MAX_CHILDREN=10
+MAX_CHILDREN=10                           # max k at any single split
+# Clustering mode (stage 3). Default: capped divisive k-means — build a hierarchy
+# but stop once there are MIN_LEAVES..MAX_LEAVES leaf clusters (each a GROUP of
+# instances), splits chosen best-first by cosine silhouette. Set CAPPED=0 for the
+# original fully-recursive tree (leaves = single instances).
+CAPPED=1
+MIN_LEAVES=6                              # keep splitting until at least this many leaf clusters
+MAX_LEAVES=10                             # never exceed this many leaf clusters
 
 # Relative path (under Datasets/$DATASET/EvalTree, no .bin) shared by stage 4 and the CI step.
 # The .bin is written by stage 3, so this must key off the stage 2/3 annotation model
-# (ANNOTATION_MODEL_2), not the stage 1/4 one.
-TREE_PATH="stage3-RecursiveClustering/[split=${SPLIT}]_[annotation=${ANNOTATION_MODEL_2}]_[embedding=${EMBEDDING_MODEL}]_[max-children=${MAX_CHILDREN}]"
+# (ANNOTATION_MODEL_2), not the stage 1/4 one. The [cluster=capped] tag keeps this
+# variant's outputs distinct from a fully-recursive build.
+if [ "$CAPPED" = "1" ] ; then
+    CLUSTER_TAG="_[cluster=capped]"
+    CLUSTER_ARGS=(--capped --min_leaf_clusters "$MIN_LEAVES" --max_leaf_clusters "$MAX_LEAVES")
+else
+    CLUSTER_TAG=""
+    CLUSTER_ARGS=()
+fi
+TREE_PATH="stage3-RecursiveClustering/[split=${SPLIT}]_[annotation=${ANNOTATION_MODEL_2}]_[embedding=${EMBEDDING_MODEL}]_[max-children=${MAX_CHILDREN}]${CLUSTER_TAG}"
 
 echo "==> Clearing THIS config's stale tree (built for a previous dataset size); other variants kept"
 rm -f "Datasets/${DATASET}/EvalTree/${TREE_PATH}.bin" "Datasets/${DATASET}/EvalTree/${TREE_PATH}"*.json
@@ -41,18 +56,28 @@ echo "==> Stage 1a: capability annotation with ${ANNOTATION_MODEL}  (feeds stage
 python -m EvalTree.stage1-CapabilityAnnotation.annotate \
     --dataset "$DATASET" --annotation_model "$ANNOTATION_MODEL"
 
-echo "==> Stage 1b: capability annotation with ${ANNOTATION_MODEL_2}  (feeds stage 2 embeddings)"
-python -m EvalTree.stage1-CapabilityAnnotation.annotate \
-    --dataset "$DATASET" --annotation_model "$ANNOTATION_MODEL_2"
+# Stage 1b only adds anything when it uses a DIFFERENT model than 1a: the two write
+# to [annotation=<model>].json, so identical models means 1b just re-runs 1a and
+# overwrites the same file. Skip it in that case (e.g. the default all-gpt-4o-mini
+# config); it's needed when ANNOTATION_MODEL is a richer model (e.g. claude-opus-4-8)
+# for leaf descriptions while embeddings still key off gpt-4o-mini.
+if [ "$ANNOTATION_MODEL_2" != "$ANNOTATION_MODEL" ] ; then
+    echo "==> Stage 1b: capability annotation with ${ANNOTATION_MODEL_2}  (feeds stage 2 embeddings)"
+    python -m EvalTree.stage1-CapabilityAnnotation.annotate \
+        --dataset "$DATASET" --annotation_model "$ANNOTATION_MODEL_2"
+else
+    echo "==> Stage 1b: skipped (ANNOTATION_MODEL_2 == ANNOTATION_MODEL, reusing 1a's [annotation=${ANNOTATION_MODEL}].json)"
+fi
 
 echo "==> Stage 2: capability embedding"
 python -m EvalTree.stage2-CapabilityEmbedding.embedding \
     --dataset "$DATASET" --annotation_model "$ANNOTATION_MODEL_2" --embedding_model "$EMBEDDING_MODEL"
 
-echo "==> Stage 3: recursive clustering -> tree.bin"
+echo "==> Stage 3: clustering -> tree.bin  (mode: $([ "$CAPPED" = "1" ] && echo "capped ${MIN_LEAVES}-${MAX_LEAVES} leaf groups" || echo "fully recursive"))"
 python -m EvalTree.stage3-RecursiveClustering.build \
     --dataset "$DATASET" --split "$SPLIT" \
-    --annotation_model "$ANNOTATION_MODEL_2" --embedding_model "$EMBEDDING_MODEL" --max_children "$MAX_CHILDREN"
+    --annotation_model "$ANNOTATION_MODEL_2" --embedding_model "$EMBEDDING_MODEL" --max_children "$MAX_CHILDREN" \
+    ${CLUSTER_ARGS[@]+"${CLUSTER_ARGS[@]}"}
 
 echo "==> Stage 4: capability descriptions -> tree.json"
 python -m EvalTree.stage4-CapabilityDescription.describe \
@@ -68,6 +93,7 @@ python -m EvalTree.WeaknessProfile.confidence_interval \
 echo "==> Building standalone demo HTML viewer (FAIL_RATE overlay per node)"
 python EvalTree/build_viewer.py --dataset "Datasets/${DATASET}"
 
+CLUSTER_NAME="$([ "$CAPPED" = "1" ] && echo "capped" || echo "hierarchical")"
 echo "==> Done."
 echo "    Capability tree: Datasets/${DATASET}/EvalTree/${TREE_PATH}_[stage4-CapabilityDescription-model=${ANNOTATION_MODEL}].json"
-echo "    Demo HTML:       Datasets/${DATASET}/EvalTree/viewers/viewer-${MODEL}-${ANNOTATION_MODEL}.html"
+echo "    Demo HTML:       Datasets/${DATASET}/EvalTree/viewers/viewer-${MODEL}-${ANNOTATION_MODEL_2}-${CLUSTER_NAME}-${ANNOTATION_MODEL}.html"

@@ -1,0 +1,26 @@
+<|im_start|>system
+You are organizing a capability tree of research questions designed to be hard for a deep research (DR) agent. The tree groups questions by the deep-research capability they demand. At each level the sibling groups partition a shared parent, so they are all superficially similar — they typically all involve integrating, synthesizing, and evaluating complex interdisciplinary evidence. Your job is NOT to restate that shared theme. Your job is to name the ONE capability dimension that makes the TARGET group distinctive relative to its sibling groups.
+<|im_end|>
+<|im_start|>user
+## Target Group (describe THIS group)
+Working summary of the target group's capability:
+{target_description}
+
+The target group is itself composed of these sub-capabilities:
+{target_details}
+
+## Sibling Groups (for contrast only — do NOT describe these)
+There are {sibling_number} sibling groups that share the same parent as the target group. Each is described below. Use them only to understand what the target group is NOT about.
+{sibling_descriptions}
+
+## Task
+Generate a single gerund phrase describing the deep-research capability that is **characteristic and distinctive of the target group** — the specific reasoning or research move that sets it apart from the sibling groups.
+
+## Requirements
+- Output a **single gerund phrase**, informative and detailed, describing the capability that distinguishes the target group from its siblings.
+- **Contrast is the point.** Identify the dimension along which the target group differs from the siblings (e.g., the kind of evidence handled, the nature of the reasoning move, the type of conflict resolved, the domain constraint applied) and make that dimension explicit and specific.
+- **Avoid generic filler verbs** that apply equally to every sibling. Do not lead with bare "integrating", "synthesizing", "evaluating", "analyzing complex evidence", or "reconciling frameworks" unless you immediately qualify them with the specific distinguishing dimension. If a phrase could equally describe any sibling group, it is wrong.
+- Stay faithful to the target group's actual content: the distinguishing capability must be genuinely present in the target's sub-capabilities, not invented to force contrast.
+- Focus on the **underlying research or reasoning capability**, not any surface topic; do not introduce specifics (named entities, materials, places, or figures) that are not present in the provided descriptions.
+- Please output **only a gerund phrase** describing the distinctive capability, with NO additional text.
+<|im_end|>

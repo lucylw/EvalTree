@@ -55,11 +55,14 @@ def annotate(node, results):
 
 
 def describe_tree(path):
-    """Pull the stage-4 (description) and annotation model names out of a filename."""
+    """Pull the stage-4 (description), annotation model, and clustering-mode names
+    out of a filename. `cluster` is "flat" for single-level k-means trees (tagged
+    [cluster=flat] by stage 3) and "hierarchical" otherwise."""
     name = path.name
     desc = (re.search(r"stage4-CapabilityDescription-model=([^\]]+)", name) or [None, "?"])[1]
     annot = (re.search(r"\[annotation=([^\]]+)\]", name) or [None, None])[1]
-    return desc, annot
+    cluster = (re.search(r"\[cluster=([^\]]+)\]", name) or [None, "hierarchical"])[1]
+    return desc, annot, cluster
 
 
 HTML_TEMPLATE = r"""<!DOCTYPE html>
@@ -363,16 +366,16 @@ def main():
         for tree_path in trees:
             tree = json.load(open(tree_path))
             fail, scored = annotate(tree, results)
-            desc_model, annot = describe_tree(tree_path)
+            desc_model, annot, cluster = describe_tree(tree_path)
             overall = f"{fail}/{scored} = {round(100 * fail / scored) if scored else 0}%"
-            title = f"{eval_model} · leaves:{annot} · tree:{desc_model}"
+            title = f"{eval_model} · leaves:{annot} · {cluster} · tree:{desc_model}"
             header = (f"EvalTree — <b>{eval_model}</b> &nbsp;FAIL_RATE {overall}"
-                      f" &nbsp;<span style='color:var(--muted)'>(leaf labels: {annot} · descriptions: {desc_model})</span>")
+                      f" &nbsp;<span style='color:var(--muted)'>(leaf labels: {annot} · clustering: {cluster} · descriptions: {desc_model})</span>")
             html = build_html(tree, title, header)
-            # Include the leaf-annotation source in the filename so different tree
-            # variants (e.g. LLM capability annotations vs. the dataset "strategy"
-            # field) don't overwrite one another.
-            stem = "-".join(p for p in ("viewer", eval_model, annot, desc_model) if p)
+            # Include the leaf-annotation source AND clustering mode in the filename
+            # so different tree variants (LLM capability vs. "strategy" leaves,
+            # flat vs. hierarchical clustering) don't overwrite one another.
+            stem = "-".join(p for p in ("viewer", eval_model, annot, cluster, desc_model) if p)
             out = out_dir / f"{stem}.html"
             out.write_text(html, encoding="utf-8")
             built.append((out, overall))

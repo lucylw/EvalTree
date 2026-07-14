@@ -24,9 +24,23 @@ ANNOTATION="strategy"                     # leaf labels = dataset "strategy" fie
 DATASET_FIELD="strategy"                  # which dataset.json field to use as the leaf label
 DESCRIPTION_MODEL="gpt-4o-mini"           # stage 4: LLM that summarises INTERNAL nodes
 EMBEDDING_MODEL="text-embedding-3-small"  # OpenAI embeddings (stage 2)
-MAX_CHILDREN=10
+MAX_CHILDREN=10                           # max k at any single split
+# Clustering mode (stage 3). Default: capped divisive k-means — build a hierarchy
+# but stop once there are MIN_LEAVES..MAX_LEAVES leaf clusters (each a GROUP of
+# strategies), splits chosen best-first by cosine silhouette. Set CAPPED=0 for the
+# original fully-recursive tree (leaves = single instances).
+CAPPED=1
+MIN_LEAVES=6                              # keep splitting until at least this many leaf clusters
+MAX_LEAVES=10                             # never exceed this many leaf clusters
 
-TREE_PATH="stage3-RecursiveClustering/[split=${SPLIT}]_[annotation=${ANNOTATION}]_[embedding=${EMBEDDING_MODEL}]_[max-children=${MAX_CHILDREN}]"
+if [ "$CAPPED" = "1" ] ; then
+    CLUSTER_TAG="_[cluster=capped]"
+    CLUSTER_ARGS=(--capped --min_leaf_clusters "$MIN_LEAVES" --max_leaf_clusters "$MAX_LEAVES")
+else
+    CLUSTER_TAG=""
+    CLUSTER_ARGS=()
+fi
+TREE_PATH="stage3-RecursiveClustering/[split=${SPLIT}]_[annotation=${ANNOTATION}]_[embedding=${EMBEDDING_MODEL}]_[max-children=${MAX_CHILDREN}]${CLUSTER_TAG}"
 
 echo "==> Clearing THIS variant's stale tree (built for a previous dataset size); other variants kept"
 rm -f "Datasets/${DATASET}/EvalTree/${TREE_PATH}.bin" "Datasets/${DATASET}/EvalTree/${TREE_PATH}"*.json
@@ -50,10 +64,11 @@ echo "==> Stage 2: embed the strategies"
 python -m EvalTree.stage2-CapabilityEmbedding.embedding \
     --dataset "$DATASET" --annotation_model "$ANNOTATION" --embedding_model "$EMBEDDING_MODEL"
 
-echo "==> Stage 3: recursive clustering -> tree.bin"
+echo "==> Stage 3: clustering -> tree.bin  (mode: $([ "$CAPPED" = "1" ] && echo "capped ${MIN_LEAVES}-${MAX_LEAVES} leaf groups" || echo "fully recursive"))"
 python -m EvalTree.stage3-RecursiveClustering.build \
     --dataset "$DATASET" --split "$SPLIT" \
-    --annotation_model "$ANNOTATION" --embedding_model "$EMBEDDING_MODEL" --max_children "$MAX_CHILDREN"
+    --annotation_model "$ANNOTATION" --embedding_model "$EMBEDDING_MODEL" --max_children "$MAX_CHILDREN" \
+    ${CLUSTER_ARGS[@]+"${CLUSTER_ARGS[@]}"}
 
 echo "==> Stage 4: leaves = strategies (no LLM), internal nodes summarised by ${DESCRIPTION_MODEL}"
 python -m EvalTree.stage4-CapabilityDescription.describe \
@@ -70,6 +85,7 @@ python -m EvalTree.WeaknessProfile.confidence_interval \
 echo "==> Building standalone demo HTML viewer (FAIL_RATE overlay per node)"
 python EvalTree/build_viewer.py --dataset "Datasets/${DATASET}"
 
+CLUSTER_NAME="$([ "$CAPPED" = "1" ] && echo "capped" || echo "hierarchical")"
 echo "==> Done."
 echo "    Strategy tree: Datasets/${DATASET}/EvalTree/${TREE_PATH}_[stage4-CapabilityDescription-model=${DESCRIPTION_MODEL}].json"
-echo "    Demo HTML:     Datasets/${DATASET}/EvalTree/viewers/viewer-${MODEL}-${ANNOTATION}-${DESCRIPTION_MODEL}.html"
+echo "    Demo HTML:     Datasets/${DATASET}/EvalTree/viewers/viewer-${MODEL}-${ANNOTATION}-${CLUSTER_NAME}-${DESCRIPTION_MODEL}.html"
