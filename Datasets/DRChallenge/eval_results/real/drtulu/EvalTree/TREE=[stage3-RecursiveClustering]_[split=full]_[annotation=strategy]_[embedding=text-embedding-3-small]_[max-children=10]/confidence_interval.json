@@ -1,0 +1,3138 @@
+{
+  "size": 268,
+  "sum_metrics": 137,
+  "subtrees": {
+    "0": {
+      "size": 212,
+      "sum_metrics": 116,
+      "subtrees": {
+        "0": {
+          "size": 8,
+          "sum_metrics": 5,
+          "subtrees": {
+            "0": {
+              "size": 3,
+              "sum_metrics": 3,
+              "subtrees": {
+                "0": {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 130,
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 2,
+                  "sum_metrics": 2,
+                  "subtrees": [
+                    {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 85,
+                      "confidence_interval": null
+                    },
+                    {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 162,
+                      "confidence_interval": null
+                    }
+                  ],
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": null
+            },
+            "1": {
+              "size": 2,
+              "sum_metrics": 0,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 213,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 216,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": null
+            },
+            "2": {
+              "size": 2,
+              "sum_metrics": 1,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 5,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 6,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": null
+            },
+            "3": {
+              "size": 1,
+              "sum_metrics": 1,
+              "subtrees": 147,
+              "confidence_interval": null
+            }
+          },
+          "confidence_interval": {
+            "0.01": [
+              0.16970048712286118,
+              0.9525359663535395
+            ],
+            "0.05": [
+              0.2448632163665516,
+              0.9147665858627465
+            ]
+          }
+        },
+        "1": {
+          "size": 38,
+          "sum_metrics": 21,
+          "subtrees": {
+            "0": {
+              "size": 12,
+              "sum_metrics": 10,
+              "subtrees": {
+                "0": {
+                  "size": 3,
+                  "sum_metrics": 3,
+                  "subtrees": {
+                    "0": {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 108,
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 2,
+                      "sum_metrics": 2,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 99,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 111,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 9,
+                  "sum_metrics": 7,
+                  "subtrees": {
+                    "0": {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 68,
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 8,
+                      "sum_metrics": 6,
+                      "subtrees": {
+                        "0": {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 64,
+                          "confidence_interval": null
+                        },
+                        "1": {
+                          "size": 2,
+                          "sum_metrics": 1,
+                          "subtrees": [
+                            {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 132,
+                              "confidence_interval": null
+                            },
+                            {
+                              "size": 1,
+                              "sum_metrics": 0,
+                              "subtrees": 234,
+                              "confidence_interval": null
+                            }
+                          ],
+                          "confidence_interval": null
+                        },
+                        "2": {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 12,
+                          "confidence_interval": null
+                        },
+                        "3": {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 160,
+                          "confidence_interval": null
+                        },
+                        "4": {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 217,
+                          "confidence_interval": null
+                        },
+                        "5": {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 39,
+                          "confidence_interval": null
+                        },
+                        "6": {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 124,
+                          "confidence_interval": null
+                        }
+                      },
+                      "confidence_interval": {
+                        "0.01": [
+                          0.2578306126636851,
+                          0.9862641058427215
+                        ],
+                        "0.05": [
+                          0.3491442055871758,
+                          0.9681459737500557
+                        ]
+                      }
+                    }
+                  },
+                  "confidence_interval": {
+                    "0.01": [
+                      0.3073936492314562,
+                      0.9878764109193773
+                    ],
+                    "0.05": [
+                      0.39990642628368783,
+                      0.9718550265221018
+                    ]
+                  }
+                }
+              },
+              "confidence_interval": {
+                "0.01": [
+                  0.4270504013509448,
+                  0.9910321153118319
+                ],
+                "0.05": [
+                  0.5158622513140328,
+                  0.9791374745399076
+                ]
+              }
+            },
+            "1": {
+              "size": 26,
+              "sum_metrics": 11,
+              "subtrees": {
+                "0": {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 44,
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 25,
+                  "sum_metrics": 11,
+                  "subtrees": {
+                    "0": {
+                      "size": 2,
+                      "sum_metrics": 1,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 56,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 190,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 23,
+                      "sum_metrics": 10,
+                      "subtrees": {
+                        "0": {
+                          "size": 5,
+                          "sum_metrics": 3,
+                          "subtrees": {
+                            "0": {
+                              "size": 3,
+                              "sum_metrics": 1,
+                              "subtrees": {
+                                "0": {
+                                  "size": 2,
+                                  "sum_metrics": 1,
+                                  "subtrees": [
+                                    {
+                                      "size": 1,
+                                      "sum_metrics": 1,
+                                      "subtrees": 62,
+                                      "confidence_interval": null
+                                    },
+                                    {
+                                      "size": 1,
+                                      "sum_metrics": 0,
+                                      "subtrees": 236,
+                                      "confidence_interval": null
+                                    }
+                                  ],
+                                  "confidence_interval": null
+                                },
+                                "1": {
+                                  "size": 1,
+                                  "sum_metrics": 0,
+                                  "subtrees": 238,
+                                  "confidence_interval": null
+                                }
+                              },
+                              "confidence_interval": null
+                            },
+                            "1": {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 140,
+                              "confidence_interval": null
+                            },
+                            "2": {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 43,
+                              "confidence_interval": null
+                            }
+                          },
+                          "confidence_interval": {
+                            "0.01": [
+                              0.0828291872014768,
+                              0.9771187786246456
+                            ],
+                            "0.05": [
+                              0.14663279963467313,
+                              0.9472550494736831
+                            ]
+                          }
+                        },
+                        "1": {
+                          "size": 17,
+                          "sum_metrics": 7,
+                          "subtrees": {
+                            "0": {
+                              "size": 2,
+                              "sum_metrics": 1,
+                              "subtrees": [
+                                {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 11,
+                                  "confidence_interval": null
+                                },
+                                {
+                                  "size": 1,
+                                  "sum_metrics": 0,
+                                  "subtrees": 40,
+                                  "confidence_interval": null
+                                }
+                              ],
+                              "confidence_interval": null
+                            },
+                            "1": {
+                              "size": 15,
+                              "sum_metrics": 6,
+                              "subtrees": {
+                                "0": {
+                                  "size": 1,
+                                  "sum_metrics": 0,
+                                  "subtrees": 70,
+                                  "confidence_interval": null
+                                },
+                                "1": {
+                                  "size": 2,
+                                  "sum_metrics": 0,
+                                  "subtrees": [
+                                    {
+                                      "size": 1,
+                                      "sum_metrics": 0,
+                                      "subtrees": 192,
+                                      "confidence_interval": null
+                                    },
+                                    {
+                                      "size": 1,
+                                      "sum_metrics": 0,
+                                      "subtrees": 224,
+                                      "confidence_interval": null
+                                    }
+                                  ],
+                                  "confidence_interval": null
+                                },
+                                "2": {
+                                  "size": 7,
+                                  "sum_metrics": 4,
+                                  "subtrees": {
+                                    "0": {
+                                      "size": 2,
+                                      "sum_metrics": 1,
+                                      "subtrees": [
+                                        {
+                                          "size": 1,
+                                          "sum_metrics": 1,
+                                          "subtrees": 16,
+                                          "confidence_interval": null
+                                        },
+                                        {
+                                          "size": 1,
+                                          "sum_metrics": 0,
+                                          "subtrees": 237,
+                                          "confidence_interval": null
+                                        }
+                                      ],
+                                      "confidence_interval": null
+                                    },
+                                    "1": {
+                                      "size": 1,
+                                      "sum_metrics": 0,
+                                      "subtrees": 225,
+                                      "confidence_interval": null
+                                    },
+                                    "2": {
+                                      "size": 1,
+                                      "sum_metrics": 0,
+                                      "subtrees": 2,
+                                      "confidence_interval": null
+                                    },
+                                    "3": {
+                                      "size": 1,
+                                      "sum_metrics": 1,
+                                      "subtrees": 36,
+                                      "confidence_interval": null
+                                    },
+                                    "4": {
+                                      "size": 1,
+                                      "sum_metrics": 1,
+                                      "subtrees": 13,
+                                      "confidence_interval": null
+                                    },
+                                    "5": {
+                                      "size": 1,
+                                      "sum_metrics": 1,
+                                      "subtrees": 152,
+                                      "confidence_interval": null
+                                    }
+                                  },
+                                  "confidence_interval": {
+                                    "0.01": [
+                                      0.11770375166895196,
+                                      0.9447006500194337
+                                    ],
+                                    "0.05": [
+                                      0.184051567640083,
+                                      0.9010117215574921
+                                    ]
+                                  }
+                                },
+                                "3": {
+                                  "size": 2,
+                                  "sum_metrics": 0,
+                                  "subtrees": [
+                                    {
+                                      "size": 1,
+                                      "sum_metrics": 0,
+                                      "subtrees": 226,
+                                      "confidence_interval": null
+                                    },
+                                    {
+                                      "size": 1,
+                                      "sum_metrics": 0,
+                                      "subtrees": 266,
+                                      "confidence_interval": null
+                                    }
+                                  ],
+                                  "confidence_interval": null
+                                },
+                                "4": {
+                                  "size": 1,
+                                  "sum_metrics": 0,
+                                  "subtrees": 233,
+                                  "confidence_interval": null
+                                },
+                                "5": {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 32,
+                                  "confidence_interval": null
+                                },
+                                "6": {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 125,
+                                  "confidence_interval": null
+                                }
+                              },
+                              "confidence_interval": {
+                                "0.01": [
+                                  0.11696084847371178,
+                                  0.743871059180866
+                                ],
+                                "0.05": [
+                                  0.16336432385951347,
+                                  0.6771302337937184
+                                ]
+                              }
+                            }
+                          },
+                          "confidence_interval": {
+                            "0.01": [
+                              0.1370832312485922,
+                              0.7344243001660853
+                            ],
+                            "0.05": [
+                              0.18443696178394667,
+                              0.6707528460532426
+                            ]
+                          }
+                        },
+                        "2": {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 4,
+                          "confidence_interval": null
+                        }
+                      },
+                      "confidence_interval": {
+                        "0.01": [
+                          0.18475209512772148,
+                          0.7116476365360255
+                        ],
+                        "0.05": [
+                          0.23191419953823145,
+                          0.6550533925476254
+                        ]
+                      }
+                    }
+                  },
+                  "confidence_interval": {
+                    "0.01": [
+                      0.1973775585719025,
+                      0.7054465253148516
+                    ],
+                    "0.05": [
+                      0.24402366514720805,
+                      0.6507183660086642
+                    ]
+                  }
+                }
+              },
+              "confidence_interval": {
+                "0.01": [
+                  0.1886479913988353,
+                  0.6857102246163822
+                ],
+                "0.05": [
+                  0.23352198312744346,
+                  0.6308196190760333
+                ]
+              }
+            }
+          },
+          "confidence_interval": {
+            "0.01": [
+              0.336520786791606,
+              0.7553441847714355
+            ],
+            "0.05": [
+              0.38299075116428966,
+              0.7137585009994039
+            ]
+          }
+        },
+        "2": {
+          "size": 19,
+          "sum_metrics": 7,
+          "subtrees": {
+            "0": {
+              "size": 1,
+              "sum_metrics": 1,
+              "subtrees": 90,
+              "confidence_interval": null
+            },
+            "1": {
+              "size": 2,
+              "sum_metrics": 2,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 144,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 165,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": null
+            },
+            "2": {
+              "size": 4,
+              "sum_metrics": 1,
+              "subtrees": {
+                "0": {
+                  "size": 3,
+                  "sum_metrics": 1,
+                  "subtrees": {
+                    "0": {
+                      "size": 2,
+                      "sum_metrics": 0,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 47,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 48,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 50,
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 244,
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": null
+            },
+            "3": {
+              "size": 3,
+              "sum_metrics": 1,
+              "subtrees": {
+                "0": {
+                  "size": 2,
+                  "sum_metrics": 1,
+                  "subtrees": [
+                    {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 114,
+                      "confidence_interval": null
+                    },
+                    {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 208,
+                      "confidence_interval": null
+                    }
+                  ],
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 223,
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": null
+            },
+            "4": {
+              "size": 4,
+              "sum_metrics": 1,
+              "subtrees": {
+                "0": {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 58,
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 3,
+                  "sum_metrics": 1,
+                  "subtrees": {
+                    "0": {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 59,
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 2,
+                      "sum_metrics": 1,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 57,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 61,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": null
+            },
+            "5": {
+              "size": 1,
+              "sum_metrics": 1,
+              "subtrees": 105,
+              "confidence_interval": null
+            },
+            "6": {
+              "size": 2,
+              "sum_metrics": 0,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 180,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 181,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": null
+            },
+            "7": {
+              "size": 2,
+              "sum_metrics": 0,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 189,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 205,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": null
+            }
+          },
+          "confidence_interval": {
+            "0.01": [
+              0.12068060288209474,
+              0.6808985095985852
+            ],
+            "0.05": [
+              0.16288587215509961,
+              0.6164220766855948
+            ]
+          }
+        },
+        "3": {
+          "size": 31,
+          "sum_metrics": 12,
+          "subtrees": {
+            "0": {
+              "size": 10,
+              "sum_metrics": 5,
+              "subtrees": {
+                "0": {
+                  "size": 4,
+                  "sum_metrics": 4,
+                  "subtrees": {
+                    "0": {
+                      "size": 2,
+                      "sum_metrics": 2,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 103,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 113,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 2,
+                      "sum_metrics": 2,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 121,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 166,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 4,
+                  "sum_metrics": 0,
+                  "subtrees": [
+                    {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 92,
+                      "confidence_interval": null
+                    },
+                    {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 204,
+                      "confidence_interval": null
+                    },
+                    {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 210,
+                      "confidence_interval": null
+                    },
+                    {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 239,
+                      "confidence_interval": null
+                    }
+                  ],
+                  "confidence_interval": null
+                },
+                "2": {
+                  "size": 2,
+                  "sum_metrics": 1,
+                  "subtrees": [
+                    {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 98,
+                      "confidence_interval": null
+                    },
+                    {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 198,
+                      "confidence_interval": null
+                    }
+                  ],
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": {
+                "0.01": [
+                  0.12831055393508325,
+                  0.8716894460649167
+                ],
+                "0.05": [
+                  0.18708602844739855,
+                  0.8129139715526015
+                ]
+              }
+            },
+            "1": {
+              "size": 21,
+              "sum_metrics": 7,
+              "subtrees": {
+                "0": {
+                  "size": 6,
+                  "sum_metrics": 2,
+                  "subtrees": {
+                    "0": {
+                      "size": 2,
+                      "sum_metrics": 1,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 60,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 126,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 2,
+                      "sum_metrics": 0,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 179,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 202,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    },
+                    "2": {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 15,
+                      "confidence_interval": null
+                    },
+                    "3": {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 191,
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": {
+                    "0.01": [
+                      0.018720693104820788,
+                      0.8564042453352743
+                    ],
+                    "0.05": [
+                      0.043271868292741676,
+                      0.7772219044964879
+                    ]
+                  }
+                },
+                "1": {
+                  "size": 15,
+                  "sum_metrics": 5,
+                  "subtrees": {
+                    "0": {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 167,
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 14,
+                      "sum_metrics": 4,
+                      "subtrees": {
+                        "0": {
+                          "size": 3,
+                          "sum_metrics": 2,
+                          "subtrees": {
+                            "0": {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 87,
+                              "confidence_interval": null
+                            },
+                            "1": {
+                              "size": 2,
+                              "sum_metrics": 1,
+                              "subtrees": [
+                                {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 69,
+                                  "confidence_interval": null
+                                },
+                                {
+                                  "size": 1,
+                                  "sum_metrics": 0,
+                                  "subtrees": 178,
+                                  "confidence_interval": null
+                                }
+                              ],
+                              "confidence_interval": null
+                            }
+                          },
+                          "confidence_interval": null
+                        },
+                        "1": {
+                          "size": 11,
+                          "sum_metrics": 2,
+                          "subtrees": {
+                            "0": {
+                              "size": 9,
+                              "sum_metrics": 1,
+                              "subtrees": {
+                                "0": {
+                                  "size": 7,
+                                  "sum_metrics": 1,
+                                  "subtrees": {
+                                    "0": {
+                                      "size": 5,
+                                      "sum_metrics": 0,
+                                      "subtrees": {
+                                        "0": {
+                                          "size": 2,
+                                          "sum_metrics": 0,
+                                          "subtrees": [
+                                            {
+                                              "size": 1,
+                                              "sum_metrics": 0,
+                                              "subtrees": 187,
+                                              "confidence_interval": null
+                                            },
+                                            {
+                                              "size": 1,
+                                              "sum_metrics": 0,
+                                              "subtrees": 267,
+                                              "confidence_interval": null
+                                            }
+                                          ],
+                                          "confidence_interval": null
+                                        },
+                                        "1": {
+                                          "size": 1,
+                                          "sum_metrics": 0,
+                                          "subtrees": 230,
+                                          "confidence_interval": null
+                                        },
+                                        "2": {
+                                          "size": 2,
+                                          "sum_metrics": 0,
+                                          "subtrees": [
+                                            {
+                                              "size": 1,
+                                              "sum_metrics": 0,
+                                              "subtrees": 183,
+                                              "confidence_interval": null
+                                            },
+                                            {
+                                              "size": 1,
+                                              "sum_metrics": 0,
+                                              "subtrees": 219,
+                                              "confidence_interval": null
+                                            }
+                                          ],
+                                          "confidence_interval": null
+                                        }
+                                      },
+                                      "confidence_interval": {
+                                        "0.01": [
+                                          0.0,
+                                          0.6534275784224268
+                                        ],
+                                        "0.05": [
+                                          0.0,
+                                          0.5218237501049815
+                                        ]
+                                      }
+                                    },
+                                    "1": {
+                                      "size": 1,
+                                      "sum_metrics": 0,
+                                      "subtrees": 242,
+                                      "confidence_interval": null
+                                    },
+                                    "2": {
+                                      "size": 1,
+                                      "sum_metrics": 1,
+                                      "subtrees": 19,
+                                      "confidence_interval": null
+                                    }
+                                  },
+                                  "confidence_interval": {
+                                    "0.01": [
+                                      0.0007158210811255033,
+                                      0.6849116392467302
+                                    ],
+                                    "0.05": [
+                                      0.0036102968619005833,
+                                      0.5787231970431952
+                                    ]
+                                  }
+                                },
+                                "1": {
+                                  "size": 2,
+                                  "sum_metrics": 0,
+                                  "subtrees": [
+                                    {
+                                      "size": 1,
+                                      "sum_metrics": 0,
+                                      "subtrees": 76,
+                                      "confidence_interval": null
+                                    },
+                                    {
+                                      "size": 1,
+                                      "sum_metrics": 0,
+                                      "subtrees": 240,
+                                      "confidence_interval": null
+                                    }
+                                  ],
+                                  "confidence_interval": null
+                                }
+                              },
+                              "confidence_interval": {
+                                "0.01": [
+                                  0.0005567940241491999,
+                                  0.5849694720606846
+                                ],
+                                "0.05": [
+                                  0.002809136746599214,
+                                  0.4824965149173371
+                                ]
+                              }
+                            },
+                            "1": {
+                              "size": 2,
+                              "sum_metrics": 1,
+                              "subtrees": [
+                                {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 102,
+                                  "confidence_interval": null
+                                },
+                                {
+                                  "size": 1,
+                                  "sum_metrics": 0,
+                                  "subtrees": 241,
+                                  "confidence_interval": null
+                                }
+                              ],
+                              "confidence_interval": null
+                            }
+                          },
+                          "confidence_interval": {
+                            "0.01": [
+                              0.00981967352882243,
+                              0.6084949709780327
+                            ],
+                            "0.05": [
+                              0.02283119829995966,
+                              0.5177558523601726
+                            ]
+                          }
+                        }
+                      },
+                      "confidence_interval": {
+                        "0.01": [
+                          0.05258949606585492,
+                          0.6579443474142619
+                        ],
+                        "0.05": [
+                          0.08388931830712752,
+                          0.5810352571836609
+                        ]
+                      }
+                    }
+                  },
+                  "confidence_interval": {
+                    "0.01": [
+                      0.080113224250032,
+                      0.6881572190687288
+                    ],
+                    "0.05": [
+                      0.11824110336688094,
+                      0.6161962674588459
+                    ]
+                  }
+                }
+              },
+              "confidence_interval": {
+                "0.01": [
+                  0.10780986749803628,
+                  0.6337323243830959
+                ],
+                "0.05": [
+                  0.1458769423430967,
+                  0.5696754829041243
+                ]
+              }
+            }
+          },
+          "confidence_interval": {
+            "0.01": [
+              0.17828584656691046,
+              0.6309402224509009
+            ],
+            "0.05": [
+              0.21849959849856906,
+              0.5781304108659588
+            ]
+          }
+        },
+        "4": {
+          "size": 33,
+          "sum_metrics": 10,
+          "subtrees": {
+            "0": {
+              "size": 6,
+              "sum_metrics": 1,
+              "subtrees": {
+                "0": {
+                  "size": 4,
+                  "sum_metrics": 0,
+                  "subtrees": {
+                    "0": {
+                      "size": 3,
+                      "sum_metrics": 0,
+                      "subtrees": {
+                        "0": {
+                          "size": 2,
+                          "sum_metrics": 0,
+                          "subtrees": [
+                            {
+                              "size": 1,
+                              "sum_metrics": 0,
+                              "subtrees": 22,
+                              "confidence_interval": null
+                            },
+                            {
+                              "size": 1,
+                              "sum_metrics": 0,
+                              "subtrees": 31,
+                              "confidence_interval": null
+                            }
+                          ],
+                          "confidence_interval": null
+                        },
+                        "1": {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 67,
+                          "confidence_interval": null
+                        }
+                      },
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 73,
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 2,
+                  "sum_metrics": 1,
+                  "subtrees": [
+                    {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 133,
+                      "confidence_interval": null
+                    },
+                    {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 229,
+                      "confidence_interval": null
+                    }
+                  ],
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": {
+                "0.01": [
+                  0.0008350747680884826,
+                  0.7460073817591748
+                ],
+                "0.05": [
+                  0.00421074451448947,
+                  0.6412345789976748
+                ]
+              }
+            },
+            "1": {
+              "size": 5,
+              "sum_metrics": 4,
+              "subtrees": {
+                "0": {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 72,
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 4,
+                  "sum_metrics": 3,
+                  "subtrees": {
+                    "0": {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 88,
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 2,
+                      "sum_metrics": 2,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 91,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 136,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    },
+                    "2": {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 20,
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": {
+                "0.01": [
+                  0.1850972721217302,
+                  0.9989979939789199
+                ],
+                "0.05": [
+                  0.2835820638819105,
+                  0.9949492366205319
+                ]
+              }
+            },
+            "2": {
+              "size": 5,
+              "sum_metrics": 1,
+              "subtrees": {
+                "0": {
+                  "size": 2,
+                  "sum_metrics": 0,
+                  "subtrees": [
+                    {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 24,
+                      "confidence_interval": null
+                    },
+                    {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 25,
+                      "confidence_interval": null
+                    }
+                  ],
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 75,
+                  "confidence_interval": null
+                },
+                "2": {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 10,
+                  "confidence_interval": null
+                },
+                "3": {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 83,
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": {
+                "0.01": [
+                  0.0010020060210801207,
+                  0.8149027278782698
+                ],
+                "0.05": [
+                  0.0050507633794680575,
+                  0.7164179361180896
+                ]
+              }
+            },
+            "3": {
+              "size": 5,
+              "sum_metrics": 2,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 9,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 18,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 109,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 184,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 232,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": {
+                "0.01": [
+                  0.02288122137535445,
+                  0.9171708127985232
+                ],
+                "0.05": [
+                  0.052744950526316906,
+                  0.8533672003653269
+                ]
+              }
+            },
+            "4": {
+              "size": 7,
+              "sum_metrics": 1,
+              "subtrees": {
+                "0": {
+                  "size": 3,
+                  "sum_metrics": 0,
+                  "subtrees": {
+                    "0": {
+                      "size": 2,
+                      "sum_metrics": 0,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 196,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 215,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 222,
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 4,
+                  "sum_metrics": 1,
+                  "subtrees": {
+                    "0": {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 194,
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 3,
+                      "sum_metrics": 1,
+                      "subtrees": {
+                        "0": {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 206,
+                          "confidence_interval": null
+                        },
+                        "1": {
+                          "size": 2,
+                          "sum_metrics": 1,
+                          "subtrees": [
+                            {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 128,
+                              "confidence_interval": null
+                            },
+                            {
+                              "size": 1,
+                              "sum_metrics": 0,
+                              "subtrees": 227,
+                              "confidence_interval": null
+                            }
+                          ],
+                          "confidence_interval": null
+                        }
+                      },
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": {
+                "0.01": [
+                  0.0007158210811255033,
+                  0.6849116392467302
+                ],
+                "0.05": [
+                  0.0036102968619005833,
+                  0.5787231970431952
+                ]
+              }
+            },
+            "5": {
+              "size": 2,
+              "sum_metrics": 0,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 28,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 29,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": null
+            },
+            "6": {
+              "size": 3,
+              "sum_metrics": 1,
+              "subtrees": {
+                "0": {
+                  "size": 2,
+                  "sum_metrics": 0,
+                  "subtrees": [
+                    {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 51,
+                      "confidence_interval": null
+                    },
+                    {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 65,
+                      "confidence_interval": null
+                    }
+                  ],
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 116,
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": null
+            }
+          },
+          "confidence_interval": {
+            "0.01": [
+              0.12305996176383227,
+              0.54075210586873
+            ],
+            "0.05": [
+              0.15591660239698577,
+              0.4871106975383934
+            ]
+          }
+        },
+        "5": {
+          "size": 23,
+          "sum_metrics": 20,
+          "subtrees": {
+            "0": {
+              "size": 22,
+              "sum_metrics": 19,
+              "subtrees": {
+                "0": {
+                  "size": 15,
+                  "sum_metrics": 13,
+                  "subtrees": {
+                    "0": {
+                      "size": 11,
+                      "sum_metrics": 10,
+                      "subtrees": {
+                        "0": {
+                          "size": 10,
+                          "sum_metrics": 9,
+                          "subtrees": {
+                            "0": {
+                              "size": 9,
+                              "sum_metrics": 9,
+                              "subtrees": {
+                                "0": {
+                                  "size": 2,
+                                  "sum_metrics": 2,
+                                  "subtrees": [
+                                    {
+                                      "size": 1,
+                                      "sum_metrics": 1,
+                                      "subtrees": 66,
+                                      "confidence_interval": null
+                                    },
+                                    {
+                                      "size": 1,
+                                      "sum_metrics": 1,
+                                      "subtrees": 134,
+                                      "confidence_interval": null
+                                    }
+                                  ],
+                                  "confidence_interval": null
+                                },
+                                "1": {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 122,
+                                  "confidence_interval": null
+                                },
+                                "2": {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 135,
+                                  "confidence_interval": null
+                                },
+                                "3": {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 74,
+                                  "confidence_interval": null
+                                },
+                                "4": {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 23,
+                                  "confidence_interval": null
+                                },
+                                "5": {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 52,
+                                  "confidence_interval": null
+                                },
+                                "6": {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 37,
+                                  "confidence_interval": null
+                                },
+                                "7": {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 168,
+                                  "confidence_interval": null
+                                }
+                              },
+                              "confidence_interval": {
+                                "0.01": [
+                                  0.5550473077848115,
+                                  1.0
+                                ],
+                                "0.05": [
+                                  0.6637328831200572,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "1": {
+                              "size": 1,
+                              "sum_metrics": 0,
+                              "subtrees": 177,
+                              "confidence_interval": null
+                            }
+                          },
+                          "confidence_interval": {
+                            "0.01": [
+                              0.45571294310031313,
+                              0.9994988714245354
+                            ],
+                            "0.05": [
+                              0.5549838829718047,
+                              0.9974714214555382
+                            ]
+                          }
+                        },
+                        "1": {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 142,
+                          "confidence_interval": null
+                        }
+                      },
+                      "confidence_interval": {
+                        "0.01": [
+                          0.49143527031137074,
+                          0.9995444181886014
+                        ],
+                        "0.05": [
+                          0.5872200830116173,
+                          0.9977010277861857
+                        ]
+                      }
+                    },
+                    "1": {
+                      "size": 4,
+                      "sum_metrics": 3,
+                      "subtrees": {
+                        "0": {
+                          "size": 2,
+                          "sum_metrics": 2,
+                          "subtrees": [
+                            {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 93,
+                              "confidence_interval": null
+                            },
+                            {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 100,
+                              "confidence_interval": null
+                            }
+                          ],
+                          "confidence_interval": null
+                        },
+                        "1": {
+                          "size": 2,
+                          "sum_metrics": 1,
+                          "subtrees": [
+                            {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 34,
+                              "confidence_interval": null
+                            },
+                            {
+                              "size": 1,
+                              "sum_metrics": 0,
+                              "subtrees": 231,
+                              "confidence_interval": null
+                            }
+                          ],
+                          "confidence_interval": null
+                        }
+                      },
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": {
+                    "0.01": [
+                      0.5136699933923536,
+                      0.992883494266805
+                    ],
+                    "0.05": [
+                      0.5953973033966279,
+                      0.9834240865599164
+                    ]
+                  }
+                },
+                "1": {
+                  "size": 7,
+                  "sum_metrics": 6,
+                  "subtrees": {
+                    "0": {
+                      "size": 2,
+                      "sum_metrics": 2,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 46,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 159,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 5,
+                      "sum_metrics": 4,
+                      "subtrees": {
+                        "0": {
+                          "size": 2,
+                          "sum_metrics": 2,
+                          "subtrees": [
+                            {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 42,
+                              "confidence_interval": null
+                            },
+                            {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 139,
+                              "confidence_interval": null
+                            }
+                          ],
+                          "confidence_interval": null
+                        },
+                        "1": {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 141,
+                          "confidence_interval": null
+                        },
+                        "2": {
+                          "size": 2,
+                          "sum_metrics": 1,
+                          "subtrees": [
+                            {
+                              "size": 1,
+                              "sum_metrics": 0,
+                              "subtrees": 33,
+                              "confidence_interval": null
+                            },
+                            {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 63,
+                              "confidence_interval": null
+                            }
+                          ],
+                          "confidence_interval": null
+                        }
+                      },
+                      "confidence_interval": {
+                        "0.01": [
+                          0.1850972721217302,
+                          0.9989979939789199
+                        ],
+                        "0.05": [
+                          0.2835820638819105,
+                          0.9949492366205319
+                        ]
+                      }
+                    }
+                  },
+                  "confidence_interval": {
+                    "0.01": [
+                      0.31508836075326985,
+                      0.9992841789188744
+                    ],
+                    "0.05": [
+                      0.4212768029568048,
+                      0.9963897031380994
+                    ]
+                  }
+                }
+              },
+              "confidence_interval": {
+                "0.01": [
+                  0.5838875298763657,
+                  0.984027001650539
+                ],
+                "0.05": [
+                  0.6508779027425919,
+                  0.9709441488712534
+                ]
+              }
+            },
+            "1": {
+              "size": 1,
+              "sum_metrics": 1,
+              "subtrees": 153,
+              "confidence_interval": null
+            }
+          },
+          "confidence_interval": {
+            "0.01": [
+              0.5988174724368949,
+              0.9847485856484682
+            ],
+            "0.05": [
+              0.6641108624628791,
+              0.9722484925772068
+            ]
+          }
+        },
+        "6": {
+          "size": 31,
+          "sum_metrics": 28,
+          "subtrees": {
+            "0": {
+              "size": 1,
+              "sum_metrics": 1,
+              "subtrees": 55,
+              "confidence_interval": null
+            },
+            "1": {
+              "size": 7,
+              "sum_metrics": 6,
+              "subtrees": {
+                "0": {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 27,
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 6,
+                  "sum_metrics": 5,
+                  "subtrees": {
+                    "0": {
+                      "size": 2,
+                      "sum_metrics": 2,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 35,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 127,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 3,
+                      "sum_metrics": 2,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 14,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 96,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 137,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    },
+                    "2": {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 8,
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": {
+                    "0.01": [
+                      0.2539926182408252,
+                      0.9991649252319115
+                    ],
+                    "0.05": [
+                      0.35876542100232517,
+                      0.9957892554855106
+                    ]
+                  }
+                }
+              },
+              "confidence_interval": {
+                "0.01": [
+                  0.31508836075326985,
+                  0.9992841789188744
+                ],
+                "0.05": [
+                  0.4212768029568048,
+                  0.9963897031380994
+                ]
+              }
+            },
+            "2": {
+              "size": 1,
+              "sum_metrics": 1,
+              "subtrees": 26,
+              "confidence_interval": null
+            },
+            "3": {
+              "size": 2,
+              "sum_metrics": 1,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 170,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 199,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": null
+            },
+            "4": {
+              "size": 20,
+              "sum_metrics": 19,
+              "subtrees": {
+                "0": {
+                  "size": 18,
+                  "sum_metrics": 18,
+                  "subtrees": {
+                    "0": {
+                      "size": 15,
+                      "sum_metrics": 15,
+                      "subtrees": {
+                        "0": {
+                          "size": 14,
+                          "sum_metrics": 14,
+                          "subtrees": {
+                            "0": {
+                              "size": 7,
+                              "sum_metrics": 7,
+                              "subtrees": {
+                                "0": {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 77,
+                                  "confidence_interval": null
+                                },
+                                "1": {
+                                  "size": 6,
+                                  "sum_metrics": 6,
+                                  "subtrees": {
+                                    "0": {
+                                      "size": 4,
+                                      "sum_metrics": 4,
+                                      "subtrees": {
+                                        "0": {
+                                          "size": 3,
+                                          "sum_metrics": 3,
+                                          "subtrees": {
+                                            "0": {
+                                              "size": 2,
+                                              "sum_metrics": 2,
+                                              "subtrees": [
+                                                {
+                                                  "size": 1,
+                                                  "sum_metrics": 1,
+                                                  "subtrees": 38,
+                                                  "confidence_interval": null
+                                                },
+                                                {
+                                                  "size": 1,
+                                                  "sum_metrics": 1,
+                                                  "subtrees": 41,
+                                                  "confidence_interval": null
+                                                }
+                                              ],
+                                              "confidence_interval": null
+                                            },
+                                            "1": {
+                                              "size": 1,
+                                              "sum_metrics": 1,
+                                              "subtrees": 95,
+                                              "confidence_interval": null
+                                            }
+                                          },
+                                          "confidence_interval": null
+                                        },
+                                        "1": {
+                                          "size": 1,
+                                          "sum_metrics": 1,
+                                          "subtrees": 164,
+                                          "confidence_interval": null
+                                        }
+                                      },
+                                      "confidence_interval": null
+                                    },
+                                    "1": {
+                                      "size": 2,
+                                      "sum_metrics": 2,
+                                      "subtrees": [
+                                        {
+                                          "size": 1,
+                                          "sum_metrics": 1,
+                                          "subtrees": 104,
+                                          "confidence_interval": null
+                                        },
+                                        {
+                                          "size": 1,
+                                          "sum_metrics": 1,
+                                          "subtrees": 107,
+                                          "confidence_interval": null
+                                        }
+                                      ],
+                                      "confidence_interval": null
+                                    }
+                                  },
+                                  "confidence_interval": {
+                                    "0.01": [
+                                      0.41351855420001377,
+                                      1.0
+                                    ],
+                                    "0.05": [
+                                      0.5407418735600995,
+                                      1.0
+                                    ]
+                                  }
+                                }
+                              },
+                              "confidence_interval": {
+                                "0.01": [
+                                  0.4691172785435415,
+                                  1.0
+                                ],
+                                "0.05": [
+                                  0.5903836027749966,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "1": {
+                              "size": 5,
+                              "sum_metrics": 5,
+                              "subtrees": [
+                                {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 1,
+                                  "confidence_interval": null
+                                },
+                                {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 3,
+                                  "confidence_interval": null
+                                },
+                                {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 30,
+                                  "confidence_interval": null
+                                },
+                                {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 71,
+                                  "confidence_interval": null
+                                },
+                                {
+                                  "size": 1,
+                                  "sum_metrics": 1,
+                                  "subtrees": 172,
+                                  "confidence_interval": null
+                                }
+                              ],
+                              "confidence_interval": {
+                                "0.01": [
+                                  0.3465724215775732,
+                                  1.0
+                                ],
+                                "0.05": [
+                                  0.4781762498950185,
+                                  1.0
+                                ]
+                              }
+                            },
+                            "2": {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 21,
+                              "confidence_interval": null
+                            },
+                            "3": {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 169,
+                              "confidence_interval": null
+                            }
+                          },
+                          "confidence_interval": {
+                            "0.01": [
+                              0.6849213666863821,
+                              1.0
+                            ],
+                            "0.05": [
+                              0.7683642383498834,
+                              1.0
+                            ]
+                          }
+                        },
+                        "1": {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 143,
+                          "confidence_interval": null
+                        }
+                      },
+                      "confidence_interval": {
+                        "0.01": [
+                          0.7024218301525187,
+                          1.0
+                        ],
+                        "0.05": [
+                          0.7819806390894659,
+                          1.0
+                        ]
+                      }
+                    },
+                    "1": {
+                      "size": 3,
+                      "sum_metrics": 3,
+                      "subtrees": {
+                        "0": {
+                          "size": 2,
+                          "sum_metrics": 2,
+                          "subtrees": [
+                            {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 148,
+                              "confidence_interval": null
+                            },
+                            {
+                              "size": 1,
+                              "sum_metrics": 1,
+                              "subtrees": 154,
+                              "confidence_interval": null
+                            }
+                          ],
+                          "confidence_interval": null
+                        },
+                        "1": {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 158,
+                          "confidence_interval": null
+                        }
+                      },
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": {
+                    "0.01": [
+                      0.745014971517225,
+                      1.0
+                    ],
+                    "0.05": [
+                      0.8146980318621477,
+                      1.0
+                    ]
+                  }
+                },
+                "1": {
+                  "size": 2,
+                  "sum_metrics": 1,
+                  "subtrees": [
+                    {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 155,
+                      "confidence_interval": null
+                    },
+                    {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 186,
+                      "confidence_interval": null
+                    }
+                  ],
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": {
+                "0.01": [
+                  0.6828582652429046,
+                  0.9997494043131685
+                ],
+                "0.05": [
+                  0.7512672372279722,
+                  0.9987349105020502
+                ]
+              }
+            }
+          },
+          "confidence_interval": {
+            "0.01": [
+              0.6886828924165663,
+              0.9887965909683876
+            ],
+            "0.05": [
+              0.7424609353722644,
+              0.9795801373122079
+            ]
+          }
+        },
+        "7": {
+          "size": 29,
+          "sum_metrics": 13,
+          "subtrees": {
+            "0": {
+              "size": 2,
+              "sum_metrics": 2,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 110,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 115,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": null
+            },
+            "1": {
+              "size": 6,
+              "sum_metrics": 4,
+              "subtrees": {
+                "0": {
+                  "size": 2,
+                  "sum_metrics": 2,
+                  "subtrees": [
+                    {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 117,
+                      "confidence_interval": null
+                    },
+                    {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 120,
+                      "confidence_interval": null
+                    }
+                  ],
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 3,
+                  "sum_metrics": 1,
+                  "subtrees": {
+                    "0": {
+                      "size": 2,
+                      "sum_metrics": 1,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 94,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 188,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 197,
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": null
+                },
+                "2": {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 45,
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": {
+                "0.01": [
+                  0.1435957546647258,
+                  0.9812793068951792
+                ],
+                "0.05": [
+                  0.22277809550351213,
+                  0.9567281317072583
+                ]
+              }
+            },
+            "2": {
+              "size": 4,
+              "sum_metrics": 2,
+              "subtrees": {
+                "0": {
+                  "size": 3,
+                  "sum_metrics": 1,
+                  "subtrees": {
+                    "0": {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 97,
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 2,
+                      "sum_metrics": 0,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 7,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 185,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 118,
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": null
+            },
+            "3": {
+              "size": 5,
+              "sum_metrics": 0,
+              "subtrees": {
+                "0": {
+                  "size": 2,
+                  "sum_metrics": 0,
+                  "subtrees": [
+                    {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 17,
+                      "confidence_interval": null
+                    },
+                    {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 265,
+                      "confidence_interval": null
+                    }
+                  ],
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 243,
+                  "confidence_interval": null
+                },
+                "2": {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 0,
+                  "confidence_interval": null
+                },
+                "3": {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 201,
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": {
+                "0.01": [
+                  0.0,
+                  0.6534275784224268
+                ],
+                "0.05": [
+                  0.0,
+                  0.5218237501049815
+                ]
+              }
+            },
+            "4": {
+              "size": 2,
+              "sum_metrics": 0,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 53,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 54,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": null
+            },
+            "5": {
+              "size": 4,
+              "sum_metrics": 2,
+              "subtrees": {
+                "0": {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 149,
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 3,
+                  "sum_metrics": 1,
+                  "subtrees": {
+                    "0": {
+                      "size": 1,
+                      "sum_metrics": 0,
+                      "subtrees": 200,
+                      "confidence_interval": null
+                    },
+                    "1": {
+                      "size": 2,
+                      "sum_metrics": 1,
+                      "subtrees": [
+                        {
+                          "size": 1,
+                          "sum_metrics": 1,
+                          "subtrees": 119,
+                          "confidence_interval": null
+                        },
+                        {
+                          "size": 1,
+                          "sum_metrics": 0,
+                          "subtrees": 228,
+                          "confidence_interval": null
+                        }
+                      ],
+                      "confidence_interval": null
+                    }
+                  },
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": null
+            },
+            "6": {
+              "size": 3,
+              "sum_metrics": 1,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 49,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 171,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 235,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": null
+            },
+            "7": {
+              "size": 3,
+              "sum_metrics": 2,
+              "subtrees": {
+                "0": {
+                  "size": 2,
+                  "sum_metrics": 2,
+                  "subtrees": [
+                    {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 123,
+                      "confidence_interval": null
+                    },
+                    {
+                      "size": 1,
+                      "sum_metrics": 1,
+                      "subtrees": 129,
+                      "confidence_interval": null
+                    }
+                  ],
+                  "confidence_interval": null
+                },
+                "1": {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 173,
+                  "confidence_interval": null
+                }
+              },
+              "confidence_interval": null
+            }
+          },
+          "confidence_interval": {
+            "0.01": [
+              0.2190744765581148,
+              0.6945639032045883
+            ],
+            "0.05": [
+              0.2644553037067049,
+              0.643061289196085
+            ]
+          }
+        }
+      },
+      "confidence_interval": {
+        "0.01": [
+          0.4565025416429086,
+          0.6356674343856099
+        ],
+        "0.05": [
+          0.4775485218166191,
+          0.6154534606656987
+        ]
+      }
+    },
+    "1": {
+      "size": 56,
+      "sum_metrics": 21,
+      "subtrees": {
+        "0": {
+          "size": 21,
+          "sum_metrics": 21,
+          "subtrees": {
+            "0": {
+              "size": 19,
+              "sum_metrics": 19,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 78,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 79,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 80,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 81,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 82,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 84,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 86,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 89,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 112,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 131,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 138,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 145,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 146,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 150,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 151,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 156,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 157,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 161,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 163,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": {
+                "0.01": [
+                  0.756646727558943,
+                  1.0
+                ],
+                "0.05": [
+                  0.8235330881930346,
+                  1.0
+                ]
+              }
+            },
+            "1": {
+              "size": 2,
+              "sum_metrics": 2,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 101,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 1,
+                  "subtrees": 106,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": null
+            }
+          },
+          "confidence_interval": {
+            "0.01": [
+              0.777010957048437,
+              1.0
+            ],
+            "0.05": [
+              0.8389023847809204,
+              1.0
+            ]
+          }
+        },
+        "1": {
+          "size": 35,
+          "sum_metrics": 0,
+          "subtrees": {
+            "0": {
+              "size": 28,
+              "sum_metrics": 0,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 174,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 176,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 182,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 193,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 195,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 207,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 209,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 211,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 212,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 218,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 220,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 221,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 245,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 246,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 247,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 248,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 249,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 250,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 252,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 253,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 254,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 256,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 257,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 258,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 259,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 261,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 262,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 263,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": {
+                "0.01": [
+                  0.0,
+                  0.17240023762305118
+                ],
+                "0.05": [
+                  0.0,
+                  0.12343611850026384
+                ]
+              }
+            },
+            "1": {
+              "size": 7,
+              "sum_metrics": 0,
+              "subtrees": [
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 175,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 203,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 214,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 251,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 255,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 260,
+                  "confidence_interval": null
+                },
+                {
+                  "size": 1,
+                  "sum_metrics": 0,
+                  "subtrees": 264,
+                  "confidence_interval": null
+                }
+              ],
+              "confidence_interval": {
+                "0.01": [
+                  0.0,
+                  0.5308827214564584
+                ],
+                "0.05": [
+                  0.0,
+                  0.4096163972250034
+                ]
+              }
+            }
+          },
+          "confidence_interval": {
+            "0.01": [
+              0.0,
+              0.14047940787626842
+            ],
+            "0.05": [
+              0.0,
+              0.10003243557210506
+            ]
+          }
+        }
+      },
+      "confidence_interval": {
+        "0.01": [
+          0.21639550790664416,
+          0.555393600614431
+        ],
+        "0.05": [
+          0.24918406763773052,
+          0.5145216934370633
+        ]
+      }
+    }
+  },
+  "confidence_interval": {
+    "0.01": [
+      0.43106248379716905,
+      0.5909189282538618
+    ],
+    "0.05": [
+      0.4496457720386042,
+      0.5724920462950932
+    ]
+  }
+}

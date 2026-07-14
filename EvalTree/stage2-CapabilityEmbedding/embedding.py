@@ -17,7 +17,7 @@ if multiprocessing.get_start_method(allow_none = True) != "fork" :
 parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", type = str, required = True, choices = ("MATH", "WildChat10K", "DS-1000", ) + ("Chatbot-Arena", "ShareGPT10K", "MMLU", "CollegeMath", "DRChallenge", ))
 parser.add_argument("--num_procs", type = int, default = 4)
-parser.add_argument("--annotation_model", type = str, default = "gpt-4o-mini", choices = ("gpt-4o-mini", ))
+parser.add_argument("--annotation_model", type = str, default = "gpt-4o-mini", choices = ("gpt-4o-mini", "strategy", ))
 parser.add_argument("--embedding_model", type = str, default = "text-embedding-3-small", choices = ("text-embedding-3-small", ))
 args = parser.parse_args()
 

@@ -1,23 +1,31 @@
 #!/usr/bin/env bash
-# Build the EvalTree (capability tree) for the DRChallenge dataset and compute
-# per-node confidence intervals for the drtulu deep-research agent.
+# Build the EvalTree (capability tree) over the FULL DRChallenge dataset — every
+# instance in Datasets/DRChallenge/dataset.json — and render the standalone demo
+# HTML viewer for the drtulu deep-research agent.
 #
-# Instances are labeled 1 when the updated_question is hard (the DR agent FAILED)
-# and 0 when it is answerable (PASSED), so high-failure tree nodes name the
-# research capabilities that reliably stump the agent.
+# Labels: eval_results/real/drtulu/results.json holds one 0/1 per instance, in
+# dataset.json order — 1 = the DR agent FAILED the updated_question, 0 = PASSED
+# (this mirrors each entry's "drtulu_verdict" field). High-failure tree nodes
+# therefore name the research capabilities that reliably stump the agent.
+#
+# The pipeline runs stage 1 TWICE, once per annotation model:
+#   * claude-opus-4-8 annotations -> stage 4 leaf descriptions
+#   * gpt-4o-mini annotations     -> stage 2 embeddings (shorter, more consistent
+#                                    phrasings cluster better)
 #
 # Before running:
-#   export ANTHROPIC_API_KEY=...   # stages 1 & 4 (capability annotation + description)
-#   export OpenAI_API_KEY=...      # stage 2 only (embeddings — Anthropic has no embeddings API)
+#   export ANTHROPIC_API_KEY=...   # stage 1 (opus) + stage 4 descriptions
+#   export OpenAI_API_KEY=...      # stage 1 (gpt-4o-mini) + stage 2 embeddings
 # Run from the repo root:
 #   bash EvalTree/run_pipeline.drchallenge.sh
 set -euo pipefail
 
 DATASET="DRChallenge"
-SPLIT="train-test"           # all 83 instances are test (Datasets/DRChallenge/splits/train-test.json)
-MODEL="drtulu"               # eval_results/real/drtulu/results.json  (FAILED=1, PASSED=0)
-ANNOTATION_MODEL="claude-opus-4-8"        # LLM for stages 1 & 4 (Claude Opus 4.8)
-ANNOTATION_MODEL_2="gpt-4o-mini"                     # LLM for stage 2 (embedding) annotation (shorter, more consistent annotations for better embeddings)
+SPLIT="full"                              # build over every instance in dataset.json
+MODEL="drtulu"                            # eval_results/real/drtulu/results.json  (FAILED=1, PASSED=0)
+# ANNOTATION_MODEL="claude-opus-4-8"        # stage 1 (leaf descriptions) + stage 4 (Claude Opus 4.8)
+ANNOTATION_MODEL="gpt-4o-mini"
+ANNOTATION_MODEL_2="gpt-4o-mini"          # stage 1 (embedding annotations) + stage 2/3 keying
 EMBEDDING_MODEL="text-embedding-3-small"  # OpenAI embeddings (stage 2)
 MAX_CHILDREN=10
 
@@ -26,9 +34,16 @@ MAX_CHILDREN=10
 # (ANNOTATION_MODEL_2), not the stage 1/4 one.
 TREE_PATH="stage3-RecursiveClustering/[split=${SPLIT}]_[annotation=${ANNOTATION_MODEL_2}]_[embedding=${EMBEDDING_MODEL}]_[max-children=${MAX_CHILDREN}]"
 
-echo "==> Stage 1: capability annotation (one LLM call per question)"
+echo "==> Clearing THIS config's stale tree (built for a previous dataset size); other variants kept"
+rm -f "Datasets/${DATASET}/EvalTree/${TREE_PATH}.bin" "Datasets/${DATASET}/EvalTree/${TREE_PATH}"*.json
+
+echo "==> Stage 1a: capability annotation with ${ANNOTATION_MODEL}  (feeds stage 4 leaf descriptions)"
 python -m EvalTree.stage1-CapabilityAnnotation.annotate \
     --dataset "$DATASET" --annotation_model "$ANNOTATION_MODEL"
+
+echo "==> Stage 1b: capability annotation with ${ANNOTATION_MODEL_2}  (feeds stage 2 embeddings)"
+python -m EvalTree.stage1-CapabilityAnnotation.annotate \
+    --dataset "$DATASET" --annotation_model "$ANNOTATION_MODEL_2"
 
 echo "==> Stage 2: capability embedding"
 python -m EvalTree.stage2-CapabilityEmbedding.embedding \
@@ -50,5 +65,9 @@ python -m EvalTree.WeaknessProfile.confidence_interval \
     --tree_path "$TREE_PATH" \
     --results_path "real/${MODEL}"
 
-echo "==> Done. Capability tree:"
-echo "    Datasets/${DATASET}/EvalTree/${TREE_PATH}_[stage4-CapabilityDescription-model=${ANNOTATION_MODEL}].json"
+echo "==> Building standalone demo HTML viewer (FAIL_RATE overlay per node)"
+python EvalTree/build_viewer.py --dataset "Datasets/${DATASET}"
+
+echo "==> Done."
+echo "    Capability tree: Datasets/${DATASET}/EvalTree/${TREE_PATH}_[stage4-CapabilityDescription-model=${ANNOTATION_MODEL}].json"
+echo "    Demo HTML:       Datasets/${DATASET}/EvalTree/viewers/viewer-${MODEL}-${ANNOTATION_MODEL}.html"

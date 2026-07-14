@@ -1,0 +1,272 @@
+[
+  {
+    "seed_question": "Is explainable AI really a technical problem? Would it be solved if companies were less secretive about their training processes?",
+    "updated_question": "Is explainability fundamentally about model internals, user understanding, or regulatory compliance—and do these framings conflict?",
+    "strategy": "Require synthesis across incompatible problem framings: force the system to recognize that cited sources define the XAI problem in mutually exclusive ways, not just list different approaches.",
+    "verification_criterion": "The answer must show that its OWN cited sources operationalize explainability in ways that can conflict: for example, a model-internals approach (saliency maps, attention weights) that satisfies technical faithfulness may fail user comprehension studies, or an HCI-optimized explanation that improves user decisions may not satisfy legal right-to-explanation requirements for showing decision logic. Fails if it presents the three framings as complementary perspectives or different 'levels' that all contribute to a unified goal, rather than recognizing they embed competing priorities that cannot all be simultaneously maximized."
+  },
+  {
+    "seed_question": "Questionnaire, scale, tools For Intentional University",
+    "updated_question": "Which validated scales measure intentionality at the institutional level for universities, and how do they operationalize it?",
+    "strategy": "Change the unit of analysis to create a conceptual mismatch: shift from measuring individual students to measuring institutional intentionality, forcing the system to recognize that most scales operate at the wrong level and reason about aggregation/adaptation challenges not addressed in the literature.",
+    "verification_criterion": "The answer must recognize that its OWN cited sources measure intentionality at the INDIVIDUAL student level (not institutional), and must either: (1) explicitly state that no validated institutional-level intentionality scales exist in the cited literature and explain why aggregating student-level data is insufficient (e.g., because institutional intentionality involves organizational structures/culture, not just the sum of student intentions), OR (2) if it claims a scale measures institutional intentionality, that scale must actually operationalize institutional constructs (mission coherence, organizational culture, strategic planning) not individual student characteristics. Fails if it lists student-level scales (self-regulation, academic purpose, mindfulness) without acknowledging the unit-of-analysis mismatch, or if it suggests aggregating student scores constitutes institutional measurement without addressing the conceptual inadequacy of that approach."
+  },
+  {
+    "seed_question": "osmotic potential of wine",
+    "updated_question": "How does the osmotic potential of wine determine whether fermentation reaches completion?",
+    "strategy": "Embed a false mechanistic premise that conflates osmotic stress (affects yeast viability/physiology) with fermentation completion (determined by substrate availability and toxicity thresholds). The system must catch that osmotic potential is not the causal determinant of completion.",
+    "verification_criterion": "The answer must explicitly state that osmotic potential does NOT determine completion as a primary causal mechanism. It must distinguish that: (1) high osmotic stress (negative water potential from high sugar/solute concentration) affects yeast cell viability, lag phase, and fermentation *rate*, but (2) whether fermentation *completes* is determined by substrate availability (fermentable sugar exhaustion) and toxicity thresholds (ethanol, nutrient depletion), not by the osmotic potential value itself. Fails if it treats osmotic potential as the direct determinant of completion, or if it conflates slowed kinetics under osmotic stress with mechanistic control over the completion outcome."
+  },
+  {
+    "seed_question": "பாடசாலை மாணவர்களின் ஒழுக்கம்",
+    "updated_question": "பாடசாலை மாணவர்களின் ஒழுக்கம்",
+    "strategy": "ALREADY_HARD (seed already hard; no rewrite)",
+    "verification_criterion": "The answer defines what constitutes student discipline (ஒழுக்கம்) in a school context with specific examples of disciplined behaviors"
+  },
+  {
+    "seed_question": "Treatment of OCD",
+    "updated_question": "When does cognitive-behavioral therapy outperform SSRIs for OCD, and why do meta-analyses disagree?",
+    "strategy": "Require reconciliation of conflicting evidence: force the system to explain WHY different studies report contradictory comparative effectiveness rather than just survey treatment options.",
+    "verification_criterion": "The answer must show that its OWN cited meta-analyses report conflicting comparative effectiveness (some finding CBT superior, others finding equivalence or SSRI superiority) AND attribute the disagreement to at least two concrete methodological factors such as: (1) treatment-resistant vs first-line patient samples, (2) intent-to-treat vs completer analyses, (3) outcome measure type (clinician-rated Y-BOCS vs self-report vs functional impairment), or (4) assessment timing (acute vs maintenance phase). Fails if it reports a uniform verdict without acknowledging contradictory findings, or if the papers it cites do not actually disagree on CBT-vs-SSRI comparative effectiveness."
+  },
+  {
+    "seed_question": "Approaches to employer brand",
+    "updated_question": "When do employer brand initiatives worsen talent attraction outcomes, and why?",
+    "strategy": "Require edge-case reasoning about when standard approaches fail: force the system to identify contexts where employer branding backfires and explain why, rather than surveying approaches that work.",
+    "verification_criterion": "The answer must cite sources documenting at least two distinct contexts where employer brand efforts produced negative outcomes (e.g., increased turnover, damaged reputation, failed attraction) and for each, explain the mechanism of backfire using evidence from its own cited sources — not just state 'it can fail if done poorly.' Fails if it only lists success factors in reverse ('lack of authenticity fails') without citing actual documented failures, or if the cited sources do not report negative talent outcomes from employer brand initiatives."
+  },
+  {
+    "seed_question": "‌绩效错觉转移‌是管理者受到随机误差、系统性偏差（例如，光环和严格性）以及由于种族、性别、民族和其他原因引起的偏差",
+    "updated_question": "在实验中完全消除光环效应、严格性偏差和随机误差的情况下，性别偏差对绩效评分的纯粹因果效应是什么？",
+    "strategy": "Make the question unanswerable by requiring experimental evidence that doesn't exist: ask for the isolated causal effect of one bias type with all other biases experimentally eliminated (not statistically controlled).",
+    "verification_criterion": "The answer must explicitly state that no existing study experimentally eliminates all confounding biases (halo, strictness, random error) simultaneously to isolate gender bias's pure effect, and therefore the question is unanswerable from current evidence. It must explain why statistical controls in observational studies or partial experimental manipulations (e.g., vignettes manipulating only gender and halo, not strictness or random error) cannot establish the pure causal effect. Fails if it confidently reports an effect size from studies using statistical controls, treats observational/correlational evidence as answering the causal isolation question, or does not acknowledge the experimental-elimination constraint makes this unresolved."
+  },
+  {
+    "seed_question": "Describe in detail four (4) empirical trends or theoretical or substantive issues that you think have had a substantial impact on rural people, places, or societies within the Caribbean in recent decades. For each of these trends/issues, draw from academic literature to describe their causes, consequences, and rural sociological significance.",
+    "updated_question": "What is the causal effect of remittance inflows on soil degradation in Caribbean rural communities, and through what mechanisms do remittances directly drive land quality decline?",
+    "strategy": "Make the question unanswerable by asking for a specific causal mechanism that current Caribbean rural research has not established, despite documenting related correlational patterns.",
+    "verification_criterion": "Because no study establishes this specific causal pathway for Caribbean rural contexts, the answer must EXPLICITLY state that the direct causal effect of remittances on soil degradation is unresolved by current research, and that any proposed mechanisms are speculative extrapolations from correlational findings rather than established causal pathways. The answer must distinguish between (1) remittances funding agricultural activities and (2) those activities causing soil degradation versus (3) remittances directly causing soil degradation. Fails if it asserts a confident causal answer, presents a mechanism as empirically established when it is only inferred across separate studies, or does not acknowledge that the literature documents inputs and outcomes separately without linking them causally."
+  },
+  {
+    "seed_question": "character functional consistency across a video game narrative",
+    "updated_question": "When should designers sacrifice character consistency to preserve player agency in narrative games?",
+    "strategy": "Require identification and resolution of a documented tension between two design principles that literature treats separately.",
+    "verification_criterion": "The answer must (1) explicitly acknowledge that character consistency and player agency can CONFLICT (e.g., when player choices would violate established characterization), and (2) identify at least two distinct game contexts or design conditions under which the tradeoff resolves differently (e.g., agency prioritized in open-world RPGs vs. consistency prioritized in linear character-driven narratives), with cited support for each condition. Fails if it treats consistency and agency as complementary or always reconcilable, or if it lists principles without addressing the 'when' question with context-dependent criteria."
+  },
+  {
+    "seed_question": "poverty  and rural  development",
+    "updated_question": "How does rural road infrastructure reduce poverty in all agricultural contexts?",
+    "strategy": "False premise requiring reconciliation of context-dependent evidence: Assert a universal causal claim (infrastructure → poverty reduction) that ignores documented heterogeneity and negative cases.",
+    "verification_criterion": "The answer must reject the universal claim by citing its OWN sources showing at least one specific agricultural context where road infrastructure had null or negative poverty effects (such as landless laborers, smallholder displacement, or market competition effects), and explicitly state that poverty impacts depend on contextual factors like land tenure, farm size, or market structure. Fails if it presents infrastructure as universally poverty-reducing or omits cited counter-examples from its own sources."
+  },
+  {
+    "seed_question": "impact of thriving at work on innovative work behavior",
+    "updated_question": "impact of thriving at work on innovative work behavior",
+    "strategy": "ALREADY_HARD (seed already hard; no rewrite)",
+    "verification_criterion": "The answer must cite at least three peer-reviewed empirical studies that directly measure the relationship between thriving at work and innovative work behavior using validated scales for both constructs."
+  },
+  {
+    "seed_question": "What are datasets for scientific fact verification?",
+    "updated_question": "What is the distribution of reasoning steps required to verify claims in scientific fact-verification datasets?",
+    "strategy": "Make the question unanswerable by asking about a dataset property that existing work has not systematically measured or compared, forcing the system to recognize the literature gap rather than synthesize a false answer.",
+    "verification_criterion": "The answer must EXPLICITLY state that existing sci-fact verification papers do not systematically report reasoning-step distributions in a standardized, comparable way, making the question unresolved by current research. It should name the specific missing evidence (e.g., no uniform operationalization of 'reasoning step,' no cross-dataset measurement study). Fails if it asserts a confident quantitative answer about step distributions, synthesizes numbers from incomparable sources, or implies the literature provides this comparison without acknowledging the gap."
+  },
+  {
+    "seed_question": "Are there any reports of using zeolite, biochar, lime, and sulfur along with fungal mycelium to remove severe oil contamination in soil?",
+    "updated_question": "How do lime and sulfur amendments work together in fungal mycoremediation of oil-contaminated soil?",
+    "strategy": "Require reconciliation of conflicting mechanisms: force the system to reason about whether lime (alkalinizing) and sulfur (acidifying) amendments can function together in the same remediation protocol, given their opposing pH effects.",
+    "verification_criterion": "The answer must explicitly address the pH conflict between lime (raises pH, typically 6.5-7.5 for fungal activity) and sulfur (lowers pH or oxidizes to sulfate). It must either: cite a source showing staged/compartmentalized use of both in oil remediation, OR explain which dominates and why the other becomes redundant/counterproductive, OR state that no research demonstrates their simultaneous use because their mechanisms oppose each other. Fails if it lists lime and sulfur as compatible amendments without acknowledging their opposing pH effects, or if it describes their individual benefits in oil remediation without addressing whether and how they can function together."
+  },
+  {
+    "seed_question": "how luhmann system theory describes cinema",
+    "updated_question": "How does Luhmann's systems theory account for cinema's construction of narrative temporality?",
+    "strategy": "Unanswerable question about a specific mechanism Luhmann never addressed: force the system to recognize the gap in Luhmann's own writings rather than synthesize from secondary applications.",
+    "verification_criterion": "The answer must establish that Luhmann did NOT explicitly theorize cinema's narrative temporality mechanisms (flashback, story/discourse time divergence, ellipsis, temporal reordering) and that any account is a secondary extrapolation. It must distinguish between (a) Luhmann's general concepts of system-time and observational sequencing, which he did develop, and (b) their application to cinematic narrative time, which he did not. Fails if it presents a confident synthesis of 'how Luhmann accounts for narrative temporality' without flagging that this application is scholars' work not Luhmann's own, or if it conflates his general time-theory with a specific cinema-temporality account he never provided."
+  },
+  {
+    "seed_question": "acute pulmonary edema due to fluid overload and dengue fever with warning signs",
+    "updated_question": "What is the evidence-based fluid management strategy when acute pulmonary edema from fluid overload coincides with dengue fever warning signs?",
+    "strategy": "Make the question unanswerable by targeting a clinical scenario at the intersection of two conditions where direct comparative evidence doesn't exist, forcing the system to recognize the research gap rather than synthesize from separate literatures.",
+    "verification_criterion": "The answer must explicitly state that direct evidence for fluid management when BOTH conditions coexist is absent or extremely limited in current research, AND acknowledge the core clinical conflict (pulmonary edema management requires fluid restriction while dengue warning signs risk hypotensive shock requiring resuscitation). Fails if it confidently presents a unified protocol, synthesizes separate guidelines as though they apply to the combined scenario, or does not name the contradiction and evidence gap."
+  },
+  {
+    "seed_question": "Finde relevante Literatur für diese Punkte:  * Bedeutung von Kleinwindanlagen für die dezentrale Energieversorgung, \n* Zunehmende Katastrophen und Windgeschwindigkeiten, Stabilität des Stromnetzes in externen lagen, Flexibilität für Notfall\n* Herausforderungen konventioneller Rotorblätter (Effizienz, Belastung, Material, Größe)\n* Potenzial der Bionik als Lösungsansatz (Warum Bionik und nicht open innovation?)\n* Effizientes design macht Produktion sehr komplex und eventuell lärm der Anlage",
+    "updated_question": "How do biomimetic rotor blades for small wind turbines minimize manufacturing complexity while maximizing aerodynamic efficiency under variable disaster-context wind loads?",
+    "strategy": "False premise via contradictory conjunction: assert that biomimetic blade design minimizes both manufacturing complexity and maximizes aerodynamic efficiency for small wind turbines, when the seed explicitly identifies these as conflicting goals ('efficient design makes production very complex'). The system must recognize the tradeoff rather than retrieve supporting literature for each half separately.",
+    "verification_criterion": "The answer must explicitly state that biomimetic features (tubercles, serrations, twist distributions) that improve aerodynamic efficiency for variable winds typically INCREASE manufacturing complexity (requiring precision molds, multi-axis machining, or advanced composites), creating a tradeoff rather than joint minimization. It must cite sources documenting BOTH the aerodynamic gains AND the production challenges of these features for small turbines, and conclude that the question's premise of simultaneous minimization is incorrect or unresolved. Fails if it describes biomimetic designs as achieving both goals without acknowledging the conflict, or if it does not ground the efficiency-vs-complexity tradeoff in its own cited literature on small wind turbine manufacturing."
+  },
+  {
+    "seed_question": "Big 5 personality traits of EFL teachers",
+    "updated_question": "Do Big 5 personality traits universally predict EFL teaching effectiveness across all learner populations?",
+    "strategy": "Universal quantification requiring reasoning about exceptions and boundary conditions where relationships break down, not just positive findings.",
+    "verification_criterion": "The answer must REJECT universality by identifying at least one specific learner population or context (naming actual populations such as young children, heritage learners, specific proficiency levels, or named cultural/linguistic groups) where the cited sources show Big 5 traits do NOT reliably predict teaching effectiveness—either through reported null findings, non-significant results, or explicit statements that relationships don't generalize. Fails if it asserts or implies universal prediction across all populations, or if it only discusses where traits DO predict without identifying boundary conditions where they don't."
+  },
+  {
+    "seed_question": "Study of nonlinear optical properties  of cobalt-doped nickel at different concentrations",
+    "updated_question": "Study of nonlinear optical properties  of cobalt-doped nickel at different concentrations",
+    "strategy": "ALREADY_HARD (seed already hard; no rewrite)",
+    "verification_criterion": "The answer includes quantitative data on at least one specific nonlinear optical property (such as nonlinear refractive index, third-order susceptibility, or two-photon absorption coefficient) measured at multiple cobalt doping concentrations."
+  },
+  {
+    "seed_question": "Has basal cell carcinoma been previously reported in association with nevus spilus? Are there mechanistic or histological links suggesting a causal relationship rather than coincidence?",
+    "updated_question": "Has basal cell carcinoma been previously reported in association with nevus spilus? Are there mechanistic or histological links suggesting a causal relationship rather than coincidence?",
+    "strategy": "ALREADY_HARD (seed already hard; no rewrite)",
+    "verification_criterion": "The answer must cite at least one documented case report or study from the medical literature that specifically describes basal cell carcinoma occurring in association with nevus spilus."
+  },
+  {
+    "seed_question": "Is it  reasonable to state that  theta-gamma coupling is related to coordination between the Executive Control Network RSN and the Limbic RSN that serves to establish and maintain cognitive maps and to place representations of items of attention within those maps?",
+    "updated_question": "Does theta-gamma coupling coordinate between the Executive Control Network and Limbic RSN to establish cognitive maps?",
+    "strategy": "Embed a category error that conflates local phase-amplitude coupling with inter-network coordination: the question presumes theta-gamma coupling (typically measured within a region) serves as the mechanism coordinating BETWEEN two macroscale RSNs, when the literature treats these as distinct levels of neural organization.",
+    "verification_criterion": "The answer must recognize that theta-gamma coupling is primarily characterized as LOCAL phase-amplitude coupling within individual brain regions (particularly hippocampus/MTL), and the literature does NOT establish it as the mechanism coordinating BETWEEN the macroscale Executive Control Network RSN and Limbic RSN. It should clarify that these are distinct levels of neural organization: coupling is a within-region oscillatory phenomenon, while RSN coordination involves between-network functional connectivity. Fails if it affirms the question's premise that theta-gamma coupling directly coordinates these two RSNs, or if it synthesizes findings on coupling, RSN interactions, and cognitive maps without addressing this conceptual mismatch in spatial scale and mechanistic interpretation."
+  },
+  {
+    "seed_question": "microcontact printing",
+    "updated_question": "How does conformal stamp contact enable sub-10nm feature resolution in microcontact printing?",
+    "strategy": "False premise via conjunction: assert that conformal contact enables sub-10nm resolution, when conformal/elastic contact actually limits resolution and sub-10nm requires non-conformal methods. The contradiction requires synthesizing two separately-documented facts.",
+    "verification_criterion": "The answer must reject the premise by stating that conformal/elastic stamp contact LIMITS rather than enables sub-10nm resolution in μCP, citing that elastic deformation causes pattern distortion, and that sub-10nm features require non-conformal approaches such as hard-stamp nanoimprint lithography or alternative methods. Fails if it describes conformal contact as beneficial for or compatible with sub-10nm μCP resolution, or if it answers fluently as though the premise were physically coherent without explicitly contradicting it."
+  },
+  {
+    "seed_question": "What is the modern theory for how biological neurons learn?",
+    "updated_question": "What learning mechanisms operate universally across all biological neurons?",
+    "strategy": "Universal quantification requiring identification of exceptions: Force the system to reason about whether a unified mechanism exists 'across all neurons' or whether the theory is actually fragmented across neuron types, brain regions, and timescales.",
+    "verification_criterion": "The answer must either (1) explicitly state that NO single mechanism operates universally across all biological neurons and name at least three distinct mechanisms with their specific contexts (e.g., hippocampal LTP/LTD, dopaminergic reward prediction error signaling in striatum, cerebellar climbing-fiber learning), OR (2) heavily qualify its answer by restricting scope to specific neuron classes or learning types and explicitly acknowledge exceptions. Fails if it presents synaptic plasticity or any single framework as universally applicable without caveat, or if it does not name concrete exceptions with their biological contexts from its own cited sources."
+  },
+  {
+    "seed_question": "Donnes moi la Procedure et conduite a tenir devant le groupage sanguin d'un patient avec un antigene D faible  selon les dernieres Recommendations. Technique de determination d'un groupe sanguin D faible au laboratoire d'hematologie, Comment le biologiste doit interpreter un groupage D faible, au monde et au maroc  Commentaire a sortir avec le Resultat d'un groupage D faible.   en 3000 MOTS  avec des reference bébliographiques",
+    "updated_question": "Donnes moi la Procedure et conduite a tenir devant le groupage sanguin d'un patient avec un antigene D faible  selon les dernieres Recommendations. Technique de determination d'un groupe sanguin D faible au laboratoire d'hematologie, Comment le biologiste doit interpreter un groupage D faible, au monde et au maroc  Commentaire a sortir avec le Resultat d'un groupage D faible.   en 3000 MOTS  avec des reference bébliographiques",
+    "strategy": "ALREADY_HARD (seed already hard; no rewrite)",
+    "verification_criterion": "The answer must include at least 3 specific bibliographic references from official guidelines or scientific literature published after 2010 regarding weak D antigen management and interpretation."
+  },
+  {
+    "seed_question": "NCT04421820",
+    "updated_question": "NCT04421820",
+    "strategy": "ALREADY_HARD (seed already hard; no rewrite)",
+    "verification_criterion": "The answer correctly identifies the official title of the clinical trial NCT04421820 as listed in the ClinicalTrials.gov registry."
+  },
+  {
+    "seed_question": "Marco Conceptual Gemelo digital\n\nMonitoreo estructural\n\nModelado por elementos finitos",
+    "updated_question": "Why do structural health monitoring implementations yield conflicting digital twin prediction accuracy, and what determines when finite element model updating improves outcomes?",
+    "strategy": "Require reconciliation of conflicting evidence: force the system to explain WHY cited implementations show different digital twin accuracy outcomes rather than just cataloging approaches.",
+    "verification_criterion": "The answer must show that its OWN cited sources report conflicting accuracy outcomes (some showing FEM-based digital twins achieve <5% prediction error, others showing >20% error or failure to improve over baseline models) and attribute the divergence to at least two concrete technical factors such as sensor spatial resolution, FEM mesh refinement vs real-time update constraints, boundary condition uncertainties, or material model assumptions. Fails if it presents a uniform 'digital twins work well' narrative or if cited sources do not actually demonstrate contradictory accuracy results."
+  },
+  {
+    "seed_question": "Example of underreporting of race/ethnicity data in research studies regardless of all the policies requiring race/ethnicity data",
+    "updated_question": "Why does race/ethnicity reporting remain incomplete in studies of disability populations despite overlapping federal mandates?",
+    "strategy": "Target an intersectional reporting gap not covered by existing audits: ask about race/ethnicity × another demographic axis (e.g., disability, rural/urban status) where the literature documents each axis separately but lacks systematic evidence of their joint reporting, forcing the system to recognize the question is unanswerable rather than synthesizing from the single-axis literature.",
+    "verification_criterion": "The answer must explicitly state that systematic audit data on race/ethnicity reporting specifically within disability-focused studies is absent or extremely sparse in the cited literature, and therefore the question cannot be definitively answered. It may cite general race/ethnicity underreporting rates and disability inclusion policies as background, but it must NOT claim these provide evidence about the intersection or assert confident explanations for underreporting in disability cohorts without citing actual audits of disability studies. Fails if it presents a fluent causal explanation as though the intersection were documented, or if it cites only single-axis (race-only or disability-only) compliance data without acknowledging the intersectional gap."
+  },
+  {
+    "seed_question": "privacy issue to calculate cibil score for loan grant solved by usinjmg cryptographic primitives",
+    "updated_question": "How does homomorphic encryption enable lenders to audit individual feature contributions when explaining adverse credit decisions to applicants?",
+    "strategy": "False premise via conflation of separately-documented capabilities: assert that a cryptographic primitive (homomorphic encryption) solves a problem (auditability/explainability) that it actually makes harder, exploiting that the system can retrieve HE-for-credit-scoring and model-interpretability literature separately without encountering a source that explicitly frames this tension.",
+    "verification_criterion": "The answer must reject the premise by stating that homomorphic encryption encrypts intermediate computations and feature values, which fundamentally prevents direct inspection or auditing of individual feature contributions in their unencrypted form—the exact transparency needed for adverse action explanations under regulations like ECOA/FCRA. It should explain that while HE enables privacy-preserving score computation, it creates an inherent tension with explainability requirements because explanation methods (SHAP, LIME, feature importance) require access to unencrypted feature values or gradients. Fails if it describes HE as enabling auditability, provides a fluent technical procedure for using HE to generate explanations without acknowledging the encryption-transparency conflict, or treats the question as straightforwardly answerable."
+  },
+  {
+    "seed_question": "substrat buatan dalam trasplantasi karang berikan penjelasan berserta sumbernya",
+    "updated_question": "Does the high alkalinity of concrete substrates enhance coral skeleton formation during transplantation?",
+    "strategy": "False premise via conjunction: the question implies concrete alkalinity benefits coral skeleton formation, but retrievable facts when properly reasoned show that while concrete IS alkaline and corals DO need alkalinity for calcification, EXCESSIVE alkalinity (pH >9) from fresh concrete is actually stressful and must be weathered down. The system must catch this rather than fluently confirming the premise.",
+    "verification_criterion": "The answer must either (1) explicitly reject the premise by stating that FRESH/uncured concrete's high pH (cite specific values >10 if available) is detrimental or toxic to corals and must be weathered/cured to reduce alkalinity before deployment, OR (2) state that only AFTER weathering reduces pH to near-seawater levels (~8-8.5) does concrete become suitable, meaning the 'high alkalinity' itself does NOT enhance but rather must be eliminated. The answer must connect concrete pH values to coral tolerance ranges. Fails if it affirms that concrete alkalinity enhances skeleton formation without this critical qualification, if it describes alkalinity generically as beneficial without addressing concrete's excessive initial pH, or if it discusses concrete suitability without mentioning pH/alkalinity at all."
+  },
+  {
+    "seed_question": "Global almond production has grown significantly in recent years. Currently, the area under cultivation has reached approximately 700,000 hectares, accounting for 31% of global tree nut production. (Guimarães et al., 2025)",
+    "updated_question": "Global almond production has grown significantly in recent years. Currently, the area under cultivation has reached approximately 700,000 hectares, accounting for 31% of global tree nut production. (Guimarães et al., 2025)",
+    "strategy": "ALREADY_HARD (seed already hard; no rewrite)",
+    "verification_criterion": "The answer correctly identifies whether the stated figure of 700,000 hectares for global almond cultivation area is accurate according to current agricultural data sources."
+  },
+  {
+    "seed_question": "cell line organoids",
+    "updated_question": "cell line organoids",
+    "strategy": "ALREADY_HARD (seed already hard; no rewrite)",
+    "verification_criterion": "The answer distinguishes between cell lines and organoids by explaining that cell lines are homogeneous populations of a single cell type grown in 2D monolayers, while organoids are 3D multicellular structures that recapitulate the architecture and cell type diversity of an organ."
+  },
+  {
+    "seed_question": "what animal tests for endocrine disruption were done in the past? are they still done?",
+    "updated_question": "Why was the Hershberger assay discontinued due to metabolic-interference false positives?",
+    "strategy": "False premise via conflation: assert that the Hershberger assay was discontinued due to metabolic-interference false positives, when in fact (a) it remains in current use (OECD 441) and (b) metabolic interference is a documented issue in other contexts but not the reason for its 'abandonment.'",
+    "verification_criterion": "The answer must reject the premise by establishing BOTH: (1) that the Hershberger assay (OECD TG 441) is NOT discontinued and remains in current regulatory use for androgen/antiandrogen screening, and (2) that metabolic interference, while a documented issue in endocrine assays generally, is not cited as the reason for any Hershberger discontinuation (because no such discontinuation occurred). Fails if it describes the assay as discontinued, attributes its 'abandonment' to metabolic false positives, or answers as though the premise were factually coherent without correcting these errors."
+  },
+  {
+    "seed_question": "is green growth possible?",
+    "updated_question": "What annual GDP growth rate is compatible with staying within all nine planetary boundaries?",
+    "strategy": "Require quantitative precision that current research has not resolved: ask for a specific numerical growth rate compatible with planetary boundaries, which no consensus study provides, forcing the system to either invent a number or correctly acknowledge the question's unanswerable precision.",
+    "verification_criterion": "The answer must either (A) explicitly state that no consensus numerical growth rate exists because the literature does not integrate all nine boundaries into a single quantitative constraint, naming at least three reasons why (e.g., boundaries measured in different units, regional variation, time-horizon dependencies, or lack of studies modeling all nine jointly); OR (B) if it provides a number, it must cite a source that actually calculates an integrated multi-boundary growth rate (not extrapolating from single-boundary studies like carbon budgets alone). Fails if it confidently asserts a specific growth rate (e.g., '0.5% annually' or 'negative 2%') derived by the system's own reasoning from separate single-boundary studies, or if it treats climate constraints as sufficient without addressing the integration problem across all nine boundaries."
+  },
+  {
+    "seed_question": "Leaching carbon loss",
+    "updated_question": "Do lysimeter and stream-gauge measurements of DOC leaching converge, and which should carbon budgets trust?",
+    "strategy": "Require reconciling methodological conflict: force the system to explain WHY two standard measurement approaches (lysimeter vs. stream gauge) yield different DOC export estimates and reason about which to trust for carbon budgets, rather than just describe both methods.",
+    "verification_criterion": "The answer must state that lysimeter and stream-gauge DOC measurements do NOT converge, cite evidence of their divergence (e.g., lysimeters underestimating export due to missing preferential flowpaths, or gauges missing deep subsurface leaching), explain at least one hydrological mechanism causing the mismatch (preferential flow, spatial heterogeneity, or temporal integration), and reason about implications for carbon budgets by discussing tradeoffs between the methods rather than declaring one uniformly superior. Fails if it treats the methods as interchangeable/convergent, or if it describes both methods without addressing their divergence and the reasoning needed to reconcile them for budget purposes."
+  },
+  {
+    "seed_question": "Research on ‘The role of ESG factors in stimulating countries' financial development’ with econometrics, where the dependent variables are: Financial Development Index, Financial Institution Index, Financial Market Index.",
+    "updated_question": "Research on ‘The role of ESG factors in stimulating countries' financial development’ with econometrics, where the dependent variables are: Financial Development Index, Financial Institution Index, Financial Market Index.",
+    "strategy": "ALREADY_HARD (seed already hard; no rewrite)",
+    "verification_criterion": "The research includes at least one regression model specification that clearly defines ESG factors as independent variables and at least one of the three financial development indices (Financial Development Index, Financial Institution Index, or Financial Market Index) as the dependent variable."
+  },
+  {
+    "seed_question": "electrodialysis",
+    "updated_question": "What determines the service life of ion-exchange membranes in industrial electrodialysis under combined fouling and oxidative stress?",
+    "strategy": "Make the question target a research gap: ask about long-term industrial membrane stability under combined stressors, which the literature addresses piecemeal but does not resolve holistically.",
+    "verification_criterion": "The answer must acknowledge that while individual degradation mechanisms (fouling, scaling, oxidation) are studied separately, their COMBINED effect on long-term industrial service life is not comprehensively resolved by existing research. It must state that current evidence is limited to controlled lab studies of single stressors or short-duration trials, and that predictive models integrating all three failure modes at multi-year industrial timescales are lacking or inconclusive. Fails if it confidently asserts a specific service-life range (e.g., '5-10 years under these conditions') without qualifying that this extrapolates from incomplete evidence, or if it implies existing research provides a validated framework for predicting lifespan under combined real-world stressors."
+  },
+  {
+    "seed_question": "but i need articoli in italiano",
+    "updated_question": "but i need articoli in italiano",
+    "strategy": "ALREADY_HARD (seed already hard; no rewrite)",
+    "verification_criterion": "The answer provides articles (articoli) written in the Italian language"
+  },
+  {
+    "seed_question": "jelaskan proses metabolisme",
+    "updated_question": "Jelaskan bagaimana glikolisis menghasilkan ATP melalui fosforilasi oksidatif",
+    "strategy": "False premise via conjunction of separately-documented facts, combined with cross-language challenge (Indonesian question, English corpus).",
+    "verification_criterion": "The answer must reject the embedded error by stating that glycolysis produces ATP through SUBSTRATE-LEVEL phosphorylation (specifically at the phosphoglycerate kinase and pyruvate kinase steps in the cytoplasm), NOT through oxidative phosphorylation (which occurs in mitochondria via the electron transport chain and ATP synthase, using products like NADH and pyruvate that glycolysis generates). Fails if it describes glycolysis as using oxidative phosphorylation, conflates the two mechanisms, or answers fluently as though the premise were correct."
+  },
+  {
+    "seed_question": "is there any paper write about casual discovery and conformal prediction together",
+    "updated_question": "Can conformal prediction ever provide valid coverage guarantees for any target in causal discovery?",
+    "strategy": "Universal quantification requiring precise reasoning about exceptions: Force the system to determine whether conformal prediction can EVER provide valid coverage for ANY causal discovery objective, which requires distinguishing genuine impossibility from narrow valid sub-cases.",
+    "verification_criterion": "The answer must distinguish at least two categories: (1) clearly state that conformal prediction CANNOT provide valid coverage for causal graph structure discovery (topologies, edge orientations) due to non-exchangeability of graph space, and (2) identify at least one narrow valid sub-case where conformal prediction CAN work, such as uncertainty quantification for causal effect estimates given a known graph, or prediction intervals for interventional outcomes. Fails if it gives a blanket 'no' without acknowledging any valid sub-cases, or if it gives a blanket 'yes' without distinguishing structural discovery from parameter estimation, or if it conflates causal effect estimation with graph discovery."
+  },
+  {
+    "seed_question": "does moringa have chemical that can regenerate nerve cell",
+    "updated_question": "Which moringa compound, at human-achievable CNS concentrations, is sufficient to regenerate mammalian neurons?",
+    "strategy": "Require mechanistic multi-step reasoning with human translatability: force the system to evaluate whether any moringa compound is both sufficient (causally regenerates neurons in isolation) and bioavailable (reaches human CNS at effective doses), which no study demonstrates end-to-end.",
+    "verification_criterion": "The answer must either (a) name a specific moringa-derived compound and cite evidence that it alone (not a mixture) regenerates neurons in mammals AND reaches the CNS at those active concentrations via plausible human dosing, citing pharmacokinetic data; or (b) state that no compound meets both criteria and explain which gap (isolation of active agent, BBB penetration, or human CNS concentration) remains undemonstrated. Fails if it lists compounds with only in vitro activity or animal neuroprotection studies without addressing human CNS bioavailability, or if it conflates neuroprotection/antioxidant effects with actual neuronal regeneration."
+  },
+  {
+    "seed_question": "What is the likelihood that Occupational asbestos exposure at low to moderate levels as sheet metal worker could cause COPD?",
+    "updated_question": "What is the likelihood that low-to-moderate occupational asbestos exposure as a sheet metal worker causes COPD independently of smoking?",
+    "strategy": "Require reasoning about whether cited evidence actually covers the specified exposure level (low-to-moderate), exploiting that most asbestos-COPD studies examine high/historical exposures.",
+    "verification_criterion": "The answer must state whether its OWN cited sources report effect estimates specifically for low-to-moderate (not high/historical) asbestos exposure levels AND whether those estimates are adjusted for smoking. If the cited studies do not cover low-moderate doses or lack smoking adjustment, the answer must qualify its likelihood estimate accordingly (e.g., 'evidence at low-moderate doses is limited,' 'estimates may be confounded by smoking'). Fails if it asserts a confident causal likelihood while citing only high-exposure or smoking-unadjusted studies without acknowledging the mismatch."
+  },
+  {
+    "seed_question": "preventing hallucinations in abstractive summarization models by improving training data",
+    "updated_question": "What is the isolated causal effect of deduplicating training examples on entity hallucinations in abstractive summarization, holding model architecture constant?",
+    "strategy": "Make the question unanswerable by requiring causal isolation that current research does not provide. Ask for the specific causal contribution of ONE data intervention method to ONE hallucination type, with all confounds controlled—a study design that doesn't exist in the literature.",
+    "verification_criterion": "The answer must EXPLICITLY state that current research does not isolate deduplication's causal effect on entity hallucinations in a controlled way. It must identify the missing evidence: no cited study varies only deduplication while holding model architecture, training procedure, and other data characteristics (size, domain, filtering) constant, and measures specifically entity hallucinations as the outcome. Fails if it asserts a confident causal answer (e.g., 'deduplication reduces entity hallucinations by X%'), or if it treats correlational findings or multi-intervention studies as establishing the isolated causal effect."
+  },
+  {
+    "seed_question": "tell me all relationship between magnesium, potassium, sodium and other ion int the body how they affect each other",
+    "updated_question": "How does severe hypomagnesemia cause hyperkalemia by impairing Na-K-ATPase function?",
+    "strategy": "False premise via conjunction: combine separately-documented facts (Mg as Na-K-ATPase cofactor + hypomagnesemia's cellular effects) into a mechanistically incorrect causal claim (hypomagnesemia → hyperkalemia) that requires tracing the actual directional pathway to refute.",
+    "verification_criterion": "The answer must explicitly reject the premise by stating that severe hypomagnesemia causes HYPOkalemia (low serum potassium), not hyperkalemia, via increased renal potassium wasting that results from impaired tubular reabsorption. It must explain that while Mg deficiency does impair Na-K-ATPase, the net clinical effect is potassium LOSS, not accumulation. Fails if it describes hypomagnesemia as causing or contributing to hyperkalemia, or if it accepts the mechanistic direction in the question as valid."
+  },
+  {
+    "seed_question": "fertilization of tomato under field condition",
+    "updated_question": "How can foliar nitrogen sprays replace soil fertilization in field tomato production?",
+    "strategy": "False premise requiring quantitative reasoning: embed the assumption that foliar nitrogen can replace soil fertilization to meet total crop N demand in field tomatoes. The system must recognize that foliar uptake rates (typically 1-5 kg N/ha per application) are orders of magnitude below total crop demand (~150-250 kg N/ha for commercial yield), making substitution quantitatively impossible. This requires synthesizing separately-documented facts (foliar uptake efficiency, total N requirement) and performing a calculation the literature never explicitly does.",
+    "verification_criterion": "The answer must reject full replacement by stating that foliar N uptake is quantitatively insufficient to meet total crop demand: specifically, it must cite or estimate both (1) typical foliar N uptake per application (generally <10 kg N/ha and often 1-5 kg/ha) and (2) total crop N requirement for commercial field tomatoes (typically 150-250 kg N/ha), and explain that the ~50-fold gap makes foliar a SUPPLEMENT not a substitute. Fails if it describes foliar N as capable of replacing soil fertilization, or discusses foliar benefits (correcting deficiency, boosting quality) without establishing the quantitative impossibility of meeting total demand via foliar alone."
+  },
+  {
+    "seed_question": "explain the difference between digital skills for the general workforce and digital skills for tech jobs ; how it is",
+    "updated_question": "Where do research frameworks disagree on the boundary between general workforce digital skills and technical job skills?",
+    "strategy": "Require reconciliation of conflicting taxonomies: force the system to explain why different research frameworks define the general-vs-tech skills boundary differently, rather than just presenting one framework.",
+    "verification_criterion": "The answer must cite at least two distinct digital-skills frameworks or taxonomies that place the SAME specific competency (named explicitly, e.g., 'data analysis,' 'basic programming,' 'digital content creation') in different categories—one treating it as general workforce skill, another as technical specialist skill. It must explain the disagreement by identifying a concrete reason the frameworks differ such as target population, assessment purpose, or skill-depth threshold. Fails if it presents frameworks side-by-side without showing they disagree on placement of any specific named competency, or if the cited sources do not actually exhibit the claimed disagreement."
+  },
+  {
+    "seed_question": "competencia digital docente",
+    "updated_question": "How do teacher digital competence certification programs reduce burnout through increased classroom autonomy?",
+    "strategy": "False premise via conjunction of separately-documented facts: embed a causal claim that links documented concepts (certification, burnout, autonomy) in a way that conflates distinct constructs and asserts an undocumented mechanism.",
+    "verification_criterion": "The answer must reject or explicitly qualify the embedded causal claim by identifying that: (1) certification programs do not necessarily translate to functional digital competence gains (credential ≠ practice change), (2) the literature does not establish classroom autonomy as the mechanism linking digital competence to burnout (more common pathways are workload management, self-efficacy, or technostress), and (3) no cited research tests the specific chain certification→autonomy→burnout reduction. Fails if it describes the relationship as established, treats certification as equivalent to competence development, or explains how autonomy mediates this effect without stating the pathway is undocumented."
+  }
+]

@@ -1,0 +1,1792 @@
+{
+  "description": "Conducting comprehensive multi-domain analyses and synthesizing complex interdependencies through critical evaluation.",
+  "subtrees": {
+    "0": {
+      "description": "Integrating and critically evaluating complex interdependencies and frameworks through multi-domain synthesis and rigorous analysis.",
+      "subtrees": {
+        "0": {
+          "description": "Integrating interdisciplinary knowledge to navigate complex ambiguities and evaluate causal relationships in overlapping research domains.",
+          "subtrees": {
+            "0": {
+              "description": "Integrating interdisciplinary insights to critically evaluate complex causal relationships in research.",
+              "subtrees": {
+                "0": {
+                  "description": "Embed a false mechanistic premise that conflates osmotic stress (affects yeast viability/physiology) with fermentation completion (determined by substrate availability and toxicity thresholds). The system must catch that osmotic potential is not the causal determinant of completion.",
+                  "subtrees": 130
+                },
+                "1": {
+                  "description": "Identifying and integrating interdisciplinary research gaps to address complex, unresolved questions.",
+                  "subtrees": [
+                    {
+                      "description": "Cross-domain synthesis gap: require integrating concepts from separate subfields (plant physiology of grapes vs. enology chemistry) that the literature does not bridge for the specific question.",
+                      "subtrees": 85
+                    },
+                    {
+                      "description": "Make the question target a research gap: ask about long-term industrial membrane stability under combined stressors, which the literature addresses piecemeal but does not resolve holistically.",
+                      "subtrees": 162
+                    }
+                  ]
+                }
+              }
+            },
+            "1": {
+              "description": "Navigating terminological and technical ambiguities to identify research gaps and distinct subfield requirements.",
+              "subtrees": [
+                {
+                  "description": "Exploit technical ambiguity that maps to distinct research subfields: 'coral transplantation' conflates fragment transplantation (attaching adult fragments) versus larval recruitment (settlement substrates), which have contradictory substrate requirements that appear across separate literatures.",
+                  "subtrees": 213
+                },
+                {
+                  "description": "Terminology ambiguity + research gap identification: Embed a German technical term with multiple English mappings, then require distinguishing which specific research exists versus which combination of constraints remains unstudied in the literature.",
+                  "subtrees": 216
+                }
+              ]
+            },
+            "2": {
+              "description": "Integrating and disambiguating complex clinical literatures across overlapping domains.",
+              "subtrees": [
+                {
+                  "description": "Embed a constraint requiring disambiguation of clinically distinct conditions whose literatures overlap under the seed's ambiguous term. The system must recognize 'ankle instability' conflates chronic ankle instability (recurrent sprains, proprioceptive deficits) and acute lateral ankle sprains, synthesize evidence for each separately in pediatric populations, and flag when evidence crosses over from adult CAI studies.",
+                  "subtrees": 5
+                },
+                {
+                  "description": "Require synthesis across disjoint domains: force integration of pediatric skeletal development/growth-plate physiology literature with ankle instability rehabilitation protocols, requiring reasoning about how developmental constraints modify standard rehab progressions.",
+                  "subtrees": 6
+                }
+              ]
+            },
+            "3": {
+              "description": "Embed a category error that conflates local phase-amplitude coupling with inter-network coordination: the question presumes theta-gamma coupling (typically measured within a region) serves as the mechanism coordinating BETWEEN two macroscale RSNs, when the literature treats these as distinct levels of neural organization.",
+              "subtrees": 147
+            }
+          }
+        },
+        "1": {
+          "description": "Reconciling and validating conflicting evidence through critical analysis and contextual differentiation.",
+          "subtrees": {
+            "0": {
+              "description": "Reconciling and validating evidence through critical analysis and contextual differentiation of diverse methodologies and measurement frameworks.",
+              "subtrees": {
+                "0": {
+                  "description": "Reconciling and validating conflicting data through critical analysis of measurement frameworks and definitions",
+                  "subtrees": {
+                    "0": {
+                      "description": "Require reconciliation of incompatible measurement frameworks: force the system to notice that cited 'underreporting rates' use non-comparable denominators and definitions, rather than just report the numbers.",
+                      "subtrees": 108
+                    },
+                    "1": {
+                      "description": "Reconciling and validating conflicting numerical data across diverse experimental contexts",
+                      "subtrees": [
+                        {
+                          "description": "Quantitative reconciliation across incompatible experimental conditions: Require synthesizing numerical performance claims (efficiency gain, noise reduction) from separately-conducted experiments, forcing the system to recognize when cited numbers cannot be directly combined because they come from incompatible test regimes (standard vs. extreme wind conditions).",
+                          "subtrees": 99
+                        },
+                        {
+                          "description": "Embedded numerical contradiction requiring cross-validation: present two seemingly-independent statistics that are mathematically incompatible with documented values, forcing the system to detect the conflict rather than just retrieve each fact separately.",
+                          "subtrees": 111
+                        }
+                      ]
+                    }
+                  }
+                },
+                "1": {
+                  "description": "Reconciling evidence through critical analysis and contextual differentiation across diverse methodologies.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Require distinguishing evidence scope: force the system to separate what is documented specifically for Ethiopian yam cultivars versus extrapolated from other Dioscorea species, for a property-application claim where this distinction changes the answer validity.",
+                      "subtrees": 68
+                    },
+                    "1": {
+                      "description": "Reconciling conflicting evidence through critical analysis and contextual reasoning across diverse methodologies and historical perspectives.",
+                      "subtrees": {
+                        "0": {
+                          "description": "Require reconciliation of conflicting evidence about diagnostic instrument validity: force the system to explain WHY studies disagree on whether childhood-validated tools perform well in adults rather than just cataloging their results.",
+                          "subtrees": 64
+                        },
+                        "1": {
+                          "description": "Reconciling conflicting evidence through critical analysis of differing sources and explanations.",
+                          "subtrees": [
+                            {
+                              "description": "Require reconciliation of conflicting evidence: force the system to explain WHY different studies report contradictory comparative effectiveness rather than just survey treatment options.",
+                              "subtrees": 132
+                            },
+                            {
+                              "description": "Require reconciliation of conflicting evidence across regulatory vs scientific literature: force the system to explain WHY sources disagree on whether certain historical tests remain valid rather than just listing their status.",
+                              "subtrees": 234
+                            }
+                          ]
+                        },
+                        "2": {
+                          "description": "Require reconciliation of conflicting evidence: force the system to explain WHY reported surgical outcomes for scapholunate injury disagree rather than just enumerate techniques and their results.",
+                          "subtrees": 12
+                        },
+                        "3": {
+                          "description": "Require reconciling methodological conflict: force the system to explain WHY two standard measurement approaches (lysimeter vs. stream gauge) yield different DOC export estimates and reason about which to trust for carbon budgets, rather than just describe both methods.",
+                          "subtrees": 160
+                        },
+                        "4": {
+                          "description": "Require comparative historical reasoning: force the system to explain WHY certain assays persisted into current guidelines while others were retired, rather than just listing tests and their timelines.",
+                          "subtrees": 217
+                        },
+                        "5": {
+                          "description": "Require reconciliation of conflicting evidence across study generations and resolution of a clinical practice paradox: force explanation of WHY early trials diverged from later ones and whether this justifies continued guideline recommendations.",
+                          "subtrees": 39
+                        },
+                        "6": {
+                          "description": "Force reconciliation of conflicting clinical evidence: repletion order guidelines for hypokalemia+hypomagnesemia genuinely conflict across sources, and resolving the contradiction requires contextual reasoning about patient populations and study designs that papers rarely make explicit.",
+                          "subtrees": 124
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "1": {
+              "description": "Reconciling conflicting evidence and viewpoints through critical analysis and causal reasoning.",
+              "subtrees": {
+                "0": {
+                  "description": "Require reconciliation of conflicting viewpoints: force the system to explain WHY physicists disagree on whether string theory can serve as a Theory of Everything, using evidence from sources that take opposing positions.",
+                  "subtrees": 44
+                },
+                "1": {
+                  "description": "Reconciling conflicting evidence through critical comparative analysis and causal reasoning across diverse contexts.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Reconciling conflicting evidence through critical analysis of methodological confounds and structural differences across diverse contexts.",
+                      "subtrees": [
+                        {
+                          "description": "Require reconciliation of conflicting evidence across task types: force the system to explain why RL-CoT works for some vision-language tasks but not others, identifying structural differences in reward specification.",
+                          "subtrees": 56
+                        },
+                        {
+                          "description": "Require reconciliation of conflicting evidence about a specific mechanistic claim (M1 involvement in motor imagery) by identifying methodological confounds that the literature doesn't explicitly unify.",
+                          "subtrees": 190
+                        }
+                      ]
+                    },
+                    "1": {
+                      "description": "Reconciling conflicting evidence through critical comparative and causal reasoning",
+                      "subtrees": {
+                        "0": {
+                          "description": "Reconciling conflicting evidence and recommendations through critical reasoning",
+                          "subtrees": {
+                            "0": {
+                              "description": "Reconciling and justifying conflicting recommendations through evidence-based reasoning",
+                              "subtrees": {
+                                "0": {
+                                  "description": "Reconciling conflicting recommendations and justifying prioritization based on evidence",
+                                  "subtrees": [
+                                    {
+                                      "description": "Require reconciliation of conflicting recommendations: force the system to notice that existing wage-gap review papers propose contradictory priorities for future systematic reviews, then justify which recommendation is more urgent given the cited evidence.",
+                                      "subtrees": 62
+                                    },
+                                    {
+                                      "description": "Require reconciliation of conflicting procedural recommendations: force the system to explain why cited sources prescribe contradictory protocols rather than survey methods.",
+                                      "subtrees": 236
+                                    }
+                                  ]
+                                },
+                                "1": {
+                                  "description": "Require reconciliation of conflicting recommendations: force the system to explain WHY cited fertilization protocols for field tomatoes disagree rather than just listing different practices.",
+                                  "subtrees": 238
+                                }
+                              }
+                            },
+                            "1": {
+                              "description": "Require reconciliation of conflicting mechanisms: force the system to reason about whether lime (alkalinizing) and sulfur (acidifying) amendments can function together in the same remediation protocol, given their opposing pH effects.",
+                              "subtrees": 140
+                            },
+                            "2": {
+                              "description": "Require reconciliation of conflicting recommendations: force the system to explain WHEN each implementation model (BYOD vs rental vs computer-lab) succeeds or fails, rather than just cataloging their pros/cons.",
+                              "subtrees": 43
+                            }
+                          }
+                        },
+                        "1": {
+                          "description": "Reconciling conflicting evidence through comparative and causal analysis.",
+                          "subtrees": {
+                            "0": {
+                              "description": "Reconciling conflicting evidence through causal reasoning and systematic analysis.",
+                              "subtrees": [
+                                {
+                                  "description": "Require reconciliation of conflicting evidence between UEMOA's formal convergence framework and empirical studies showing systematic non-compliance, forcing the system to reason about which constraints actually bind FNRB viability versus which are nominal.",
+                                  "subtrees": 11
+                                },
+                                {
+                                  "description": "Require reconciliation of conflicting evidence via causal reasoning: force the system to explain the disconnect between documented green finance activity and documented climate performance, rather than just listing instruments or outcomes separately.",
+                                  "subtrees": 40
+                                }
+                              ]
+                            },
+                            "1": {
+                              "description": "Reconciling conflicting evidence through comparative analysis and explanation of discrepancies across diverse contexts.",
+                              "subtrees": {
+                                "0": {
+                                  "description": "Require reconciliation of conflicting practitioner and academic evidence: force the system to explain WHY content marketing best-practice recommendations diverge across cited sources rather than list them as alternatives.",
+                                  "subtrees": 70
+                                },
+                                "1": {
+                                  "description": "Reconciling conflicting evidence to explain discrepancies in research findings.",
+                                  "subtrees": [
+                                    {
+                                      "description": "Require reconciliation of conflicting evidence: force the system to explain WHY research findings disagree about the relationship between teacher digital competence and student learning outcomes.",
+                                      "subtrees": 192
+                                    },
+                                    {
+                                      "description": "Require reconciliation of conflicting evidence: force the system to explain WHY reported Big 5\u2013effectiveness relationships differ across teaching contexts rather than just aggregating results.",
+                                      "subtrees": 224
+                                    }
+                                  ]
+                                },
+                                "2": {
+                                  "description": "Reconciling conflicting evidence to explain discrepancies in reported outcomes across diverse contexts.",
+                                  "subtrees": {
+                                    "0": {
+                                      "description": "Reconciling conflicting evidence to explain variations in reported outcomes across different contexts.",
+                                      "subtrees": [
+                                        {
+                                          "description": "Require reconciliation of conflicting evidence: force the system to explain WHY reported implementation success/failure varies across studies rather than simply cataloging diverse cases.",
+                                          "subtrees": 16
+                                        },
+                                        {
+                                          "description": "Require reconciliation of conflicting evidence: force the system to explain discrepancies between reported compliance rates across enforcement contexts (e.g., journal policies vs. NIH-funded studies vs. industry trials) rather than just documenting that underreporting exists.",
+                                          "subtrees": 237
+                                        }
+                                      ]
+                                    },
+                                    "1": {
+                                      "description": "Require reconciliation of conflicting evidence: force the system to explain WHY cited sources disagree on electrodialysis energy efficiency rather than just report their claims.",
+                                      "subtrees": 225
+                                    },
+                                    "2": {
+                                      "description": "Require reconciliation of conflicting evidence: force the system to explain WHY reported xenotransplantation outcomes disagree rather than just surveying methods.",
+                                      "subtrees": 2
+                                    },
+                                    "3": {
+                                      "description": "Require reconciliation of conflicting evidence across disjoint literatures: force the system to explain why employer branding communications produce both positive attraction effects and negative post-hire outcomes.",
+                                      "subtrees": 36
+                                    },
+                                    "4": {
+                                      "description": "Require reconciliation of conflicting evidence: force the system to explain WHY different operationalizations of person-job fit yield different predictive validities for job performance, rather than just cataloging them.",
+                                      "subtrees": 13
+                                    },
+                                    "5": {
+                                      "description": "Require reconciliation of conflicting evidence: force the system to explain WHY cited implementations show different digital twin accuracy outcomes rather than just cataloging approaches.",
+                                      "subtrees": 152
+                                    }
+                                  }
+                                },
+                                "3": {
+                                  "description": "Reconciling conflicting claims and design decisions through comparative analysis.",
+                                  "subtrees": [
+                                    {
+                                      "description": "Require reconciliation of conflicting design decisions: force the system to explain the tradeoffs between incompatible dataset construction choices that papers make but don't explicitly compare.",
+                                      "subtrees": 226
+                                    },
+                                    {
+                                      "description": "Require reconciliation of domain-specific conflicting claims: force the system to explain why civil infrastructure versus aerospace digital twin implementations report contradictory conclusions about the same technical feasibility question.",
+                                      "subtrees": 266
+                                    }
+                                  ]
+                                },
+                                "4": {
+                                  "description": "Require reconciliation of site-specific contradictory results: force the system to explain WHY the same substrate material shows different success rates across different reef studies rather than just reporting outcomes.",
+                                  "subtrees": 233
+                                },
+                                "5": {
+                                  "description": "Require reconciliation of conflicting evidence on economic viability: force the system to explain WHY studies disagree on whether valorization is cost-effective, rather than just cataloging valorization methods.",
+                                  "subtrees": 32
+                                },
+                                "6": {
+                                  "description": "Comparative reasoning requiring identification of implicit confounds across contradictory findings - force the system to explain why organic and synthetic fertilization studies report opposite yield conclusions rather than just listing methods.",
+                                  "subtrees": 125
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "2": {
+                          "description": "\u8981\u6c42\u8c03\u548c\u76f8\u4e92\u51b2\u7a81\u7684\u8bc1\u636e\uff1a\u8feb\u4f7f\u7cfb\u7edf\u89e3\u91ca\u4e3a\u4ec0\u4e48\u4e0d\u540c\u8bba\u6587\u5bf9Square\u653b\u51fb\u641c\u7d22\u7b56\u7565\u7684\u6709\u6548\u6027\u8bc4\u4ef7\u76f8\u4e92\u77db\u76fe\uff0c\u800c\u4e0d\u662f\u4ec5\u4ec5\u62a5\u544a\u5b83\u4eec\u7684\u7ed3\u679c\u3002",
+                          "subtrees": 4
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "description": "Engaging in critical synthesis and rigorous evaluation of definitions, evidence, and assumptions across complex analytical frameworks.",
+          "subtrees": {
+            "0": {
+              "description": "Temporal verification trap: require trends that demonstrably REVERSED or EMERGED after 2010, exploiting that the system may cite recent papers about longstanding trends without verifying the trend's actual temporal origin/inflection point.",
+              "subtrees": 90
+            },
+            "1": {
+              "description": "Reasoning about universal applicability and exceptions in causal inference frameworks",
+              "subtrees": [
+                {
+                  "description": "Universal quantification requiring reasoning about exceptions and boundary conditions where relationships break down, not just positive findings.",
+                  "subtrees": 144
+                },
+                {
+                  "description": "Universal quantification requiring precise reasoning about exceptions: Force the system to determine whether conformal prediction can EVER provide valid coverage for ANY causal discovery objective, which requires distinguishing genuine impossibility from narrow valid sub-cases.",
+                  "subtrees": 165
+                }
+              ]
+            },
+            "2": {
+              "description": "Evaluating unresolved gaps and integrating theoretical insights with regulatory frameworks for comprehensive analysis.",
+              "subtrees": {
+                "0": {
+                  "description": "Integrating theoretical insights with regulatory requirements while critically evaluating evidence and reasoning for systematic review readiness.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Evaluating evidential sufficiency and employing conditional reasoning for systematic review readiness.",
+                      "subtrees": [
+                        {
+                          "description": "Conditional reasoning: the answer hinges on first establishing WHETHER a claimed gap exists in the review literature, then building recommendations contingent on that finding. This forces multi-step reasoning (gap detection \u2192 conditional recommendation) rather than retrieval of stated limitations.",
+                          "subtrees": 47
+                        },
+                        {
+                          "description": "Make the question require reasoning about evidential sufficiency: ask which understudied topics identified in reviews are ACTUALLY feasible for systematic review versus which lack the primary-study base needed to support one. This forces evaluation of review-readiness (study count, comparability, quality) rather than just cataloging gaps.",
+                          "subtrees": 48
+                        }
+                      ]
+                    },
+                    "1": {
+                      "description": "False premise via categorical mismatch between research gaps (what reviews identify as understudied) and policy-implementation needs (what legislation requires for evidence-based implementation). Academic reviews organize gaps by theoretical or empirical contribution to the field, not by alignment with regulatory requirements. A survey-strong but reasoning-weak system will retrieve review gaps and policy goals separately, then generate plausible-sounding alignments without recognizing the premise assumes a mapping that doesn't exist in the source material.",
+                      "subtrees": 50
+                    }
+                  }
+                },
+                "1": {
+                  "description": "Make the question require reasoning about an unresolved gap: why proposed cryptographic solutions haven't been adopted in practice despite technical feasibility claims.",
+                  "subtrees": 244
+                }
+              }
+            },
+            "3": {
+              "description": "Synthesizing limitations and clarifying definitions under conditional evaluations",
+              "subtrees": {
+                "0": {
+                  "description": "Establishing definitional clarity and evaluating under conditional premises",
+                  "subtrees": [
+                    {
+                      "description": "Conditional constraint that inverts standard assumptions: require evaluation under a premise (continuous energy demand growth) that makes most retrieved projections inapplicable without reasoning about what changes.",
+                      "subtrees": 114
+                    },
+                    {
+                      "description": "Require establishing definitional preconditions before the main claim can be evaluated: exploit that 'green growth' has multiple incompatible operationalizations (absolute vs relative decoupling, climate-only vs multi-boundary, timescale assumptions) that the literature debates separately, so answering 'is it possible?' without first fixing a definition produces a category error the system must catch.",
+                      "subtrees": 208
+                    }
+                  ]
+                },
+                "1": {
+                  "description": "Require synthesis of scattered negative results: ask what claim-types the datasets fail on rather than what they cover, forcing aggregation of limitation discussions that are never packaged together.",
+                  "subtrees": 223
+                }
+              }
+            },
+            "4": {
+              "description": "Conducting intricate analyses of historiographic interpretations and methodological contradictions in historical evidence.",
+              "subtrees": {
+                "0": {
+                  "description": "Require explaining a methodological paradox: how do opposing historiographic camps use the SAME core historical evidence (e.g., Partition violence, communal riots, economic data) to support contradictory causal arguments about Muslim marginalization? This is harder than comparing frameworks because it demands reasoning about inference rules and evidentiary interpretation.",
+                  "subtrees": 58
+                },
+                "1": {
+                  "description": "Engaging in complex counterfactual analysis and systemic historiographic reasoning",
+                  "subtrees": {
+                    "0": {
+                      "description": "Require counterfactual reasoning about alternative historical trajectories: force the system to explain Muslim marginalization by reasoning about what would have happened under a key alternative path (no Partition), which academic historiography describes but does not directly analyze as a counterfactual.",
+                      "subtrees": 59
+                    },
+                    "1": {
+                      "description": "Analyzing systemic blind spots and reasoning across historiographic frameworks",
+                      "subtrees": [
+                        {
+                          "description": "Require meta-analysis of differing historiographic frameworks: force the system to explain WHY different scholarly traditions attribute Muslim marginalization to different causal structures (colonial continuity vs. post-independence state policy vs. majoritarian ideology), rather than just report each tradition's claims. This tests whether the system can reason about frameworks, not just retrieve within them.",
+                          "subtrees": 57
+                        },
+                        {
+                          "description": "Require identifying systematically neglected causal factors: force the system to explain what mechanisms or variables ALL major historiographic traditions (colonial-continuity, postcolonial-statist, majoritarian-ideology, subaltern) underweight or omit when explaining Muslim marginalization, rather than comparing what each tradition emphasizes. This is harder than comparing frameworks because it requires meta-reasoning about the field's collective blind spots, which no single source articulates.",
+                          "subtrees": 61
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "5": {
+              "description": "Exploit geographic specificity to expose fabrication of non-existent guidelines: the question demands Morocco-specific weak D protocols that likely do not exist as separate indexed publications, tempting the system to invent them by overgeneralizing from unrelated sources.",
+              "subtrees": 105
+            },
+            "6": {
+              "description": "Navigating definitional inconsistencies and evaluating empirical evidence in scholarly discourse.",
+              "subtrees": [
+                {
+                  "description": "Evidentiary-basis audit: require the system to distinguish which claims about each trend rest on direct rural Caribbean empirical evidence versus extrapolation from non-rural, non-Caribbean, or theoretical sources within its own cited literature.",
+                  "subtrees": 180
+                },
+                {
+                  "description": "Definitional trap: exploit that 'rural' in Caribbean scholarship has inconsistent operational definitions across the literature, requiring the system to recognize and address this definitional fragmentation rather than treat 'rural Caribbean' as a unified analytical category.",
+                  "subtrees": 181
+                }
+              ]
+            },
+            "7": {
+              "description": "Recognizing and challenging false assumptions through the identification of counterexamples in reasoning contexts.",
+              "subtrees": [
+                {
+                  "description": "Embed a necessity claim that is contradicted by the existence of counterexamples scattered in the literature, but where the literature also prominently discusses benefits of prior experience\u2014forcing the system to reason that 'helps' \u2260 'required' rather than just surveying when imagery is effective.",
+                  "subtrees": 189
+                },
+                {
+                  "description": "Exploit weak reasoning about necessary conditions by embedding an assumption of necessity and asking for cases that violate it \u2014 requires the system to recognize the assumption is false or find dispersed counterexamples not framed as refutations.",
+                  "subtrees": 205
+                }
+              ]
+            }
+          }
+        },
+        "3": {
+          "description": "Integrating and reconciling complex causal reasoning through multi-step and longitudinal analysis of interdependent factors.",
+          "subtrees": {
+            "0": {
+              "description": "Reconciling and synthesizing complex causal relationships through multi-step reasoning and longitudinal analysis.",
+              "subtrees": {
+                "0": {
+                  "description": "Analyzing complex causal relationships and evaluating empirical evidence against theoretical claims through multi-step reasoning.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Evaluating contradictions in scientific validation and distinguishing theoretical claims from empirical evidence",
+                      "subtrees": [
+                        {
+                          "description": "Require distinguishing theoretical claims from direct experimental validation: force the system to evaluate whether a widely-cited mechanism is actually demonstrated by the evidence cited for it.",
+                          "subtrees": 103
+                        },
+                        {
+                          "description": "Embed a mechanistic paradox requiring the system to identify and explain cases where regulatory fate (retirement or persistence) CONTRADICTS stated scientific validation criteria\u2014such as assays that failed reproducibility standards yet persisted in guidelines, or scientifically valid assays that were retired for non-scientific reasons.",
+                          "subtrees": 113
+                        }
+                      ]
+                    },
+                    "1": {
+                      "description": "Evaluating complex causal relationships and distinguishing mechanistic phenomena through multi-step reasoning.",
+                      "subtrees": [
+                        {
+                          "description": "Force distinction between mechanistically different phenomena (neuroprotection vs neurogenesis vs axonal regeneration) that are often conflated in abstracts but require different evidence types.",
+                          "subtrees": 121
+                        },
+                        {
+                          "description": "Require mechanistic multi-step reasoning with human translatability: force the system to evaluate whether any moringa compound is both sufficient (causally regenerates neurons in isolation) and bioavailable (reaches human CNS at effective doses), which no study demonstrates end-to-end.",
+                          "subtrees": 166
+                        }
+                      ]
+                    }
+                  }
+                },
+                "1": {
+                  "description": "Reconciling complex causal relationships and synthesizing contradictory evidence in motor imagery research.",
+                  "subtrees": [
+                    {
+                      "description": "EXHAUSTED (no failing answer found; hardest attempt) | Constraint violation via embedded paradox: Force the system to reconcile how motor imagery improves execution precision despite lacking the peripheral sensory error signals that standard motor learning theory requires for refinement.",
+                      "subtrees": 92
+                    },
+                    {
+                      "description": "Require synthesis of negative results and boundary conditions: force the system to identify when motor imagery interventions fail rather than just cataloging successes.",
+                      "subtrees": 204
+                    },
+                    {
+                      "description": "Bidirectional causality trap: exploit that the system can retrieve both (a) M1 activates during imagery and (b) M1 damage impairs imagery, then ask whether M1 is 'the source' of imagery content. A synthesis-strong but reasoning-weak system writes fluently around these facts without catching that activation+necessity \u2260 content generation\u2014the literature establishes higher-order areas (SMA/premotor/parietal) construct representations that M1 receives, but this hierarchical distinction isn't framed as refuting 'M1 as generator.'",
+                      "subtrees": 210
+                    },
+                    {
+                      "description": "Require reconciliation of a paradox: force the system to explain why improving training data quality can sometimes INCREASE hallucinations, which contradicts the intuitive premise and requires synthesizing opposing mechanisms that the literature doesn't explicitly connect.",
+                      "subtrees": 239
+                    }
+                  ]
+                },
+                "2": {
+                  "description": "Synthesizing temporal dynamics and recognizing diagnostic constraints through longitudinal analysis",
+                  "subtrees": [
+                    {
+                      "description": "Temporal constraint violation: Ask for diagnostic differentiation at 'initial presentation' that requires data patterns (trajectories, responses) only obtainable through longitudinal monitoring, creating an implicit impossibility the system must recognize rather than answer around.",
+                      "subtrees": 98
+                    },
+                    {
+                      "description": "Temporal paradox requiring cross-mechanism synthesis: exploit the gap between documented slow synaptic plasticity timescales and fast behavioral learning to force reasoning about how rapid credit assignment is implemented.",
+                      "subtrees": 198
+                    }
+                  ]
+                }
+              }
+            },
+            "1": {
+              "description": "Integrating and synthesizing complex causal reasoning and evidence evaluation across interdependent factors and temporal relationships.",
+              "subtrees": {
+                "0": {
+                  "description": "Synthesizing and analyzing complex interdependent causal mechanisms across diverse factors and temporal relationships.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Synthesizing complex causal mechanisms and countervailing explanations across diverse sources and literatures.",
+                      "subtrees": [
+                        {
+                          "description": "Require explaining a puzzling non-event: why a documented outcome that SHOULD occur given cross-national patterns does NOT occur, forcing synthesis of countervailing mechanisms from literatures that don't frame them as a unified explanation for this specific puzzle.",
+                          "subtrees": 60
+                        },
+                        {
+                          "description": "Require explaining a documented trend whose causal mechanism is distributed across sources: skills migration from tech-specialist to general-workforce domains over time, demanding synthesis of historical snapshots into a causal account.",
+                          "subtrees": 126
+                        }
+                      ]
+                    },
+                    "1": {
+                      "description": "Analyzing interdependent causal relationships between trends through multi-step reasoning.",
+                      "subtrees": [
+                        {
+                          "description": "Require identification of causal linkages between trends: force the system to show how trends mutually reinforce rather than just list them independently.",
+                          "subtrees": 179
+                        },
+                        {
+                          "description": "Require multi-step causal reasoning about interaction effects: force the system to explain how one Caribbean rural trend's trajectory depends on or is modulated by another, rather than allowing parallel independent descriptions.",
+                          "subtrees": 202
+                        }
+                      ]
+                    },
+                    "2": {
+                      "description": "Require causal mechanism synthesis across multiple confounded factors (educational access, cultural norms, language barriers, health system factors) where the literature documents associations but does not isolate individual causal contributions, making the question partially unanswerable without overreaching.",
+                      "subtrees": 15
+                    },
+                    "3": {
+                      "description": "Temporal causality paradox: force the system to resolve causal priority in a bidirectional relationship where the literature documents both directions but offers no consensus resolution.",
+                      "subtrees": 191
+                    }
+                  }
+                },
+                "1": {
+                  "description": "Integrating complex causal reasoning and critically evaluating evidence for nuanced understanding and methodological rigor.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Require reasoning about whether cited evidence actually covers the specified exposure level (low-to-moderate), exploiting that most asbestos-COPD studies examine high/historical exposures.",
+                      "subtrees": 167
+                    },
+                    "1": {
+                      "description": "Synthesizing complex causal reasoning and evaluating contradictory evidence for comprehensive understanding and coherent methodology development.",
+                      "subtrees": {
+                        "0": {
+                          "description": "Evaluating contradictory evidence and synthesizing coherent methodologies under embedded constraints.",
+                          "subtrees": {
+                            "0": {
+                              "description": "Embedded constraint that contradicts the core mechanism: require a treatment approach that excludes the defining component of the evidence-based standard, forcing the system to recognize the request is therapeutically incoherent rather than fluently synthesize alternatives.",
+                              "subtrees": 87
+                            },
+                            "1": {
+                              "description": "Evaluating mechanistic substitutions and synthesizing impactful methodologies from fragmented evidence.",
+                              "subtrees": [
+                                {
+                                  "description": "Shift from 'what methods are used' (survey) to 'which methods achieve documented impact' (evaluative synthesis requiring reasoning from scattered evidence of outcomes).",
+                                  "subtrees": 69
+                                },
+                                {
+                                  "description": "Ask whether a process can substitute for another at a mechanistic level that the literature has not resolved\u2014forcing the system to either fabricate shared mechanisms or admit the evidence is missing.",
+                                  "subtrees": 178
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "1": {
+                          "description": "Synthesizing and integrating complex causal reasoning and evidence evaluation for comprehensive understanding of intricate relationships.",
+                          "subtrees": {
+                            "0": {
+                              "description": "Integrating complex causal reasoning and critical evaluation of evidence across diverse contexts to elucidate intricate relationships and policy outcomes.",
+                              "subtrees": {
+                                "0": {
+                                  "description": "Engaging in complex causal reasoning and critical evaluation of evidence to infer relationships and mechanisms across diverse contexts.",
+                                  "subtrees": {
+                                    "0": {
+                                      "description": "Disentangling causal relationships through critical evaluation of evidence and study design",
+                                      "subtrees": {
+                                        "0": {
+                                          "description": "Engaging in complex causal reasoning to disentangle bias interactions and confounding variables from correlational data.",
+                                          "subtrees": [
+                                            {
+                                              "description": "Require causal attribution from correlational evidence: force the system to reason about confounded drivers rather than report observed correlations.",
+                                              "subtrees": 187
+                                            },
+                                            {
+                                              "description": "Require multi-step causal reasoning about bias interactions: force the system to explain why controlling for one bias type doesn't eliminate others, rather than just cataloging bias types.",
+                                              "subtrees": 267
+                                            }
+                                          ]
+                                        },
+                                        "1": {
+                                          "description": "Demand mechanism-level evidence: force distinction between causally validated approaches and merely correlational associations, requiring meta-reasoning about study designs rather than summarizing reported practices.",
+                                          "subtrees": 230
+                                        },
+                                        "2": {
+                                          "description": "Evaluating causal claims and identifying evidence gaps",
+                                          "subtrees": [
+                                            {
+                                              "description": "Require critical evaluation of causal identification: force the system to assess whether its cited studies establish causation (not just correlation) and name the specific threats to validity they fail to address.",
+                                              "subtrees": 183
+                                            },
+                                            {
+                                              "description": "Require epistemic evaluation: demand that the answer distinguish what the cited case reports claim from what level of evidence they actually provide for causality, by naming the missing data types.",
+                                              "subtrees": 219
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    "1": {
+                                      "description": "Require causal reasoning about an interaction effect: ask WHY a documented practice differentially benefits certain soil types, forcing the system to infer the mechanism from separately-documented soil properties rather than retrieve a pre-packaged explanation.",
+                                      "subtrees": 242
+                                    },
+                                    "2": {
+                                      "description": "Require causal reasoning about intellectual influence that isn't explicitly documented: force the system to trace whether IFT concepts causally shaped exploratory search's development or whether they emerged independently, which requires inferring from citation patterns, chronology, and concept adoption rather than retrieving pre-packaged influence claims.",
+                                      "subtrees": 19
+                                    }
+                                  }
+                                },
+                                "1": {
+                                  "description": "Conducting multi-step causal analysis to integrate disparate literature and elucidate complex policy outcomes.",
+                                  "subtrees": [
+                                    {
+                                      "description": "Require multi-step comparative reasoning to extract causal mechanisms that literature documents separately but never directly contrasts: why cartelization succeeded for diamonds but not colored gemstones.",
+                                      "subtrees": 76
+                                    },
+                                    {
+                                      "description": "Multi-step causal reasoning with a policy anchor: require explaining why a specific, named policy failed to achieve compliance, when the literature documents the policy and documents the outcome but does not pre-package the causal chain connecting them.",
+                                      "subtrees": 240
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "1": {
+                              "description": "Synthesizing causal mechanisms and verifying prerequisite conditions for comprehensive understanding.",
+                              "subtrees": [
+                                {
+                                  "description": "Hidden necessity condition: Require identifying and verifying an anatomical prerequisite for causation that case reports may not document despite claiming association.",
+                                  "subtrees": 102
+                                },
+                                {
+                                  "description": "Shift from existence proof to causal explanation: require synthesis of WHY underreporting persists (mechanistic barriers) rather than THAT it exists (documented examples).",
+                                  "subtrees": 241
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "description": "Reconciling and synthesizing complex frameworks through critical analysis, multi-domain reasoning, and comparative evaluation.",
+          "subtrees": {
+            "0": {
+              "description": "Synthesizing insights and optimizing decision-making through comparative analysis of complex scenarios.",
+              "subtrees": {
+                "0": {
+                  "description": "Evaluating complex trade-offs and optimizing decision contexts through comparative reasoning.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Conducting complex comparative evaluations and multi-dimensional trade-off analyses across diverse contexts and objectives.",
+                      "subtrees": {
+                        "0": {
+                          "description": "Engaging in complex multi-dimensional trade-off analysis across competing objectives and varying contexts.",
+                          "subtrees": [
+                            {
+                              "description": "Require multi-dimensional trade-off reasoning: force the system to identify when prompt engineering provides minimal marginal value by reasoning across tool architectures (completion vs. chat vs. autonomous agents), task types, and user skill levels\u2014a synthesis no single source performs.",
+                              "subtrees": 22
+                            },
+                            {
+                              "description": "Multi-step reasoning with competing objectives: force the system to analyze tradeoffs between extraction methods for a constrained scenario rather than merely listing them.",
+                              "subtrees": 31
+                            }
+                          ]
+                        },
+                        "1": {
+                          "description": "Require comparative evaluation across contexts: force multi-dimensional tradeoff reasoning that isn't pre-packaged in any single source.",
+                          "subtrees": 67
+                        }
+                      }
+                    },
+                    "1": {
+                      "description": "Require reasoning about tradeoffs between competing forecast objectives (track, intensity, lead time) that cannot be simultaneously optimized, forcing the system to identify which improvement matters for a specific decision context rather than surveying all improvements generically.",
+                      "subtrees": 73
+                    }
+                  }
+                },
+                "1": {
+                  "description": "Synthesizing cross-context insights and identifying edge-case failures in employer branding strategies.",
+                  "subtrees": [
+                    {
+                      "description": "Require edge-case reasoning about when standard approaches fail: force the system to identify contexts where employer branding backfires and explain why, rather than surveying approaches that work.",
+                      "subtrees": 133
+                    },
+                    {
+                      "description": "Force cross-context reasoning where the literature exists in separate silos: require synthesis of employer-brand approaches for a labor-market context (low-information, high-turnover, hourly/contingent workers) that EB research rarely addresses, while avoiding the standard high-skill professional focus. The system must reason about which approaches transfer vs. fail when candidates cannot or will not evaluate detailed brand signals.",
+                      "subtrees": 229
+                    }
+                  ]
+                }
+              }
+            },
+            "1": {
+              "description": "Reconciling conflicting principles through critical analysis and reasoning about framework limitations under constraints.",
+              "subtrees": {
+                "0": {
+                  "description": "Require reasoning about framework limitations under constraint: force the system to address what happens when the TBL's three pillars conflict, exposing that the framework offers no prioritization mechanism and that this is an unresolved problem in practice.",
+                  "subtrees": 72
+                },
+                "1": {
+                  "description": "Reconciling complex design conflicts through critical analysis and synthesis of competing principles and implicit tradeoffs.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Force reconciliation of competing design principles: require synthesis of employer-brand approaches that balance two goals documented as separate best practices but creating inherent tension (authenticity/realism vs aspirational appeal), where the literature does not resolve the tradeoff or specify when to prioritize each.",
+                      "subtrees": 88
+                    },
+                    "1": {
+                      "description": "Analyzing and articulating fundamental design conflicts between principles without relying on superficial solutions.",
+                      "subtrees": [
+                        {
+                          "description": "Require identification of an inherent tension with no complete solution: force the system to argue why certain design goals conflict at a fundamental level, which cannot be answered by listing techniques that claim to solve both.",
+                          "subtrees": 91
+                        },
+                        {
+                          "description": "Require identification and resolution of a documented tension between two design principles that literature treats separately.",
+                          "subtrees": 136
+                        }
+                      ]
+                    },
+                    "2": {
+                      "description": "Require reasoning about implicit tradeoffs between separately-documented design objectives: the system must recognize that optimizing one well-studied riser property (e.g., flexibility for deepwater installation) inherently worsens another (e.g., VIV susceptibility, fatigue resistance) even though no single source frames this as a direct conflict.",
+                      "subtrees": 20
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "description": "Synthesizing interdisciplinary insights through multi-step reasoning and counterfactual analysis to evaluate complex interactions and reconcile conflicting frameworks.",
+              "subtrees": {
+                "0": {
+                  "description": "Evaluating measurement validity and synthesizing contradictory effects into a unified framework",
+                  "subtrees": [
+                    {
+                      "description": "Require synthesis of contradictory documented effects into a unified conditional framework: force the system to specify when geopolitical risk reduces vs. increases trade, which requires reasoning beyond retrieving separate findings.",
+                      "subtrees": 24
+                    },
+                    {
+                      "description": "Require meta-level reasoning about measurement validity: force the system to evaluate whether geopolitical-risk indices conflate distinct mechanisms and whether that conflation explains heterogeneous trade findings, which requires critique of the literature's own independent variable rather than synthesizing its results.",
+                      "subtrees": 25
+                    }
+                  ]
+                },
+                "1": {
+                  "description": "Require synthesis across conflicting disciplinary framings: force the system to reconcile material-science claims about intrinsic properties with behavioral-economics findings about subjective valuation and constructed scarcity.",
+                  "subtrees": 75
+                },
+                "2": {
+                  "description": "Require synthesis across clearly disjoint literatures (actuarial pension modeling + UEMOA macroeconomic constraints + civil service labor market) and multi-step reasoning about how their interaction defines viability differently than in a non-constrained context.",
+                  "subtrees": 10
+                },
+                "3": {
+                  "description": "Counterfactual reasoning requiring synthesis across disjoint literatures: force the system to separate transparency-dependent problems from inherent technical barriers by reasoning about a hypothetical full-disclosure scenario not analyzed in any source.",
+                  "subtrees": 83
+                }
+              }
+            },
+            "3": {
+              "description": "Reconciling conflicting theoretical frameworks and empirical evidence through synthesis and evaluation of diverse research paradigms.",
+              "subtrees": [
+                {
+                  "description": "Require synthesis across conflicting methodological paradigms: force reconciliation of participatory action research (community-controlled) vs. external documentation (researcher-validated) approaches to traditional knowledge, whose contradictory assumptions the literature presents separately but does not resolve for this specific case.",
+                  "subtrees": 9
+                },
+                {
+                  "description": "Require reconciliation of implicit disciplinary conflict: force the system to explain how IFT's optimality assumptions (resource-maximizing, clear utility functions) conflict with exploratory search's sensemaking framing (evolving goals, no fixed utility), and what this means for applying both to the same scenario.",
+                  "subtrees": 18
+                },
+                {
+                  "description": "Constraint violation: Force distinction between theoretical cryptographic proposals and empirically-validated deployments for this specific application, exploiting the gap between what papers propose and what they demonstrate.",
+                  "subtrees": 109
+                },
+                {
+                  "description": "Constraint requiring synthesis of a documented-but-unresolved trade-off: force the system to address whether data interventions that improve faithfulness simultaneously harm abstractiveness, using evidence from papers that study these dimensions separately.",
+                  "subtrees": 184
+                },
+                {
+                  "description": "Require synthesis across conflicting operationalizations plus evaluation of measurement validity: force the system to reconcile different research traditions that define 'intentionality' incompatibly (e.g., self-directed learning, academic purpose, mindful engagement) and then reason about which operationalization best captures intentional undergraduate behavior given conflicting psychometric evidence.",
+                  "subtrees": 232
+                }
+              ]
+            },
+            "4": {
+              "description": "Synthesizing and evaluating complex comparative frameworks through multi-domain reasoning and contextual analysis.",
+              "subtrees": {
+                "0": {
+                  "description": "Evaluating scalability through multi-domain reasoning and contextual analysis",
+                  "subtrees": {
+                    "0": {
+                      "description": "Integrating multi-domain reasoning and simultaneous multi-dimensional analysis under contextual constraints",
+                      "subtrees": [
+                        {
+                          "description": "Embed a context constraint that requires simultaneous reasoning across multiple dimensions (cost, sourcing, technical feasibility) that papers discuss separately but never synthesize under this specific scenario. The 'zero external funding' constraint forces prioritization the literature doesn't provide.",
+                          "subtrees": 196
+                        },
+                        {
+                          "description": "Cross-constraint synthesis: Require justifying one solution approach (biomimicry) over an alternative (open innovation) using distributed criteria from multiple independent topics in the seed (production complexity, disaster resilience, efficiency). This forces multi-domain reasoning rather than parallel retrieval.",
+                          "subtrees": 215
+                        }
+                      ]
+                    },
+                    "1": {
+                      "description": "Embed a constraint (high-throughput manufacturing) that shifts the answer from well-studied lab demonstrations to under-studied scalability problems, requiring the system to distinguish proof-of-concept from production-readiness rather than just survey applications.",
+                      "subtrees": 222
+                    }
+                  }
+                },
+                "1": {
+                  "description": "Synthesizing evaluative frameworks to justify comparative approaches in complex contexts.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Embed a comparative constraint requiring justification of one approach over another, forcing evaluation rather than enumeration. The question must synthesize disaster-resilience requirements with innovation-paradigm tradeoffs, which are separately documented but never assembled for this application.",
+                      "subtrees": 194
+                    },
+                    "1": {
+                      "description": "Synthesizing complex, context-dependent evaluations across conflicting frameworks.",
+                      "subtrees": {
+                        "0": {
+                          "description": "Require synthesis across contexts where the same process has opposite carbon-budget implications, forcing the system to reason about perspective-dependence rather than survey a single domain.",
+                          "subtrees": 206
+                        },
+                        "1": {
+                          "description": "Synthesizing across conflicting evaluation frameworks and incompatible problem framings.",
+                          "subtrees": [
+                            {
+                              "description": "Require synthesis across incompatible problem framings: force the system to recognize that cited sources define the XAI problem in mutually exclusive ways, not just list different approaches.",
+                              "subtrees": 128
+                            },
+                            {
+                              "description": "Require synthesis across conflicting evaluation frameworks (biological, engineering, socioeconomic) that existing papers apply in isolation but never reconcile against each other.",
+                              "subtrees": 227
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "5": {
+              "description": "Evaluating feasibility and reconciling conflicting perspectives in complex problem spaces.",
+              "subtrees": [
+                {
+                  "description": "Require synthesis of an inherent tension: force the system to explain how smart-city technologies both enable AND undermine sustainable tourism goals, reconciling sources that rarely acknowledge this bidirectionality in a single framework.",
+                  "subtrees": 28
+                },
+                {
+                  "description": "Require constraint-checking across disjoint problem spaces: force the system to evaluate whether proposed smart-tourism solutions are feasible given Iran's documented technological/infrastructural constraints, which the literature presents separately without cross-validation.",
+                  "subtrees": 29
+                }
+              ]
+            },
+            "6": {
+              "description": "Integrating diverse perspectives and synthesizing complex, comparative analyses across siloed research domains.",
+              "subtrees": {
+                "0": {
+                  "description": "Synthesizing conflicting stakeholder perspectives and interests to evaluate trade-offs among competing priorities.",
+                  "subtrees": [
+                    {
+                      "description": "Require synthesis across conflicting stakeholder interests: force evaluation of which TBL pillar MNEs systematically sacrifice when the three conflict, rather than describing harmonious integration.",
+                      "subtrees": 51
+                    },
+                    {
+                      "description": "Require synthesis across conflicting stakeholder perspectives and their underlying incentive structures, rather than a single-lens factor enumeration.",
+                      "subtrees": 65
+                    }
+                  ]
+                },
+                "1": {
+                  "description": "Require cross-study synthesis that the literature's siloed structure prevents: ask which ESG pillar (E, S, or G) has the largest effect on each of the three indices (FDI, FII, FMI), when existing studies examine pillars and indices separately rather than comparatively.",
+                  "subtrees": 116
+                }
+              }
+            }
+          }
+        },
+        "5": {
+          "description": "Conducting intersectional and complex quantitative analyses to identify and address reporting gaps.",
+          "subtrees": {
+            "0": {
+              "description": "Identifying theoretical gaps and navigating complexities through rigorous quantitative and analytical inquiry.",
+              "subtrees": {
+                "0": {
+                  "description": "Navigating complex reasoning and identifying research gaps through rigorous analysis and design.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Identifying research gaps through complex scenario analysis and rigorous experimental design.",
+                      "subtrees": {
+                        "0": {
+                          "description": "Targeting methodological gaps and isolating causal contributions through rigorous experimental design.",
+                          "subtrees": {
+                            "0": {
+                              "description": "Isolating unanswerable causal contributions through rigorous experimental design and addressing confounding variables.",
+                              "subtrees": {
+                                "0": {
+                                  "description": "Isolating causal relationships through the demand for experimental evidence beyond current research limitations",
+                                  "subtrees": [
+                                    {
+                                      "description": "Make the question unanswerable by requiring causal isolation that current research hasn't established: ask which of multiple documented factors causally dominates when the literature provides only correlational evidence without controlled comparisons.",
+                                      "subtrees": 66
+                                    },
+                                    {
+                                      "description": "Make the question unanswerable by requiring experimental evidence that doesn't exist: ask for the isolated causal effect of one bias type with all other biases experimentally eliminated (not statistically controlled).",
+                                      "subtrees": 134
+                                    }
+                                  ]
+                                },
+                                "1": {
+                                  "description": "Force acknowledgment of categorical unanswerable claim due to heterogeneity that prevents aggregation: the question asks for a single likelihood but the exposure/occupation/outcome definitions are too variable across studies to produce one.",
+                                  "subtrees": 122
+                                },
+                                "2": {
+                                  "description": "Make the question unanswerable by asking for a specific causal mechanism that current Caribbean rural research has not established, despite documenting related correlational patterns.",
+                                  "subtrees": 135
+                                },
+                                "3": {
+                                  "description": "Unanswerable via missing causal isolation: ask about the specific causal contribution of a single forecast component when no study cleanly varies only that component while holding everything else constant.",
+                                  "subtrees": 74
+                                },
+                                "4": {
+                                  "description": "Make the question unanswerable by requiring causal isolation that current research has not established: force the system to identify the causal contribution of prompt engineering skill versus other confounded factors (base tool capability, user expertise, task selection) that existing observational studies of AI coding tools do not cleanly separate.",
+                                  "subtrees": 23
+                                },
+                                "5": {
+                                  "description": "Make the question unanswerable by asking for causal mechanisms that current research has not cleanly isolated: the effect of mandatory ESG disclosure on actual resource allocation vs. greenwashing.",
+                                  "subtrees": 52
+                                },
+                                "6": {
+                                  "description": "Unanswerable causality + conflicting evidence: Ask for the isolated causal effect of a consensus design choice where studies compare outcomes but don't control confounds, and where the question's framing assumes a clean answer exists.",
+                                  "subtrees": 37
+                                },
+                                "7": {
+                                  "description": "Make the question unanswerable by requiring causal isolation that current research does not provide. Ask for the specific causal contribution of ONE data intervention method to ONE hallucination type, with all confounds controlled\u2014a study design that doesn't exist in the literature.",
+                                  "subtrees": 168
+                                }
+                              }
+                            },
+                            "1": {
+                              "description": "Make the question unanswerable by targeting a methodological gap: ask whether conformal prediction can provide valid coverage for causal graph uncertainty, which is outside conformal prediction's current scope (it covers predictions, not structural inference).",
+                              "subtrees": 177
+                            }
+                          }
+                        },
+                        "1": {
+                          "description": "Make the question unanswerable by targeting a clinical scenario at the intersection of two conditions where direct comparative evidence doesn't exist, forcing the system to recognize the research gap rather than synthesize from separate literatures.",
+                          "subtrees": 142
+                        }
+                      }
+                    },
+                    "1": {
+                      "description": "Navigating conceptual complexities and addressing reasoning inconsistencies in research analysis",
+                      "subtrees": {
+                        "0": {
+                          "description": "Navigating conceptual ambiguities and measurement inconsistencies in comparative research analysis",
+                          "subtrees": [
+                            {
+                              "description": "Measurement heterogeneity trap: ask a comparative question ('which is fastest?') that requires commensurable metrics, when the literature uses incompatible poverty definitions, timescales, and baselines \u2014 the system can retrieve individual study results but lacks the reasoning to recognize they are non-comparable or to normalize them.",
+                              "subtrees": 93
+                            },
+                            {
+                              "description": "Force disambiguation of an ambiguous criterion: make the question hinge on 'teacher effectiveness' without defining it, exposing that cited studies operationalize this differently and their findings cannot be directly compared.",
+                              "subtrees": 100
+                            }
+                          ]
+                        },
+                        "1": {
+                          "description": "Recognizing and addressing circular reasoning and construct ambiguity in research questions.",
+                          "subtrees": [
+                            {
+                              "description": "Exploit construct ambiguity: 'organized thinking' is not a standard psychometric term. Require the system to recognize it maps to multiple possible constructs (executive function, fluid reasoning, planning, cognitive style) each with separate questionnaires, AND specify which has concurrent validity evidence against a named external criterion. A survey-strong system will retrieve a plausible match (e.g., EF questionnaire) and present it as THE answer without recognizing the term is under-specified or checking for the specific validity evidence requested.",
+                              "subtrees": 34
+                            },
+                            {
+                              "description": "Measurement circularity trap: ask a question whose standard answers involve circular reasoning where the independent variable (employer brand strength) is operationalized using the dependent variable (talent outcomes), forcing the system to recognize the tautology.",
+                              "subtrees": 231
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                "1": {
+                  "description": "Identifying theoretical gaps and navigating empirical complexities through quantitative inquiry.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Navigating epistemic complexities through precise quantitative inquiry and recognizing fundamental mismatches in empirical validation.",
+                      "subtrees": [
+                        {
+                          "description": "Make the question unanswerable by requesting empirical validation of a phenomenological claim, which commits a category error that requires recognizing the fundamental epistemic mismatch between phenomenological description and empirical falsification.",
+                          "subtrees": 46
+                        },
+                        {
+                          "description": "Require quantitative precision that current research has not resolved: ask for a specific numerical growth rate compatible with planetary boundaries, which no consensus study provides, forcing the system to either invent a number or correctly acknowledge the question's unanswerable precision.",
+                          "subtrees": 159
+                        }
+                      ]
+                    },
+                    "1": {
+                      "description": "Identifying and addressing gaps in theoretical frameworks and empirical literature.",
+                      "subtrees": {
+                        "0": {
+                          "description": "Identifying literature gaps through targeted empirical claims and unmeasured dataset properties",
+                          "subtrees": [
+                            {
+                              "description": "Make the question unanswerable by targeting a specific empirical claim that current research has not established, forcing the system to recognize the literature gap rather than synthesize adjacent work.",
+                              "subtrees": 42
+                            },
+                            {
+                              "description": "Make the question unanswerable by asking about a dataset property that existing work has not systematically measured or compared, forcing the system to recognize the literature gap rather than synthesize a false answer.",
+                              "subtrees": 139
+                            }
+                          ]
+                        },
+                        "1": {
+                          "description": "Unanswerable question about a specific mechanism Luhmann never addressed: force the system to recognize the gap in Luhmann's own writings rather than synthesize from secondary applications.",
+                          "subtrees": 141
+                        },
+                        "2": {
+                          "description": "Recognizing and addressing gaps in critical information and presupposed tools to formulate substantive responses.",
+                          "subtrees": [
+                            {
+                              "description": "Make the question unanswerable by presupposing a tool that doesn't exist, requiring the system to recognize the gap rather than retrieve a plausible partial match.",
+                              "subtrees": 33
+                            },
+                            {
+                              "description": "Make the question unanswerable by omitting critical information needed to provide a substantive answer, forcing the system to recognize what's missing rather than fill the void with generic content.",
+                              "subtrees": 63
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "1": {
+              "description": "Target an intersectional reporting gap not covered by existing audits: ask about race/ethnicity \u00d7 another demographic axis (e.g., disability, rural/urban status) where the literature documents each axis separately but lacks systematic evidence of their joint reporting, forcing the system to recognize the question is unanswerable rather than synthesizing from the single-axis literature.",
+              "subtrees": 153
+            }
+          }
+        },
+        "6": {
+          "description": "Synthesizing and critically evaluating complex information to identify misleading premises and validate methodological rigor across diverse contexts.",
+          "subtrees": {
+            "0": {
+              "description": "False historical claim requiring primary-source verification: assert that Popper explicitly classified feminism as pseudoscience, forcing the system to distinguish what Popper himself wrote from later applications of falsificationism to feminism.",
+              "subtrees": 55
+            },
+            "1": {
+              "description": "Integrating complex reasoning and validating methodological rigor while reconciling disjoint evidence and addressing conceptual misattributions.",
+              "subtrees": {
+                "0": {
+                  "description": "False premise embedded in conjunction: presume that reducing oil/gas dependence uniformly advances environmental sustainability, which ignores documented tradeoffs (lifecycle emissions of renewables/storage, land use, critical-mineral extraction, transition infrastructure). The literature contains both 'renewables = cleaner' and 'renewables have environmental costs' as separate threads, but reconciling them into a challenge of the premise requires reasoning across disjoint evidence.",
+                  "subtrees": 27
+                },
+                "1": {
+                  "description": "Integrating complex reasoning, validating methodological rigor, and correcting conceptual misattributions in research analysis.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Evaluating the validity of self-reported measures and addressing methodological inconsistencies in research design.",
+                      "subtrees": [
+                        {
+                          "description": "False premise via methodological contradiction: require binary response format while claiming it maximizes construct validity, which contradicts psychometric principles documented separately in the corpus.",
+                          "subtrees": 35
+                        },
+                        {
+                          "description": "False presupposition about measurement validity: embed the assumption that self-reported digital competence validly predicts classroom practice, forcing the system to either accept flawed evidence or recognize the attitude-behavior gap that undermines survey-based claims.",
+                          "subtrees": 127
+                        }
+                      ]
+                    },
+                    "1": {
+                      "description": "Reconciling complex causal relationships and contextual evidence in research reasoning.",
+                      "subtrees": [
+                        {
+                          "description": "False premise via conflating knowledge-of-methods with causal-effect-of-knowledge-on-behavior. The Vietnamese phrasing can remain (testing cross-lingual retrieval) while the reasoning trap targets the distinction between measuring existing knowledge versus proving that knowledge interventions causally reduce unintended pregnancies - two concepts that literature addresses separately but whose conflation creates a premise no source explicitly refutes.",
+                          "subtrees": 14
+                        },
+                        {
+                          "description": "False causal premise via inverted research trajectory: presuppose that demonstrated success of the full combination led to its widespread adoption, when the evidence pattern shows the opposite (partial combinations work adequately, so the full set remains untested).",
+                          "subtrees": 96
+                        },
+                        {
+                          "description": "False premise requiring reconciliation of context-dependent evidence: Assert a universal causal claim (infrastructure \u2192 poverty reduction) that ignores documented heterogeneity and negative cases.",
+                          "subtrees": 137
+                        }
+                      ]
+                    },
+                    "2": {
+                      "description": "False premise via misattribution of a foundational concept: attribute estado ampliado to the wrong theorist (Poulantzas instead of Gramsci), forcing the system to catch the error while engaging the substance.",
+                      "subtrees": 8
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "description": "False premise via misapplied cross-domain mechanism: embed a conjunction that borrows a well-documented mechanism (real-options investment delay under uncertainty) from FDI literature and incorrectly applies it to trade flows, where the documented pattern contradicts it (immediate shocks, not gradual delay).",
+              "subtrees": 26
+            },
+            "3": {
+              "description": "Synthesizing and critically evaluating quantitative relationships between documented facts to identify and challenge false premises in agricultural research.",
+              "subtrees": [
+                {
+                  "description": "False premise requiring quantitative reasoning: embed the assumption that foliar nitrogen can replace soil fertilization to meet total crop N demand in field tomatoes. The system must recognize that foliar uptake rates (typically 1-5 kg N/ha per application) are orders of magnitude below total crop demand (~150-250 kg N/ha for commercial yield), making substitution quantitatively impossible. This requires synthesizing separately-documented facts (foliar uptake efficiency, total N requirement) and performing a calculation the literature never explicitly does.",
+                  "subtrees": 170
+                },
+                {
+                  "description": "False premise via conjunction of separately-documented facts: embed the claim that high nitrogen rates simultaneously maximize both early yield and fruit sugar content, which contradicts the documented yield-quality tradeoff in tomato production.",
+                  "subtrees": 199
+                }
+              ]
+            },
+            "4": {
+              "description": "Synthesizing and critically evaluating complex and conflicting information to identify misleading premises and assess tradeoffs.",
+              "subtrees": {
+                "0": {
+                  "description": "Synthesizing and critically analyzing conflicting information to identify false premises and evaluate tradeoffs.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Evaluating and reconciling conflicting information through critical analysis and recognition of tradeoffs.",
+                      "subtrees": {
+                        "0": {
+                          "description": "Analyzing and refuting misleading causal claims through critical evaluation of evidence and integration of contradictory information.",
+                          "subtrees": {
+                            "0": {
+                              "description": "Integrating contradictory evidence and reasoning through complex premise analysis.",
+                              "subtrees": {
+                                "0": {
+                                  "description": "False premise via conjunction: embed a physically false claim (synthetic diamonds have lower refractive index) with a real market phenomenon (price discount), where no source links them because the linkage is nonsensical, forcing the system to reason rather than retrieve.",
+                                  "subtrees": 77
+                                },
+                                "1": {
+                                  "description": "Constructing and analyzing complex premises through the integration of contradictory evidence and cross-linguistic insights.",
+                                  "subtrees": {
+                                    "0": {
+                                      "description": "Synthesizing and analyzing cross-linguistic and disparate evidence to identify false premises in research methodologies.",
+                                      "subtrees": {
+                                        "0": {
+                                          "description": "Conflating and synthesizing disparate evidence to uncover false premises in research methodologies.",
+                                          "subtrees": {
+                                            "0": {
+                                              "description": "Synthesizing contradictory information from separate domains to identify false premises.",
+                                              "subtrees": [
+                                                {
+                                                  "description": "False premise via conjunction: embed two separately-documented facts that contradict each other when combined, requiring the system to synthesize across domains (robot capabilities + manufacturing systems) to detect the inconsistency.",
+                                                  "subtrees": 38
+                                                },
+                                                {
+                                                  "description": "False premise via conjunction of separately-documented facts: embed a claim that combines two individually-documented truths in a way that creates a contradiction no single source addresses.",
+                                                  "subtrees": 41
+                                                }
+                                              ]
+                                            },
+                                            "1": {
+                                              "description": "False conjunction: Embed a premise that conflates evidence types discussed in research methodology (primary experimental data, peer review assessments) with what fact-verification datasets actually contain (published abstracts/claims), exploiting that these are documented separately.",
+                                              "subtrees": 95
+                                            }
+                                          }
+                                        },
+                                        "1": {
+                                          "description": "False premise via conjunction of separately-documented facts, combined with cross-language challenge (Indonesian question, English corpus).",
+                                          "subtrees": 164
+                                        }
+                                      }
+                                    },
+                                    "1": {
+                                      "description": "Constructing incoherent premises through the embedding of mutually exclusive terms and separately-true facts.",
+                                      "subtrees": [
+                                        {
+                                          "description": "False conjunction: embed separately-true facts into an incoherent premise that the literature never explicitly refutes because no one proposes it.",
+                                          "subtrees": 104
+                                        },
+                                        {
+                                          "description": "False premise via technical contradiction: embed mutually exclusive technical terms whose incompatibility is definitional but not explicitly stated as a refutation in the corpus.",
+                                          "subtrees": 107
+                                        }
+                                      ]
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "1": {
+                              "description": "Identifying and debunking false causal claims through critical analysis of established relationships and evidence gaps.",
+                              "subtrees": [
+                                {
+                                  "description": "False premise via conjunction of separately-documented facts: assert that a documented physical property (moisture buffering) causally drives a contradictory outcome (higher embodied carbon) when the literature documents both properties independently but never links them because they're mechanistically unrelated.",
+                                  "subtrees": 1
+                                },
+                                {
+                                  "description": "False premise via conjunction of separately-documented pathophysiology: embed a causal claim that inverts the actual relationship between well-documented mechanisms, requiring the system to catch that the premise contradicts the established causal direction.",
+                                  "subtrees": 3
+                                },
+                                {
+                                  "description": "False premise via conjunction: assert a specific causal success (IoT-enabled carbon reduction in tourism) that combines separately-documented facts (smart-city pilots exist; carbon is a goal) into a claim the literature has not validated, forcing the system to recognize the evidence gap rather than synthesize around it.",
+                                  "subtrees": 30
+                                },
+                                {
+                                  "description": "False premise requiring causal reasoning: embed an assertion that conflates correlation with causation in a way content marketing literature frequently does but doesn't explicitly debunk, forcing the system to recognize the absence of controlled evidence.",
+                                  "subtrees": 71
+                                },
+                                {
+                                  "description": "False premise via conjunction of separately-documented facts: embed a causal claim that links documented concepts (certification, burnout, autonomy) in a way that conflates distinct constructs and asserts an undocumented mechanism.",
+                                  "subtrees": 172
+                                }
+                              ]
+                            },
+                            "2": {
+                              "description": "False premise via mechanically plausible but causally incorrect conjunction: assert that a design change (increased wall thickness) controls VIV through a mechanism (structural damping) that exists but is NOT the dominant pathway, when the true mechanism (mass ratio and natural frequency shift) is separately documented but not framed as refuting this damping-centric claim.",
+                              "subtrees": 21
+                            },
+                            "3": {
+                              "description": "False premise via conjunction: combine separately-documented facts (Mg as Na-K-ATPase cofactor + hypomagnesemia's cellular effects) into a mechanistically incorrect causal claim (hypomagnesemia \u2192 hyperkalemia) that requires tracing the actual directional pathway to refute.",
+                              "subtrees": 169
+                            }
+                          }
+                        },
+                        "1": {
+                          "description": "False premise via contradictory conjunction: assert that biomimetic blade design minimizes both manufacturing complexity and maximizes aerodynamic efficiency for small wind turbines, when the seed explicitly identifies these as conflicting goals ('efficient design makes production very complex'). The system must recognize the tradeoff rather than retrieve supporting literature for each half separately.",
+                          "subtrees": 143
+                        }
+                      }
+                    },
+                    "1": {
+                      "description": "Identifying and challenging false premises through the synthesis and reconciliation of conflicting information from diverse sources.",
+                      "subtrees": {
+                        "0": {
+                          "description": "Synthesizing and reconciling conflicting information from disparate sources to identify and challenge false premises in complex research contexts.",
+                          "subtrees": [
+                            {
+                              "description": "False premise via conjunction: assert that conformal contact enables sub-10nm resolution, when conformal/elastic contact actually limits resolution and sub-10nm requires non-conformal methods. The contradiction requires synthesizing two separately-documented facts.",
+                              "subtrees": 148
+                            },
+                            {
+                              "description": "False premise via conflation of separately-documented capabilities: assert that a cryptographic primitive (homomorphic encryption) solves a problem (auditability/explainability) that it actually makes harder, exploiting that the system can retrieve HE-for-credit-scoring and model-interpretability literature separately without encountering a source that explicitly frames this tension.",
+                              "subtrees": 154
+                            }
+                          ]
+                        },
+                        "1": {
+                          "description": "False premise via conflation: assert that the Hershberger assay was discontinued due to metabolic-interference false positives, when in fact (a) it remains in current use (OECD 441) and (b) metabolic interference is a documented issue in other contexts but not the reason for its 'abandonment.'",
+                          "subtrees": 158
+                        }
+                      }
+                    }
+                  }
+                },
+                "1": {
+                  "description": "Synthesizing complex evidence to critically evaluate and refute misleading premises through multi-faceted reasoning.",
+                  "subtrees": [
+                    {
+                      "description": "False premise via conjunction: the question implies concrete alkalinity benefits coral skeleton formation, but retrievable facts when properly reasoned show that while concrete IS alkaline and corals DO need alkalinity for calcification, EXCESSIVE alkalinity (pH >9) from fresh concrete is actually stressful and must be weathered down. The system must catch this rather than fluently confirming the premise.",
+                      "subtrees": 155
+                    },
+                    {
+                      "description": "False premise requiring multi-step refutation: embed the assumption that leached DOC has uniform mineralization kinetics across receiving waters, then ask if this makes leaching a predictable carbon loss. Refutation requires synthesizing evidence that mineralization rates vary by orders of magnitude (stream vs. lake vs. wetland residence time, lability, redox), which the literature documents separately but not as a packaged refutation of this premise.",
+                      "subtrees": 186
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "7": {
+          "description": "Integrating and reconciling complex theoretical frameworks, interdependencies, and analytical ambiguities in multifaceted research contexts.",
+          "subtrees": {
+            "0": {
+              "description": "Reconciling scale discrepancies and distinguishing temporal performance metrics for comprehensive ecosystem evaluation.",
+              "subtrees": [
+                {
+                  "description": "Temporal reasoning trap: force recognition that short-term substrate performance metrics contradict long-term ecosystem integration outcomes, requiring the system to distinguish between immediate survival versus multi-year success criteria that the literature measures separately.",
+                  "subtrees": 110
+                },
+                {
+                  "description": "Exploit spatial/temporal scale mismatch: force the system to reconcile measurements made at incompatible scales rather than assume they are directly comparable.",
+                  "subtrees": 115
+                }
+              ]
+            },
+            "1": {
+              "description": "Integrating complex reasoning to discern relationships, mechanisms, and theoretical frameworks in multifaceted phenomena.",
+              "subtrees": {
+                "0": {
+                  "description": "Recognizing and contrasting distinct mechanisms and failure modes in superficially similar phenomena.",
+                  "subtrees": [
+                    {
+                      "description": "False mechanistic equivalence: assert that two superficially similar phenomena in the same system are 'the same underlying mechanism' when they are actually distinct processes that the literature discusses separately but never explicitly contrasts because no one conflates them.",
+                      "subtrees": 117
+                    },
+                    {
+                      "description": "False equivalence via plausible-but-orthogonal problem framing: assert both methods address the same challenge, requiring the system to recognize they target fundamentally different failure modes despite superficial similarity.",
+                      "subtrees": 120
+                    }
+                  ]
+                },
+                "1": {
+                  "description": "Reconciling complex biological relationships through context-dependent reasoning and compatibility analysis.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Reconciling complex relationships and identifying context-dependent reversals in research literature.",
+                      "subtrees": [
+                        {
+                          "description": "Boundary conditions requiring identification of context-dependent reversals: force the system to find when a well-established positive relationship fails or inverts, then explain why via moderators the literature doesn't directly compare.",
+                          "subtrees": 94
+                        },
+                        {
+                          "description": "Implicit false dichotomy between two concepts that literature actually reconciles, forcing the system to recognize compatibility rather than choose sides.",
+                          "subtrees": 188
+                        }
+                      ]
+                    },
+                    "1": {
+                      "description": "Embed a biological constraint (Dale's principle) that forces reasoning about compatibility rather than retrieval of existing reconciliation discussions.",
+                      "subtrees": 197
+                    }
+                  }
+                },
+                "2": {
+                  "description": "Exploit category confusion: force recognition that ToE is a specification/goal while string theory is a candidate framework, making direct prediction-comparison incoherent.",
+                  "subtrees": 45
+                }
+              }
+            },
+            "2": {
+              "description": "Conducting comprehensive comparative analyses and integrating diverse theoretical perspectives.",
+              "subtrees": {
+                "0": {
+                  "description": "Reconciling theoretical discrepancies and integrating conflicting interpretations.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Expose unresolved theoretical tension: ask how Luhmann reconciles two aspects of his framework that scholars apply inconsistently to cinema, forcing integration rather than retrieval of separate discussions.",
+                      "subtrees": 97
+                    },
+                    "1": {
+                      "description": "Reconciling conflicting theoretical interpretations and explaining underlying disagreements among scholars.",
+                      "subtrees": [
+                        {
+                          "description": "Require reconciliation of conflicting theoretical interpretations: force the system to explain WHY cited scholars diverge in their understanding of estado ampliado rather than just cataloging who uses it.",
+                          "subtrees": 7
+                        },
+                        {
+                          "description": "Require reconciliation of conflicting theoretical positions that stem from an ambiguity in Luhmann's own framework, forcing the system to explain WHY scholars disagree rather than merely report the disagreement.",
+                          "subtrees": 185
+                        }
+                      ]
+                    }
+                  }
+                },
+                "1": {
+                  "description": "Constraint that partitions the literature: require contrastive analysis between Italian-language and English-language research traditions, where answering from only the accessible (English) half constitutes an incomplete answer the system must recognize as such.",
+                  "subtrees": 118
+                }
+              }
+            },
+            "3": {
+              "description": "Analyzing complex interdependencies and limitations in research metrics and requirements",
+              "subtrees": {
+                "0": {
+                  "description": "Evaluating theoretical distinctions and tradeoffs in research contexts",
+                  "subtrees": [
+                    {
+                      "description": "Require theoretical-level evaluation: force the system to assess whether apparent similarities are substantive (shared mechanisms/predictions) or merely superficial (shared terminology/metaphors), which demands reasoning about theoretical commitments rather than listing features.",
+                      "subtrees": 17
+                    },
+                    {
+                      "description": "Require evaluation of necessity versus sufficiency: force the system to distinguish between what is commonly used versus what is functionally required, which demands reasoning about tradeoffs the literature mentions but doesn't resolve.",
+                      "subtrees": 265
+                    }
+                  ]
+                },
+                "1": {
+                  "description": "Precision trap on conjunctive requirements: force the system to distinguish 'uses some of these' from 'uses all five simultaneously,' then require reasoning about why the specific combination is absent if no study exists.",
+                  "subtrees": 243
+                },
+                "2": {
+                  "description": "Require explaining why standard building-physics metrics (like static thermal conductivity) fail to capture performance, forcing the system to identify the limitation rather than just report numbers.",
+                  "subtrees": 0
+                },
+                "3": {
+                  "description": "Embed a constraint that requires distinguishing between two commonly conflated related processes based on an operating requirement that the literature documents separately for each but never directly compares.",
+                  "subtrees": 201
+                }
+              }
+            },
+            "4": {
+              "description": "Conducting comparative analyses of complex, multifaceted theories while recognizing and addressing inherent epistemic inconsistencies.",
+              "subtrees": [
+                {
+                  "description": "Reasoning trap via category error: the question treats 'feminism' as a single testable theory when it spans incompatible epistemic categories (empirical claims, normative frameworks, methodological approaches). The system must recognize this incoherence rather than survey literature as if it were univocal.",
+                  "subtrees": 53
+                },
+                {
+                  "description": "Require comparative structural analysis across disjoint domains: force the system to identify SHARED features that explain why both feminism and psychoanalysis resist unified testability criteria, when no literature explicitly compares them on these grounds.",
+                  "subtrees": 54
+                }
+              ]
+            },
+            "5": {
+              "description": "Reasoning about complex biological relationships and identifying exceptions in universal mechanisms.",
+              "subtrees": {
+                "0": {
+                  "description": "Universal quantification requiring identification of exceptions: Force the system to reason about whether a unified mechanism exists 'across all neurons' or whether the theory is actually fragmented across neuron types, brain regions, and timescales.",
+                  "subtrees": 149
+                },
+                "1": {
+                  "description": "Differentiating and reasoning about complex conditional relationships in distinct biological scenarios.",
+                  "subtrees": {
+                    "0": {
+                      "description": "Require differentiation of two clinically overlapping but pathophysiologically distinct scenarios that literature discusses separately, not comparatively.",
+                      "subtrees": 200
+                    },
+                    "1": {
+                      "description": "Reasoning about conditional relationships and mechanistic distinctions in complex biological systems.",
+                      "subtrees": [
+                        {
+                          "description": "Require conditional discrimination across pathways: force the system to reason about when one metabolic mode dominates another under specific physiological constraints, rather than just describing each mode independently.",
+                          "subtrees": 119
+                        },
+                        {
+                          "description": "Force mechanistic classification: require distinguishing direct molecular interactions from indirect physiological cascades, a distinction the literature describes implicitly but does not categorize explicitly.",
+                          "subtrees": 228
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "6": {
+              "description": "Reconciling conflicting taxonomic frameworks and identifying substantive gaps in research categorization.",
+              "subtrees": [
+                {
+                  "description": "Require reconciliation of incompatible organizing frameworks: force the system to map between reviews that taxonomize wage inequality differently (demographic vs institutional vs occupational), identify gaps that are artifacts of one taxonomy versus substantive across all, and determine what's genuinely understudied versus merely recategorized.",
+                  "subtrees": 49
+                },
+                {
+                  "description": "Require reconciliation of conflicting taxonomies: force the system to explain why different research frameworks define the general-vs-tech skills boundary differently, rather than just presenting one framework.",
+                  "subtrees": 171
+                },
+                {
+                  "description": "Require reconciliation of conflicting taxonomic structures: force the system to explain WHY major frameworks disagree on how to categorize digital teaching competencies rather than just describing each framework separately.",
+                  "subtrees": 235
+                }
+              ]
+            },
+            "7": {
+              "description": "Identifying ambiguities and reconceptualizing analytical frameworks in research studies.",
+              "subtrees": {
+                "0": {
+                  "description": "Reconceptualizing analytical frameworks and reconciling operational inconsistencies across research studies.",
+                  "subtrees": [
+                    {
+                      "description": "Expose inconsistent operationalization: require the system to address that 'hallucination' is measured incompatibly across studies (intrinsic entity errors vs extrinsic factual inconsistency vs inference-based additions), making cross-study synthesis about data interventions incoherent unless it reconciles the definitions.",
+                      "subtrees": 123
+                    },
+                    {
+                      "description": "Change the unit of analysis to create a conceptual mismatch: shift from measuring individual students to measuring institutional intentionality, forcing the system to recognize that most scales operate at the wrong level and reason about aggregation/adaptation challenges not addressed in the literature.",
+                      "subtrees": 129
+                    }
+                  ]
+                },
+                "1": {
+                  "description": "Ambiguity detection: require the system to identify and resolve an unspecified dimension in a superficially-precise statistic, rather than treating it as a retrieval target.",
+                  "subtrees": 173
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "1": {
+      "description": "Conducting nuanced investigations and synthesizing complex analyses across diverse domains.",
+      "subtrees": {
+        "0": {
+          "description": "Engaging in complex analytical reasoning and synthesizing multifaceted information",
+          "subtrees": {
+            "0": {
+              "description": "Engaging in complex analytical reasoning and synthesizing multifaceted information.",
+              "subtrees": [
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 78
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 79
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 80
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 81
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 82
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 84
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 86
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 89
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 112
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 131
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 138
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 145
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 146
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 150
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 151
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 156
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 157
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 161
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 163
+                }
+              ]
+            },
+            "1": {
+              "description": "Engaging in complex analytical reasoning",
+              "subtrees": [
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 101
+                },
+                {
+                  "description": "ALREADY_HARD (seed already hard; no rewrite)",
+                  "subtrees": 106
+                }
+              ]
+            }
+          }
+        },
+        "1": {
+          "description": "Conducting comprehensive and nuanced investigations across diverse research domains.",
+          "subtrees": {
+            "0": {
+              "description": "Conducting comprehensive and nuanced investigations across diverse domains.",
+              "subtrees": [
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 174
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 176
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 182
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 193
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 195
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 207
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 209
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 211
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 212
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 218
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 220
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 221
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 245
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 246
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 247
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 248
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 249
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 250
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 252
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 253
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 254
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 256
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 257
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 258
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 259
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 261
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 262
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 263
+                }
+              ]
+            },
+            "1": {
+              "description": "Conducting comprehensive and nuanced investigations across diverse research domains.",
+              "subtrees": [
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 175
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 203
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 214
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 251
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 255
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 260
+                },
+                {
+                  "description": "seed (no modification)",
+                  "subtrees": 264
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

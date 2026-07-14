@@ -12,12 +12,18 @@ parser.add_argument("--dataset", type = str, required = True, choices = ("MATH",
 parser.add_argument("--tree_path", type = str, required = True)
 
 parser.add_argument("--description_model", type = str, default = "gpt-4o-mini", choices = ("gpt-4o-mini", "claude-opus-4-8", ))
+# The stage-1 annotation file used for LEAF descriptions. Defaults to --description_model
+# (the usual behaviour: leaves reuse that model's capability annotations). Pass e.g.
+# "strategy" to label leaves with a non-LLM annotation (such as the dataset's own field)
+# while internal nodes are still summarised by --description_model.
+parser.add_argument("--leaf_annotation_model", type = str, default = None)
 parser.add_argument("--num_procs", type = int, default = 4)
 args = parser.parse_args()
 
 
 TREE = torch.load(os.path.join("Datasets/{}/EvalTree".format(args.dataset), "{}.bin".format(args.tree_path)), weights_only = False)
-with open("Datasets/{}/EvalTree/stage1-CapabilityAnnotation/[annotation={}].json".format(args.dataset, args.description_model), "r") as fin :
+LEAF_ANNOTATION = args.leaf_annotation_model if args.leaf_annotation_model is not None else args.description_model
+with open("Datasets/{}/EvalTree/stage1-CapabilityAnnotation/[annotation={}].json".format(args.dataset, LEAF_ANNOTATION), "r") as fin :
     CAPABILITIES = json.load(fin)
 
 if args.dataset == "MATH" :

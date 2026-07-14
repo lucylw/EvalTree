@@ -176,7 +176,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     <b>▸ capability node</b> (groups instances) &nbsp;·&nbsp;
     <i>#n leaf</i> = one dataset instance &nbsp;·&nbsp;
     <b>n=</b> instances under a node &nbsp;·&nbsp;
-    <b id="legendMetric">FAIL_RATE</b> = fraction of instances under a node the model FAILED; red = worse
+    <b id="legendMetric">FAIL_RATE</b> = fraction of instances under a node the model FAILED; green = higher failure (capabilities that stump the model)
   </div>
   <ul class="tree" id="tree"></ul>
 </main>
@@ -216,8 +216,8 @@ function metricBadge(node) {
   const span = document.createElement("span");
   span.className = "acc";
   if (m == null) return span;
-  const passRate = (node.scored - node.fail) / node.scored;  // green=more passes, red=more fails
-  const hue = Math.round(120 * passRate);
+  const failRate = node.fail / node.scored;  // green = MORE failures (capabilities that stump the model), red = fewer
+  const hue = Math.round(120 * failRate);
   const pct = Math.round(m.value * 100);
   span.innerHTML =
     '<span class="bar"><span style="width:' + pct + '%;background:hsl(' + hue + ',62%,46%)"></span></span>' +
@@ -365,11 +365,15 @@ def main():
             fail, scored = annotate(tree, results)
             desc_model, annot = describe_tree(tree_path)
             overall = f"{fail}/{scored} = {round(100 * fail / scored) if scored else 0}%"
-            title = f"{eval_model} · tree:{desc_model}"
+            title = f"{eval_model} · leaves:{annot} · tree:{desc_model}"
             header = (f"EvalTree — <b>{eval_model}</b> &nbsp;FAIL_RATE {overall}"
-                      f" &nbsp;<span style='color:var(--muted)'>(descriptions: {desc_model})</span>")
+                      f" &nbsp;<span style='color:var(--muted)'>(leaf labels: {annot} · descriptions: {desc_model})</span>")
             html = build_html(tree, title, header)
-            out = out_dir / f"viewer-{eval_model}-{desc_model}.html"
+            # Include the leaf-annotation source in the filename so different tree
+            # variants (e.g. LLM capability annotations vs. the dataset "strategy"
+            # field) don't overwrite one another.
+            stem = "-".join(p for p in ("viewer", eval_model, annot, desc_model) if p)
+            out = out_dir / f"{stem}.html"
             out.write_text(html, encoding="utf-8")
             built.append((out, overall))
             print(f"  built {out}  (overall FAIL_RATE {overall})")
