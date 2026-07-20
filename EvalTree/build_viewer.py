@@ -29,13 +29,22 @@ def children_of(node):
     return sub if isinstance(sub, list) else list(sub.values())
 
 
-def annotate(node, results):
+def max_leaf_index(node):
+    """Largest dataset index referenced by any leaf under `node` (-1 if none)."""
+    if is_leaf(node):
+        return node["subtrees"]
+    return max((max_leaf_index(ch) for ch in children_of(node)), default=-1)
+
+
+def annotate(node, results, idx_to_run=None, subsets=()):
     """Attach precomputed FAIL_RATE aggregates to every node.
 
     Adds two integers per node:
       fail   — instances under the node the model FAILED (results value == 1)
       scored — instances under the node that have a result at all
-    Returns (fail, scored) for the subtree so parents can sum them.
+    When `subsets` is non-empty, also adds `by_subset` = {subset: {fail, scored}}
+    so the viewer can recompute FAIL_RATE per source_run subset (idx_to_run maps a
+    dataset index -> its subset name). Returns (fail, scored) so parents can sum them.
     """
     if is_leaf(node):
         idx = node["subtrees"]
@@ -43,14 +52,27 @@ def annotate(node, results):
         scored = 1 if isinstance(v, (int, float)) else 0
         fail = int(v) if scored else 0
         node["fail"], node["scored"] = fail, scored
+        if subsets:
+            run = (idx_to_run or {}).get(idx)
+            node["subset"] = run  # which subset this single instance came from
+            node["by_subset"] = {s: {"fail": fail if s == run else 0,
+                                     "scored": scored if s == run else 0} for s in subsets}
         return fail, scored
 
     fail = scored = 0
+    by_subset = {s: {"fail": 0, "scored": 0} for s in subsets} if subsets else None
     for ch in children_of(node):
-        f, s = annotate(ch, results)
+        f, s = annotate(ch, results, idx_to_run, subsets)
         fail += f
         scored += s
+        if subsets:
+            cb = ch["by_subset"]
+            for s in subsets:
+                by_subset[s]["fail"] += cb[s]["fail"]
+                by_subset[s]["scored"] += cb[s]["scored"]
     node["fail"], node["scored"] = fail, scored
+    if subsets:
+        node["by_subset"] = by_subset
     return fail, scored
 
 
@@ -140,6 +162,15 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .acc .bar > span { display: block; height: 100%; }
   .acc .pct { min-width: 34px; text-align: right; font-weight: 600; }
   .acc .frac { color: var(--muted); font-size: 11px; }
+  /* comparison mode: one .acc per subset, side by side, each tagged with its subset */
+  .accs { flex: 0 0 auto; display: inline-flex; gap: 16px; align-items: center; }
+  .acc .slab { font-size: 11px; font-weight: 600; min-width: 52px; text-align: right; }
+  .acc.empty .bar, .acc.empty .pct, .acc.empty .frac { opacity: .28; }
+  /* leaf origin tag */
+  .chip {
+    flex: 0 0 auto; font-size: 11px; padding: 1px 8px; border-radius: 999px;
+    border: 1px solid currentColor; white-space: nowrap; opacity: .9;
+  }
   .desc { flex: 1; }
   li.internal > .row .desc { font-weight: 500; }
   li.leaf > .row .desc { color: var(--muted); }
@@ -160,6 +191,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       <option value="pass">PASS_RATE (fraction passed)</option>
     </select>
   </div>
+  __MODE_CONTROL__
   <div class="ctl"><input id="search" type="search" placeholder="Filter capabilities…" /></div>
   <div class="spacer"></div>
   <div class="ctl">show depth
@@ -180,16 +212,34 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     <i>#n leaf</i> = one dataset instance &nbsp;·&nbsp;
     <b>n=</b> instances under a node &nbsp;·&nbsp;
     <b id="legendMetric">FAIL_RATE</b> = fraction of instances under a node the model FAILED; green = higher failure (capabilities that stump the model)
+    <span id="legendMode"></span>
   </div>
   <ul class="tree" id="tree"></ul>
 </main>
 
 <script>
 // FAIL_RATE is precomputed per node (node.fail / node.scored) at build time.
+// node.by_subset[<run>] holds the same counts split by source_run subset.
 const TREE_DATA = __TREE_JSON__;
+const SUBSETS = __SUBSETS_JSON__;   // [] when there's nothing to compare
 
 const $ = (id) => document.getElementById(id);
 let stats = { nodes: 0, leaves: 0, depth: 0 };
+
+// Short subset labels: drop the prefix common to every subset (e.g.
+// "sqa_50_100_explore" -> "explore"), trimmed back to an underscore boundary.
+function commonPrefix(arr) {
+  if (!arr.length) return "";
+  let p = arr[0];
+  for (const s of arr) while (!s.startsWith(p)) p = p.slice(0, -1);
+  return p.slice(0, p.lastIndexOf("_") + 1);
+}
+const CP = commonPrefix(SUBSETS);
+const shortLabel = (s) => (CP && s.length > CP.length ? s.slice(CP.length) : s);
+// Stable identity colors per subset (off the red→green FAIL_RATE ramp so the two
+// encodings never collide). Assigned in the fixed order subsets are listed.
+const SUBSET_PALETTE = ["#6ea8fe", "#f6c177", "#c58af9", "#3ddc97", "#ff8fa3"];
+const subsetColor = (s) => SUBSET_PALETTE[Math.max(0, SUBSETS.indexOf(s)) % SUBSET_PALETTE.length];
 
 const isLeaf = (n) => typeof n.subtrees === "number";
 const childrenOf = (n) => (Array.isArray(n.subtrees) ? n.subtrees : Object.values(n.subtrees));
@@ -204,30 +254,74 @@ function countInstances(n) {
 
 const metricMode = () => $("metric").value;                 // "fail" | "pass"
 const metricLabel = () => (metricMode() === "fail" ? "FAIL_RATE" : "PASS_RATE");
+// "full" = one combined badge; "comparison" = one badge per subset side by side.
+const viewMode = () => ($("mode") ? $("mode").value : "full");
 
-// node.fail = failed instances, node.scored = instances with a result.
-function metricOf(n) {
-  const scored = n.scored || 0;
+// Failed/scored counts for a given source: "all" = every instance under the node,
+// otherwise the named source_run subset (node.by_subset[<run>]).
+function countsFor(n, source) {
+  if (source === "all" || !n.by_subset) return { fail: n.fail || 0, scored: n.scored || 0 };
+  const b = n.by_subset[source] || { fail: 0, scored: 0 };
+  return { fail: b.fail || 0, scored: b.scored || 0 };
+}
+
+function metricOf(n, source = "all") {
+  const { fail, scored } = countsFor(n, source);
   if (!scored) return null;
-  const failed = n.fail || 0, passed = scored - failed;
-  const num = metricMode() === "fail" ? failed : passed;
+  const passed = scored - fail;
+  const num = metricMode() === "fail" ? fail : passed;
   return { value: num / scored, num, scored, label: metricLabel() };
 }
 
-function metricBadge(node) {
-  const m = metricOf(node);
+// One FAIL_RATE bar for `node` restricted to `source`. `slab` (optional) is the
+// subset label shown in comparison mode so each bar is identified.
+function metricBadge(node, source = "all", slab = null) {
   const span = document.createElement("span");
   span.className = "acc";
-  if (m == null) return span;
-  const failRate = node.fail / node.scored;  // green = MORE failures (capabilities that stump the model), red = fewer
+  let html = "";
+  if (slab != null)
+    html += '<span class="slab" style="color:' + subsetColor(source) + '">' + escapeHTML(slab) + "</span>";
+  const c = countsFor(node, source);
+  const m = metricOf(node, source);
+  if (m == null) {
+    span.className += " empty";
+    span.innerHTML = html +
+      '<span class="bar"></span><span class="pct">—</span><span class="frac">0/0</span>';
+    span.title = (slab != null ? slab + ": " : "") + "no instances here";
+    return span;
+  }
+  const failRate = c.fail / c.scored;  // green = MORE failures (capabilities that stump the model), red = fewer
   const hue = Math.round(120 * failRate);
   const pct = Math.round(m.value * 100);
-  span.innerHTML =
+  span.innerHTML = html +
     '<span class="bar"><span style="width:' + pct + '%;background:hsl(' + hue + ',62%,46%)"></span></span>' +
     '<span class="pct" style="color:hsl(' + hue + ',62%,58%)">' + pct + '%</span>' +
     '<span class="frac">' + m.num + '/' + m.scored + '</span>';
-  span.title = m.label + " " + m.num + "/" + m.scored + " (" + pct + "%)";
+  span.title = (slab != null ? slab + " · " : "") + m.label + " " + m.num + "/" + m.scored + " (" + pct + "%)";
   return span;
+}
+
+// The metric area for a row: a single combined badge (full) or one per subset
+// (comparison). Returns an element to drop into the row.
+function metricArea(node) {
+  if (viewMode() === "comparison" && SUBSETS.length) {
+    const wrap = document.createElement("span");
+    wrap.className = "accs";
+    for (const s of SUBSETS) wrap.appendChild(metricBadge(node, s, shortLabel(s)));
+    return wrap;
+  }
+  return metricBadge(node, "all");
+}
+
+// A small pill on a leaf row naming the subset that single instance came from.
+function subsetChip(node) {
+  if (!SUBSETS.length || !node.subset) return null;
+  const chip = document.createElement("span");
+  chip.className = "chip";
+  chip.textContent = shortLabel(node.subset);
+  chip.style.color = subsetColor(node.subset);
+  chip.title = "source_run: " + node.subset;
+  return chip;
 }
 
 const escapeHTML = (s) => String(s).replace(/[&<>]/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[m]));
@@ -250,11 +344,13 @@ function buildLi(node, depth) {
   count.innerHTML = leaf ? '<span class="unit">leaf</span>' : '<span class="unit">n=</span><b>' + n + "</b>";
   const icon = document.createElement("span"); icon.className = "icon";
   icon.textContent = leaf ? "#" + node.subtrees : "▸";
-  const acc = metricBadge(node);
+  const acc = metricArea(node);
   const desc = document.createElement("span"); desc.className = "desc";
   desc.textContent = node.description || "(no description)";
 
   row.append(tw, count, acc, icon, desc);
+  const chip = leaf ? subsetChip(node) : null;   // leaf origin (which subset)
+  if (chip) row.appendChild(chip);
   li.appendChild(row);
 
   if (!leaf) {
@@ -272,10 +368,25 @@ function render() {
   root.innerHTML = "";
   root.appendChild(buildLi(TREE_DATA, 0));
   let line = `${stats.nodes.toLocaleString()} capability nodes · ${stats.leaves.toLocaleString()} instances · depth ${stats.depth}`;
-  const m = metricOf(TREE_DATA);
-  if (m != null) line += ` · overall ${m.label} ${Math.round(m.value * 100)}% (${m.num}/${m.scored})`;
+  if (viewMode() === "comparison" && SUBSETS.length) {
+    const parts = SUBSETS.map((s) => {
+      const m = metricOf(TREE_DATA, s);
+      return m ? `${shortLabel(s)} ${Math.round(m.value * 100)}% (${m.num}/${m.scored})` : `${shortLabel(s)} —`;
+    });
+    line += ` · overall ${metricLabel()} — ${parts.join("  vs  ")}`;
+  } else {
+    const m = metricOf(TREE_DATA, "all");
+    if (m != null) line += ` · overall ${m.label} ${Math.round(m.value * 100)}% (${m.num}/${m.scored})`;
+  }
   $("stats").textContent = line;
   $("legendMetric").textContent = metricLabel();
+  if ($("legendMode")) {
+    $("legendMode").innerHTML = (viewMode() === "comparison" && SUBSETS.length)
+      ? " &nbsp;·&nbsp; <b>comparison</b>: one bar per subset (" +
+        SUBSETS.map((s) => '<span style="color:' + subsetColor(s) + '">' + escapeHTML(shortLabel(s)) + "</span>").join(", ") +
+        "); each leaf is tagged with its subset"
+      : (SUBSETS.length ? " &nbsp;·&nbsp; switch <b>view</b> to <i>comparison</i> to split each bar by subset" : "");
+  }
   applyDepth();
   applyLeafVisibility();
 }
@@ -288,6 +399,7 @@ function applyDepth() {
 }
 $("depth").addEventListener("change", applyDepth);
 $("metric").addEventListener("change", render);
+if ($("mode")) $("mode").addEventListener("change", render);
 
 function applyLeafVisibility() {
   const show = $("showLeaves").checked;
@@ -324,15 +436,29 @@ render();
 """
 
 
-def build_html(tree, title, header):
+def mode_control_html(subsets):
+    """The 'view' <select> (full vs comparison), or '' if there's nothing to compare."""
+    if len(subsets) < 2:
+        return ""
+    return ('<div class="ctl" title="full = combined; comparison = per-subset side by side">'
+            'view <select id="mode">'
+            '<option value="full" selected>full</option>'
+            '<option value="comparison">comparison</option>'
+            '</select></div>')
+
+
+def build_html(tree, title, header, subsets=()):
     tree_json = json.dumps(tree, ensure_ascii=False, separators=(",", ":"))
     # Guard against "</script>" in any description prematurely closing the tag.
     tree_json = tree_json.replace("</", "<\\/")
+    subsets_json = json.dumps(list(subsets) if len(subsets) >= 2 else [])
     return (
         HTML_TEMPLATE
         .replace("__TREE_JSON__", tree_json)
         .replace("__TITLE__", title)
         .replace("__HEADER__", header)
+        .replace("__MODE_CONTROL__", mode_control_html(subsets))
+        .replace("__SUBSETS_JSON__", subsets_json)
     )
 
 
@@ -351,12 +477,24 @@ def main():
     if not trees:
         raise SystemExit(f"No stage-4 trees found in {tree_dir}")
 
+    # Map each dataset index -> its generation subset (source_run), so the viewer can
+    # break FAIL_RATE down per subset (e.g. compare "explore" vs "original" prompts).
+    # Only emit the subset control when more than one subset is actually present.
+    idx_to_run, subsets = {}, []
+    dataset_json = dataset / "dataset.json"
+    if dataset_json.is_file():
+        instances = json.load(open(dataset_json))
+        idx_to_run = {i: (inst.get("source_run") or "unknown") for i, inst in enumerate(instances)}
+        found = sorted(set(idx_to_run.values()))
+        if len(found) > 1:
+            subsets = found
+
     # Each evaluated model = a results.json under eval_results/.../<model>/.
     results_files = sorted((dataset / "eval_results").rglob("results.json"))
     if not results_files:
         raise SystemExit(f"No results.json found under {dataset / 'eval_results'}")
 
-    built = []
+    built, skipped = [], []
     for res_path in results_files:
         eval_model = res_path.parent.name
         results = json.load(open(res_path))
@@ -365,23 +503,42 @@ def main():
             continue
         for tree_path in trees:
             tree = json.load(open(tree_path))
-            fail, scored = annotate(tree, results)
             desc_model, annot, cluster = describe_tree(tree_path)
-            overall = f"{fail}/{scored} = {round(100 * fail / scored) if scored else 0}%"
-            title = f"{eval_model} · leaves:{annot} · {cluster} · tree:{desc_model}"
-            header = (f"EvalTree — <b>{eval_model}</b> &nbsp;FAIL_RATE {overall}"
-                      f" &nbsp;<span style='color:var(--muted)'>(leaf labels: {annot} · clustering: {cluster} · descriptions: {desc_model})</span>")
-            html = build_html(tree, title, header)
             # Include the leaf-annotation source AND clustering mode in the filename
             # so different tree variants (LLM capability vs. "strategy" leaves,
             # flat vs. hierarchical clustering) don't overwrite one another.
             stem = "-".join(p for p in ("viewer", eval_model, annot, cluster, desc_model) if p)
             out = out_dir / f"{stem}.html"
+
+            # A tree built over a different (usually older/larger) dataset references
+            # leaf indices that don't exist in the current results — those leaves would
+            # render untagged and inflate the leaf count. Refuse to build a misleading
+            # viewer, and delete any stale one this tree produced on a previous run.
+            mx = max_leaf_index(tree)
+            if mx >= len(results):
+                if out.exists():
+                    out.unlink()
+                    note = " (removed stale viewer)"
+                else:
+                    note = ""
+                print(f"  SKIP {tree_path.name}: leaf index {mx} >= {len(results)} results — "
+                      f"tree is stale; rebuild stages 2-4 against the current dataset{note}")
+                skipped.append(tree_path.name)
+                continue
+
+            fail, scored = annotate(tree, results, idx_to_run, subsets)
+            overall = f"{fail}/{scored} = {round(100 * fail / scored) if scored else 0}%"
+            title = f"{eval_model} · leaves:{annot} · {cluster} · tree:{desc_model}"
+            subset_note = f" · subsets: {', '.join(subsets)}" if subsets else ""
+            header = (f"EvalTree — <b>{eval_model}</b> &nbsp;FAIL_RATE {overall}"
+                      f" &nbsp;<span style='color:var(--muted)'>(leaf labels: {annot} · clustering: {cluster} · descriptions: {desc_model}{subset_note})</span>")
+            html = build_html(tree, title, header, subsets)
             out.write_text(html, encoding="utf-8")
             built.append((out, overall))
             print(f"  built {out}  (overall FAIL_RATE {overall})")
 
-    print(f"\nDone — {len(built)} viewer(s) in {out_dir}")
+    print(f"\nDone — {len(built)} viewer(s) in {out_dir}"
+          + (f"; {len(skipped)} stale tree(s) skipped" if skipped else ""))
     for out, _ in built:
         print(f"  open {out}")
 
